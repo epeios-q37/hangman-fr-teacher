@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Exercices de programmation du jeu du pendu</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAMFBMVEUEAvyEhsxERuS8urQsKuycnsRkYtzc2qwUFvRUVtysrrx0ctTs6qTMyrSUksQ0NuyciPBdAAABHklEQVR42mNgwAa8zlxjDd2A4POfOXPmzZkFCAH2M8fNzyALzDlzg2ENssCbMwkMOsgCa858YOjBKxBzRoHhD7LAHiBH5swCT9HQ6A9ggZ4zp7YCrV0DdM6pBpAAG5Blc2aBDZA68wCsZPuZU0BDH07xvHOmAGKKvgMP2NA/Zw7ADIYJXGDgLQeBBSCBFu0aoAPYQUadMQAJAE29zwAVWMCWpgB08ZnDQGsbGhpsgCqBQHNfzRkDEIPlzFmo0T5nzoMovjPHoAK8Zw5BnA5yDosDSAVYQOYMKIDZzkoDzagAsjhqzjRAfXTmzAQgi/vMQZA6pjtAvhEk0E+ATWRRm6YBZuScCUCNN5szH1D4TGdOoSrggtiNAH3vBBjwAQCglIrSZkf1MQAAAABJRU5ErkJggg==" />
+  <style>
+  body {
+      padding: 20px;
+      max-width: 900px;
+      margin:0 auto;
+  }
+  
+  blockquote {
+      margin-left: 0px;
+      padding-left: 10px;
+      border-left: solid;
+      border-color: lightgrey;
+  }
+  
+  code {
+      font-size: larger;
+      background-color: lightgrey;
+      padding-left: 2px;
+      padding-right: 2px;
+  }
+  
+  pre.sourceCode {
+      padding: 15px;
+      background-color: lightgrey;
+      border: solid;
+      border-radius: 15px;
+  }
+  
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    padding: 5px;
+    box-shadow: 1px 1px 12px #555;
+  }
+  
+  h1 {
+      text-align: center;
+      border: solid;
+  }
+  
+  h2 {
+      text-decoration: underline;
+  }
+  
+  h3 {
+      font-style: italic;
+  }
+  
+  </style>
+</head>
+<body>
+<h1 id="exercices-de-programmation-du-jeu-du-pendu">Exercices de programmation du jeu du pendu</h1>
+<p><a href="https://repl.it/github/epeios-q37/hangman-fr"><img src="https://img.shields.io/badge/essai-en_ligne-green.svg?labelColor=violet&amp;style=for-the-badge&amp;logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHJvbGU9ImltZyIgdmlld0JveD0iMCAwIDI0IDI0Ij48dGl0bGU+cmVwbC5pdCBpY29uPC90aXRsZT48cGF0aCBkPSJNMTIuMjY1LjAwMmExMS45MTEgMTEuOTExIDAgMDAtMi40MzcuMjA0YzEzLjg3NiAxLjcwNCAxMC4yNyAxNy45NCAxLjcxNyAxNy44MTkgMCAwIDEyLjQ1MyAxLjYyNSAxMS42NzMtMTAuMjE1QTExLjkxMSAxMS45MTEgMCAwMDEyLjI2NS4wMDJ6TTguMjEzLjgyN2MtLjIuMDAyLS40MDIuMDA4LS42MS4wMTZBMTEuODU2IDExLjg1NiAwIDAwLjE0NiAxMy42MDhDMi45My0uNDIxIDE4LjgwNSA0LjEyMiAxNy45IDEyLjY4OGMwIDAgMi44NS0xMi4wMTQtOS42ODgtMTEuODYxem0xLjQ1NCA1LjAzNUM2LjAwMiA1Ljg4Ni42OTEgNy40NS44MTYgMTYuMzQ0YTEyLjAxMyAxMi4wMTMgMCAwMDIuODk3IDQuMzNjLjA1Mi4wNTEuMTA4LjEuMTYyLjE0OWExMi4wMiAxMi4wMiAwIDAwMS4xMzcuOTI2Yy4wNjEuMDQ0LjEyLjA5Mi4xODEuMTM1YTExLjkzIDExLjkzIDAgMDAxLjMxMi43NzljLjEzMi4wNjguMjY2LjEzLjQuMTkzYTExLjg1NCAxMS44NTQgMCAwMDEuMTk5LjQ4NmMuMS4wMzQuMTk1LjA3Ny4yOTcuMTA5YTExLjg3NCAxMS44NzQgMCAwMDEuNDkuMzUzYy4xNTMuMDI3LjMwNy4wNS40NjEuMDdhMTIuMDE2IDEyLjAxNiAwIDAwMS41NzguMTIzbC4wNi4wMDNjLjQgMCAuNzkyLS4wMjEgMS4xOC0uMDYtMTMuOTQ5LTMuMzI3LTguNjQ1LTE4LjkyNC0uMTE0LTE3LjY4IDAgMC0xLjQ2OS0uNDEtMy4zODktLjM5OHptMi40MzYgMi43NjJhMy4zNTUgMy4zNTUgMCAxMDMuMzU0IDMuMzU2IDMuMzU1IDMuMzU1IDAgMDAtMy4zNTQtMy4zNTZ6bS01Ljk1IDIuMTkyUzIuODIgMjMuMDkgMTYuMTcyIDIzLjE5NmExMS45NzggMTEuOTc4IDAgMDA3Ljc0My05Ljk5MmMuMDMzLS4zMTkuMDQzLS42NDQuMDUtLjk3LjAwMS0uMDg1LjAxMy0uMTY4LjAxMy0uMjU1IDAtLjM3MS0uMDIzLS43MzctLjA1Ni0xLjEtMy41MjcgMTMuODg3LTE5LjEzMiA4LjQ0OC0xNy43Ny0uMDYzeiIvPjwvc3ZnPg==" alt="Essai en ligne" /></a></p>
+<p>Le série d'exercices qui suit permet de programmer une version du <a href="https://fr.wikipedia.org/wiki/Le_Pendu_(jeu)">jeu du pendu</a> jouable sur smartphone, et qui ressemblera à ça :</p>
+<p><img src="assets/Pendu.png" /></p>
+<p>Le professeur vous indiquera comment procéder pour le lancement des divers exercices.</p>
+<h2 id="exercice-a">Exercice <em>a</em></h2>
+<h3 id="objectifs">Objectifs</h3>
+<p>Se familiariser avec l'édition d'un fichier source, ainsi que le lancement et l'arrêt du jeu.</p>
+<h3 id="préparation">Préparation</h3>
+<p>Ouvrir le fichier <code>pendu.py</code>. Il devrait avoir le contenu suivant :</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">from</span> workshop.fr.a <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a>MONTRER_MOT_SECRET <span class="op">=</span> VRAI</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="kw">def</span> choisirMot():</span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a>go(<span class="bu">globals</span>())</span></code></pre></div>
+<p>La variable booléenne <code>MONTRER_MOT_SECRET</code> permet de configurer le jeu pour qu'il affiche le mot à deviner. Sans cette possibilité, il serait compliqué de tester le jeu pour vérifier s'il fonctionne correctement. On donnera à cette variable la valeur<code>VRAI</code> (ou <code>True</code>) tout au long du développement et de la mise au point du jeu, et <code>FAUX</code> (ou <code>False</code>) une fois que le jeu sera au point, pour que le mot à deviner ne soit plus affiché.</p>
+<h3 id="tâches">Tâches</h3>
+<p>Écrire le contenu de la fonction <code>choisirMot</code> pour qu'elle retourne toujours la même chaîne de caractères contenant un mot.</p>
+<h3 id="pseudo-code">Pseudo-code</h3>
+<blockquote>
+<p>Retourner un mot contenu dans une chaîne de caractères.</p>
+</blockquote>
+<h3 id="aperçu">Aperçu</h3>
+<p><img src="assets/a.png" /></p>
+<h3 id="tests">Tests</h3>
+<ul>
+<li>Cliquer sur le bouton <code>Recommencer</code> et vérifier que les deux champs affichent le mot retourné par la fonction <code>choisirMot</code> ;</li>
+<li>changer le contenu du champs de saisie, cliquer sur le bouton <code>Recommencer</code>, et vérifier que les deux champs affiche le même mot que ci-dessus.</li>
+</ul>
+<h2 id="exercice-b">Exercice <em>b</em></h2>
+<h3 id="objectifs-1">Objectifs</h3>
+<p>Offrir la possibilité de définir le mot à deviner grâce au champs de saisie. C'est-à-dire que, lorsqu'on va cliquer sur le bouton <code>Recommencer</code>, c'est le texte contenu dans le champs de saisie qui va être utilisé comme mot à deviner, et donc affiché dans les deux champs.</p>
+<h3 id="préparation-1">Préparation</h3>
+<ul>
+<li>Dans la première ligne, remplacer le <code>a</code> par un <code>b</code> ;</li>
+<li>ajouter le paramètre <code>suggestion</code> dans la déclaration de la fonction <code>choisirMot</code>.</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> workshop.fr.b <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a>…</span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="kw">def</span> choisirMot(suggestion):</span>
+<span id="cb2-6"><a href="#cb2-6"></a>    …</span>
+<span id="cb2-7"><a href="#cb2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8"></a>go(<span class="bu">globals</span>())</span></code></pre></div>
+<h3 id="tâches-1">Tâches</h3>
+<p>Sachant que :</p>
+<ul>
+<li><code>suggestion</code> est une chaîne de caractères contenant ce qui a été saisi dans le champs de saisie  ;</li>
+</ul>
+<p>modifier le code de la fonction <code>choisirMot</code> pour que :</p>
+<ul>
+<li>lorsque <code>suggestion</code> est vide, elle retourne une chaîne de caractères contenant un mot quelconque, toujours le même (réutiliser le code écrit dans l'exercice précédent) ;</li>
+<li>lorsque <code>suggestion</code> n'est <strong>pas</strong> vide, elle retourne <code>suggestion</code>.</li>
+</ul>
+<h3 id="pseudo-code-1">Pseudo-code</h3>
+<blockquote>
+<p>Si <code>suggestion</code> est vide<br />
+  Retourner un mot quelconque<br />
+Sinon<br />
+  Retourner <code>suggestion</code></p>
+</blockquote>
+<h3 id="aperçu-1">Aperçu</h3>
+<p>Le même que pour l'exercice précédent.</p>
+<h3 id="tests-1">Tests</h3>
+<ul>
+<li>Lorsque l'on clique sur <code>Recommencer</code> alors que le champs de saisie est vide, c'est toujours le même mot qui doit être affiché dans les deux champs ;</li>
+<li>lorsque l'on clique sur <code>Recommencer</code> alors que le champs de saisie n'est <strong>pas</strong> vide, alors c'est le contenu de ce champs qui doit être affiché dans les deux champs.</li>
+</ul>
+<h2 id="exercice-c">Exercice <em>c</em></h2>
+<h3 id="objectifs-2">Objectifs</h3>
+<p>Au lieu de toujours retourner le même mot lorsque le champs de saisie est vide, on va retourner un mot au hasard fournit par le système.</p>
+<h3 id="préparation-2">Préparation</h3>
+<ul>
+<li>Dans la première ligne, remplacer le <code>b</code> par un <code>c</code> ;</li>
+<li>ajouter le paramètre <code>motAuHasard</code> dans la déclaration de la fonction <code>choisirMot</code>.</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">from</span> workshop.fr.c <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a>…</span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="kw">def</span> choisirMot(suggestion,motAuHasard):</span>
+<span id="cb3-6"><a href="#cb3-6"></a>    …</span>
+<span id="cb3-7"><a href="#cb3-7"></a></span>
+<span id="cb3-8"><a href="#cb3-8"></a>go(<span class="bu">globals</span>())</span></code></pre></div>
+<h3 id="tâches-2">Tâches</h3>
+<p>Sachant que :</p>
+<ul>
+<li><code>suggestion</code> est le contenu du champs de saisie ;</li>
+<li><code>motAuHasard</code> est un mot choisi au hasard ;</li>
+</ul>
+<p>modifier la fonction <code>choisirMot</code> pour que :</p>
+<ul>
+<li>lorsque <code>suggestion</code> est vide, elle retourne <code>motAuHasard</code> ;</li>
+<li>lorsque <code>suggestion</code> n'est <strong>pas</strong> vide, elle retourne <code>suggestion</code>.</li>
+</ul>
+<h3 id="pseudo-code-2">Pseudo-code</h3>
+<blockquote>
+<p>Si <code>suggestion</code> est vide<br />
+  Retourner <code>motAuHasard</code><br />
+Sinon<br />
+  Retourner <code>suggestion</code></p>
+</blockquote>
+<h3 id="aperçu-2">Aperçu</h3>
+<p>Le même que pour l'exercice précédent.</p>
+<h3 id="tests-2">Tests</h3>
+<p>Les mêmes que pour l'exercice précédent, sauf que, lorsque le champs de saisie est vide, ce ne sera pas toujours le même mot qui sera affiché. Il se peut qu'un même mot soit affiché deux fois (ou plus) à la suite, mais c'est rare.</p>
+<h2 id="exercice-d">Exercice <em>d</em></h2>
+<h3 id="objectifs-3">Objectifs</h3>
+<p>Détecter la présence d'une lettre dans un mot.</p>
+<h3 id="préparation-3">Préparation</h3>
+<ul>
+<li>Dans la première ligne, remplacer le <code>c</code> par un <code>d</code> ;</li>
+<li>ajouter <code>def lettreEstDansMot(lettre,mot):</code> avant la dernière instruction du fichier.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">from</span> workshop.fr.d <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a>…</span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="kw">def</span> choisirMot(…):</span>
+<span id="cb4-6"><a href="#cb4-6"></a>    …</span>
+<span id="cb4-7"><a href="#cb4-7"></a></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="kw">def</span> lettreEstDansMot(lettre,mot):</span>
+<span id="cb4-9"><a href="#cb4-9"></a></span>
+<span id="cb4-10"><a href="#cb4-10"></a>go(<span class="bu">globals</span>())</span></code></pre></div>
+<h3 id="tâches-3">Tâches</h3>
+<p>Sachant que :</p>
+<ul>
+<li><code>lettre</code> est la lettre choisie par le joueur ;</li>
+<li><code>mot</code> est le mot à deviner ;</li>
+</ul>
+<p>écrire le code de la fonction <code>lettreEstDansMot</code> pour que :</p>
+<ul>
+<li>lorsque <code>lettre</code> est présent dans <code>mot</code>, elle retourne <code>VRAI</code> (ou <code>True</code>) ;</li>
+<li>lorsque <code>lettre</code> n'est <strong>pas</strong> présent dans <code>mot</code>, elle retourne <code>FAUX</code> (ou <code>False</code>).</li>
+</ul>
+<h3 id="pseudo-code-3">Pseudo-code</h3>
+<blockquote>
+<p>Si <code>lettre</code> est contenu dans <code>mot</code><br />
+  Retourner <code>VRAI</code><br />
+Sinon<br />
+  Retourner <code>FAUX</code></p>
+</blockquote>
+<h3 id="aperçu-3">Aperçu</h3>
+<p>Lorsque l'on lance le jeu, voilà ce qui est affiché :</p>
+<p><img src="./assets/b/Start.png" /></p>
+<ul>
+<li><em>Pioche</em> affiche la lettre sélectionnée par l'utilisateur ;</li>
+<li><em>Attendu</em> affiche la valeur que la fonction <code>lettreEstDansMot</code> devrait retourner ;</li>
+<li><em>Obtenu</em> affiche ce que la fonction <code>lettreEstDansMot</code> retourne effectivement.</li>
+</ul>
+<p>Si l'utilisateur clique sur une lettre qui est contenue dans le mot, voici ce qui devrait s'afficher.</p>
+<p><img src="./assets/b/True.correct.png" /></p>
+<p>Si la fonction ne retourne pas la bonne valeur, et doit donc être corrigée, alors ceci s'affiche :</p>
+<p><img src="./assets/b/True.bug.png" /></p>
+<p>Si l'utilisateur clique sur une lettre qui n'est <strong>pas</strong> contenue dans le mot, voici ce qui devrait s'afficher :</p>
+<p><img src="./assets/b/False.correct.png" /></p>
+<p>Si la fonction ne retourne pas la bonne valeur, et doit donc être corrigée, alors ceci s'affiche :</p>
+<p><img src="./assets/b/False.bug.png" /></p>
+<h3 id="tests-3">Tests</h3>
+<ul>
+<li><p>Cliquer sur une lettre contenue dans le mot :</p>
+<ul>
+<li><em>Pioche</em> doit afficher la lettre cliquée ;</li>
+<li><em>Attendu</em> doit afficher <code>vrai</code> ;</li>
+<li><em>Obtenu</em> doit afficher <code>vrai</code> surligné en vert ;</li>
+</ul></li>
+<li><p>cliquer sur une lettre qui n'est <strong>pas</strong> contenue dans le mot :</p>
+<ul>
+<li><em>Pioche</em> doit afficher la lettre cliquée ;</li>
+<li><em>Attendu</em> doit afficher <code>faux</code> ;</li>
+<li><em>Obtenu</em> doit afficher <code>faux</code> surligné en vert.</li>
+</ul></li>
+<li><p>refaire les actions ci-dessus avec différentes lettres et différents mots.</p></li>
+</ul>
+<p>Si ce qui est affiché dans <em>Obtenu</em> est barré et surligné de rouge, alors le code de la fonction <code>lettreEstDansMot</code> est incorrect. Noter le mot et le lettre qui posent problème, corriger la fonction, et ressayer le mot et la lettre pour vérifier que le bug a été corrigé.</p>
+<h2 id="exercice-e">Exercice <em>e</em></h2>
+<h3 id="objectifs-4">Objectifs</h3>
+<p>Affichage du masque, c'est-à-dire du mot à deviner avec dissimulation des lettres qui n'ont pas encore encore été trouvées par le joueur.</p>
+<h3 id="préparation-4">Préparation</h3>
+<ul>
+<li>Dans la première ligne, remplacer le <code>d</code> par un <code>e</code> ;</li>
+<li>ajouter <code>def donnerMasque(mot,pioches):</code> avant la dernière instruction du fichier.</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">from</span> workshop.fr.e <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a>…</span>
+<span id="cb5-4"><a href="#cb5-4"></a></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="kw">def</span> lettreEstDansMot(lettre,mot):</span>
+<span id="cb5-6"><a href="#cb5-6"></a>    …</span>
+<span id="cb5-7"><a href="#cb5-7"></a></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="kw">def</span> donnerMasque(mot,pioches):</span>
+<span id="cb5-9"><a href="#cb5-9"></a></span>
+<span id="cb5-10"><a href="#cb5-10"></a>go(<span class="bu">globals</span>())</span></code></pre></div>
+<h3 id="tâches-4">Tâches</h3>
+<p>Sachant que :</p>
+<ul>
+<li><code>mot</code> est une chaîne de caractères contenant le mot à deviner ;</li>
+<li><code>pioches</code> étant une chaîne de caractère contenant les lettres choisies par le joueur ;</li>
+</ul>
+<p>écrire le code de la fonction <code>donnerMasque</code> pour qu'elle retourne <code>mot</code>, mais dont les lettres qui ne sont pas contenus dans <code>pioches</code> sont remplacées par le caractère <code>_</code>.</p>
+<h3 id="pseudo-code-4">Pseudo-code</h3>
+<blockquote>
+<p>Mettre une chaîne de caractères vide dans <code>masque</code></p>
+<p>Pour <code>lettre</code> étant chaque lettre dans <code>mot</code><br />
+  Si <code>lettre</code> est dans <code>pioches</code><br />
+    Ajouter <code>lettre</code> à <code>masque</code><br />
+  Sinon<br />
+    Ajouter le caractère <strong><code>_</code></strong> à <code>masque</code></p>
+<p>Retourner <code>masque</code></p>
+</blockquote>
+<h3 id="aperçu-4">Aperçu</h3>
+<p><img src="assets/e.png" /></p>
+<h3 id="tests-4">Tests</h3>
+<p>Sachant que le contenu du msque est affiché dans le cadre au-dessus du clavier :</p>
+<ul>
+<li>au lancement, le masque doit être constitué d'un nombre de <code>_</code> égal au nombre de caractères du mot à deviner ;</li>
+<li>cliquer sur une lettre contenue dans le mot à deviner : toutes les occurrences de cette lettre contenus dans le mot à deviner doivent être dévoilées, en plus des lettres déjà dévoilées ;</li>
+<li>cliquer sur une lettre qui n'est <strong>pas</strong> contenue dans le mot à deviner : rien ne doit se passer ;</li>
+<li>tester des mots contenant plusieurs fois la même lettre pour vérifier que toutes les occurrences d'une même lettre soient bien dévoilées.</li>
+</ul>
+<h2 id="exercice-f">Exercice <em>f</em></h2>
+<h3 id="objectif">Objectif</h3>
+<p>Dessiner le corps du pendu en fonction du nombre d'erreurs, c'est-à-dire du nombre de lettres choisies par le joueur qui ne sont pas contenues dans le mot à deviner.</p>
+<h3 id="préparation-5">Préparation</h3>
+<ul>
+<li>Dans la première ligne, remplacer le <code>e</code> par un <code>f</code> ;</li>
+<li>ajouter <code>def majCorps(nombreErreurs)</code> avant la dernière instruction du fichier.</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">from</span> workshop.fr.f <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a>…</span>
+<span id="cb6-4"><a href="#cb6-4"></a></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="kw">def</span> donnerMasque(mot,pioches):</span>
+<span id="cb6-6"><a href="#cb6-6"></a>    …</span>
+<span id="cb6-7"><a href="#cb6-7"></a></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="kw">def</span> majCorps(nombreErreurs):    </span>
+<span id="cb6-9"><a href="#cb6-9"></a></span>
+<span id="cb6-10"><a href="#cb6-10"></a>go(<span class="bu">globals</span>())</span></code></pre></div>
+<h3 id="tâche">Tâche</h3>
+<p>Sachant que :</p>
+<ul>
+<li><code>nombreErreurs</code> est le nombre d'erreurs commises par le joueur, c'est-à-dire le nombre de lettres qu'il a choisi est qui ne sont pas contenus dans le mot à deviner ;</li>
+</ul>
+<p>écrire le code de la fonction <code>majCorps</code> pour qu'elle dessine la partie du corps correspondant au nombre d'erreurs.</p>
+<p>Pour cette tâche, utiliser la fonction <code>dessinerPartieCorps</code> qui peut prendre, comme paramètre, une des valeurs suivantes :</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>P_TETE          <span class="co"># pour dessiner la tête,</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>P_TRONC         <span class="co"># pour dessiner le tronc,</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>P_BRAS_GAUCHE   <span class="co"># pour dessiner le bras gauche,</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>P_BRAS_DROIT    <span class="co"># pour dessiner le bras droit,</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>P_PIED_GAUCHE   <span class="co"># pour dessiner le pied gauche,</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a>P_PIED_DROIT    <span class="co"># pour dessiner le pied droit,</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a>P_VISAGE        <span class="co"># pour dessiner la visage.</span></span></code></pre></div>
+<p><code>maj</code> signifie <em>mise-à-jour</em>, car la fonction est appelée à chaque nouvelle erreur. Cela veut dire que la valeur du paramètre <code>nombreErreurs</code> est incrémenté d'un appel à l'autre. Aussi ne va-t-on pas redessiner tous le corps, mais juste la partie correspondant au nombre d'erreurs.</p>
+<h3 id="pseudo-code-5">Pseudo-code</h3>
+<blockquote>
+<p>Si <code>nombreErreurs</code> est égal à 1<br />
+  Dessiner la tête<br />
+Sinon si <code>nombreErreurs</code> est égal à 2<br />
+  Dessiner le tronc<br />
+Sinon si <code>nombreErreur</code> est égal à 3<br />
+  Dessiner le bras gauche</p>
+<p><em>et ainsi de suite pour dessiner le bras droit, le pied gauche, le pied droit et enfin le visage.</em></p>
+</blockquote>
+<h3 id="aperçu-5">Aperçu</h3>
+<p><img src="assets/f.png" /></p>
+<h3 id="tests-5">Tests</h3>
+<ul>
+<li>Pour chaque lettre contenue dans le mot à deviner, vérifier que le jeu se comporte comme dans l'exercice précédent ;</li>
+<li>pour chaque lettre <strong>non</strong> contenue dans le mot à deviner, vérifier que le dessin du pendu se complète peu à peu.</li>
+</ul>
+</body>
+</html>

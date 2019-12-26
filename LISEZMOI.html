@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Exercices de programmation du jeu du pendu</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAMFBMVEUEAvyEhsxERuS8urQsKuycnsRkYtzc2qwUFvRUVtysrrx0ctTs6qTMyrSUksQ0NuyciPBdAAABHklEQVR42mNgwAa8zlxjDd2A4POfOXPmzZkFCAH2M8fNzyALzDlzg2ENssCbMwkMOsgCa858YOjBKxBzRoHhD7LAHiBH5swCT9HQ6A9ggZ4zp7YCrV0DdM6pBpAAG5Blc2aBDZA68wCsZPuZU0BDH07xvHOmAGKKvgMP2NA/Zw7ADIYJXGDgLQeBBSCBFu0aoAPYQUadMQAJAE29zwAVWMCWpgB08ZnDQGsbGhpsgCqBQHNfzRkDEIPlzFmo0T5nzoMovjPHoAK8Zw5BnA5yDosDSAVYQOYMKIDZzkoDzagAsjhqzjRAfXTmzAQgi/vMQZA6pjtAvhEk0E+ATWRRm6YBZuScCUCNN5szH1D4TGdOoSrggtiNAH3vBBjwAQCglIrSZkf1MQAAAABJRU5ErkJggg==" />
+  <style>
+  body {
+      padding: 20px;
+      max-width: 900px;
+      margin:0 auto;
+  }
+  
+  blockquote {
+      margin-left: 0px;
+      padding-left: 10px;
+      border-left: solid;
+      border-color: lightgrey;
+  }
+  
+  code {
+      font-size: larger;
+      background-color: lightgrey;
+      padding-left: 2px;
+      padding-right: 2px;
+  }
+  
+  pre.sourceCode {
+      padding: 15px;
+      background-color: lightgrey;
+      border: solid;
+      border-radius: 15px;
+  }
+  
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    padding: 5px;
+    box-shadow: 1px 1px 12px #555;
+  }
+  
+  h1 {
+      text-align: center;
+      border: solid;
+  }
+  
+  h2 {
+      text-decoration: underline;
+  }
+  
+  h3 {
+      font-style: italic;
+  }
+  
+  </style>
+</head>
+<body>
+<h1 id="exercices-de-programmation-du-jeu-du-pendu--documentation-professeur">Exercices de programmation du jeu du pendu ; documentation professeur</h1>
+<p><a href="https://repl.it/github/epeios-q37/hangman-fr-teacher"><img src="https://img.shields.io/badge/essai-en_ligne-green.svg?labelColor=violet&amp;style=for-the-badge&amp;logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHJvbGU9ImltZyIgdmlld0JveD0iMCAwIDI0IDI0Ij48dGl0bGU+cmVwbC5pdCBpY29uPC90aXRsZT48cGF0aCBkPSJNMTIuMjY1LjAwMmExMS45MTEgMTEuOTExIDAgMDAtMi40MzcuMjA0YzEzLjg3NiAxLjcwNCAxMC4yNyAxNy45NCAxLjcxNyAxNy44MTkgMCAwIDEyLjQ1MyAxLjYyNSAxMS42NzMtMTAuMjE1QTExLjkxMSAxMS45MTEgMCAwMDEyLjI2NS4wMDJ6TTguMjEzLjgyN2MtLjIuMDAyLS40MDIuMDA4LS42MS4wMTZBMTEuODU2IDExLjg1NiAwIDAwLjE0NiAxMy42MDhDMi45My0uNDIxIDE4LjgwNSA0LjEyMiAxNy45IDEyLjY4OGMwIDAgMi44NS0xMi4wMTQtOS42ODgtMTEuODYxem0xLjQ1NCA1LjAzNUM2LjAwMiA1Ljg4Ni42OTEgNy40NS44MTYgMTYuMzQ0YTEyLjAxMyAxMi4wMTMgMCAwMDIuODk3IDQuMzNjLjA1Mi4wNTEuMTA4LjEuMTYyLjE0OWExMi4wMiAxMi4wMiAwIDAwMS4xMzcuOTI2Yy4wNjEuMDQ0LjEyLjA5Mi4xODEuMTM1YTExLjkzIDExLjkzIDAgMDAxLjMxMi43NzljLjEzMi4wNjguMjY2LjEzLjQuMTkzYTExLjg1NCAxMS44NTQgMCAwMDEuMTk5LjQ4NmMuMS4wMzQuMTk1LjA3Ny4yOTcuMTA5YTExLjg3NCAxMS44NzQgMCAwMDEuNDkuMzUzYy4xNTMuMDI3LjMwNy4wNS40NjEuMDdhMTIuMDE2IDEyLjAxNiAwIDAwMS41NzguMTIzbC4wNi4wMDNjLjQgMCAuNzkyLS4wMjEgMS4xOC0uMDYtMTMuOTQ5LTMuMzI3LTguNjQ1LTE4LjkyNC0uMTE0LTE3LjY4IDAgMC0xLjQ2OS0uNDEtMy4zODktLjM5OHptMi40MzYgMi43NjJhMy4zNTUgMy4zNTUgMCAxMDMuMzU0IDMuMzU2IDMuMzU1IDMuMzU1IDAgMDAtMy4zNTQtMy4zNTZ6bS01Ljk1IDIuMTkyUzIuODIgMjMuMDkgMTYuMTcyIDIzLjE5NmExMS45NzggMTEuOTc4IDAgMDA3Ljc0My05Ljk5MmMuMDMzLS4zMTkuMDQzLS42NDQuMDUtLjk3LjAwMS0uMDg1LjAxMy0uMTY4LjAxMy0uMjU1IDAtLjM3MS0uMDIzLS43MzctLjA1Ni0xLjEtMy41MjcgMTMuODg3LTE5LjEzMiA4LjQ0OC0xNy43Ny0uMDYzeiIvPjwvc3ZnPg==" alt="Essai en ligne" /></a></p>
+<h2 id="introduction">Introduction</h2>
+<p>De nos jour, la plupart des jeunes possèdent un smartphone. Il sera donc plus facile de les intéresser à la programmation avec des exercices qui s'utilisent comme les applications de leurs smartphones.</p>
+<p>C'est pourquoi les exercices présentés ici ont une véritable interface graphique, au lieu de l'habituelle et austère interface texte. De plus, avec chaque exercice, un <a href="https://fr.wikipedia.org/wiki/Code_QR">code QR</a> y donnant accés à partir d'un smartphone est automatiquement affiché. Cela met en évidence, par l'exemple, qu'on peut utiliser ses propres applications sur son smartphone, et non pas seulement des applications comme <em>Facebook</em>, <em>YouTube</em>, <em>Twitter</em>….</p>
+<p>En outre, ils peuvent également partager l'accés avec leurs proches, directement sur leurs smartphones (ou n'importe quel dispositif équipé d'un navigateur web moderne connecté à internet) respectifs. Avec un minimum d'encouragement de la part de ces derniers,</p>
+<p>Vous trouverez plus de détails sur les caractéristiques de ce nouveau type d'exercices à cette adresse : <a href="https://q37.info/s/knf9hdwp">https://q37.info/s/knf9hdwp</a>.</p>
+<p>Ces exercices aboutissent à la programmation, en <em>Python</em>, du [jeu du pendu](<a href="https://fr.wikipedia.org/wiki/Le_Pendu_(jeu)">https://fr.wikipedia.org/wiki/Le_Pendu_(jeu)</a> avec une interface graphique, sans avoir à manipuler directement cette interface. Chaque exercice s'appuie sur le précédent et l'ensemble reproduit les différentes étapes habituellement suivies pour la réalisation d'un tel jeu.</p>
+<p>Ces exercices portent sur la programmation en générale, et non pas sur la programmation en <em>Python</em>. C'est pour cela que les solutions générales seront données avant les solutions propres à <em>Python</em>.</p>
+<h2 id="utilisation">Utilisation</h2>
+<p>Le dépôt <a href="https://github.com/epeios-q37/hangman-fr">https://github.com/epeios-q37/hangman-fr</a> est destinés aux élèves. <a href="https://github.com/epeios-q37/hangman-fr-teacher">https://github.com/epeios-q37/hangman-fr-teacher</a> reprend le contenu de ce dépôt, en y ajoutant des informations utiles aux professeurs, notamment les solutions des exercices. De ce fait, ce dernier dépôt est réservé aux professeurs.</p>
+<p>Pour distribuer ces exercices aux élèves, vous pouvez directement utiliser le dépôt <a href="https://github.com/epeios-q37/hangman-fr">https://github.com/epeios-q37/hangman-fr</a>. Si vous êtes familiarisés avec <em>GitHub</em>, vous pouvez utiliser les outils mis à disposition pour créer votre propre dépôt. Dans ce cas, ils vous suffit de remplacer <code>epeios-q37</code> par votre nom d'utilisateur sur <em>GitHub</em>, et <code>hangman-fr</code> par le nom que vous avez donné à votre dépôt.</p>
+<p>Ls exercices ne sont pas conçus por être enchaînés directement, mais au fur et à mesure que les différentes notions informatiques auront été abordées par ailleurs. Vous pouvez tester ces exercices en allant à cette adresse : <a href="https://repl.it/github/epeios-q37/hangman-fr-teacher">https://repl.it/github/epeios-q37/hangman-fr-teacher</a>. Les fichiers contenus dans le répertoire <code>Student</code> sont ceux mis à disposition des étudiants.</p>
+<p>Il existe deux façon pour les élèves de</p>
+<h3 id="utilisation-en-local">Utilisation en local</h3>
+<p>Pour une utilisation en local, sur un ordinateur équipé de <em>Python</em>, il suffit aux élèves de télécharger et désarchiver le fichier suivant : <a href="https://github.com/epeios-q37/hangman-fr/…">https://github.com/epeios-q37/hangman-fr/…</a>. Alternativement, s'ils possèdent les connaissances adéquates, ils peuvent aussi faire un <code>git clone https://github.com/epeios-q37/hangman-fr</code>.</p>
+<p>Les exercices consistent à écrire du code dans le fichier <code>pendu.py</code> situé à la racine du dépôt. Pour le lancement, il suffira d'exécuter la commande <code>python3 pendu.py</code> dans une console, à partir de la racine du dépôt. S'ouvrira alors un navigateur web leur donnant accès à leur exercice. Le programme sera arrêté avec un <em>CTRL-C</em>.</p>
+<p>Ce dépôt contient, à la racine, un fichier PDF <code>LISEMOI.pdf</code> qui leur donnent les instructions pour chaque exercice.</p>
+<h3 id="utilisation-en-ligne">Utilisation en ligne</h3>
+<p>Pour une utilisation en ligne, en utilisant un navigateur web, sans rien avoir à installer, il suffit de suivre le lien suivant : <a href="https://repl.it/github/epeios-q37/hangman-fr">https://repl.it/github/epeios-q37/hangman-fr</a>.</p>
+<p>Comme ci-dessus, l'exercice consistera à écrire du code dans le fichier <code>pendu.py</code>. Pour lancer l'exercice, il suffira de cliquer sur le bouton vert <code>run</code>. Cela provoquera l'affichage d'un code QR que l'on cliquera (ou éventuellement scannera avec un smartphone) pour accèder à l'exercice.</p>
+<p>Pour revenir au code source, on fermera l'onglet (ou la fenêtre) qui s'est ouverte suite au click sur le code QR. Pour relancer l'application, il suffira de cliquer à nouveau sur le bouton vert (dont le libellé change en fonction du contexte).</p>
+<h2 id="les-exercices">Les exercices</h2>
+<p>Les informations données ici viennent en complément de celles indiquées dans le fichier <code>Student/LISEZMOI.(md|pdf)</code>.</p>
+<h3 id="exercice-a">Exercice <em>a</em></h3>
+<h4 id="notions-abordées">Notions abordées</h4>
+<ul>
+<li>Édition d'un fichier source ;</li>
+<li>lancement d'un programme ;</li>
+<li>arrêt d'un programme ;</li>
+<li>booléen,</li>
+<li>création d'une chaîne de caractères ;</li>
+<li>renvoie d'une valeur par une fonction.</li>
+</ul>
+<h4 id="solution">Solution</h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> choisirMot():</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="cf">return</span> <span class="st">&quot;pied&quot;</span></span></code></pre></div>
+<h3 id="exercice-b">Exercice <em>b</em></h3>
+<h4 id="notions-abordées-">Notions abordées :</h4>
+<ul>
+<li>Paramètre de fonction ;</li>
+<li>instruction conditionnelle ;</li>
+<li>taille d'une chaîne de caractères ;</li>
+<li>booléens ;</li>
+<li>opérateur de comparaison ;</li>
+<li>instructions conditionnelles.</li>
+</ul>
+<h4 id="solutions">Solutions</h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">def</span> choisirMot(suggestion):</span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="cf">if</span> <span class="bu">len</span>(suggestion) <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb2-3"><a href="#cb2-3"></a>    <span class="cf">return</span> suggestion</span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="cf">else</span>:</span>
+<span id="cb2-5"><a href="#cb2-5"></a>    <span class="cf">return</span> <span class="st">&quot;bras&quot;</span></span></code></pre></div>
+<p>Une fois que cette solution aura été trouvée, on pourra proposer de remplacer <code>if len(suggestion) != 0:</code> par <code>if len(suggestion):</code>, puis par <code>if suggestion:</code> en soulignant que c'est une propre à <em>Python</em> (et à certains autres langages).</p>
+<h3 id="exercice-c">Exercice <em>c</em></h3>
+<p>La seconde solution est optionnelle, et pourra être abordée plus tard.</p>
+<h4 id="notions-abordées-1">Notions abordées</h4>
+<p>Pour la première version, aucune en particulier ; il s'agit juste d'une amélioration.</p>
+<p>Pour la seconde version :</p>
+<ul>
+<li>tuples :
+<ul>
+<li>création,</li>
+<li>indexation,</li>
+<li>récupération taille ;</li>
+</ul></li>
+<li>import d'une fonction particulière d'un module,</li>
+<li>fonction <code>randint</code>.</li>
+</ul>
+<h4 id="solutions-1">Solutions</h4>
+<p>Première version :</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">def</span> choisirMot(suggestion,motAuHasard):</span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="cf">if</span> suggestion:</span>
+<span id="cb3-3"><a href="#cb3-3"></a>    <span class="cf">return</span> suggestion</span>
+<span id="cb3-4"><a href="#cb3-4"></a>  <span class="cf">else</span>:</span>
+<span id="cb3-5"><a href="#cb3-5"></a>    <span class="cf">return</span> motAuHasard</span></code></pre></div>
+<p>seconde version :</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">from</span> random <span class="im">import</span> randint</span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a>…</span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="co"># Placer les mots de son choix.</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>DICTIONNAIRE <span class="op">=</span> (<span class="st">&quot;arbre&quot;</span>, <span class="st">&quot;maison&quot;</span>, <span class="st">&quot;chaise&quot;</span>)</span>
+<span id="cb4-7"><a href="#cb4-7"></a></span>
+<span id="cb4-8"><a href="#cb4-8"></a></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="kw">def</span> choisirMot(suggestion):</span>
+<span id="cb4-10"><a href="#cb4-10"></a>  <span class="cf">if</span> suggestion:</span>
+<span id="cb4-11"><a href="#cb4-11"></a>    <span class="cf">return</span> suggestion</span>
+<span id="cb4-12"><a href="#cb4-12"></a>  <span class="cf">else</span>:</span>
+<span id="cb4-13"><a href="#cb4-13"></a>    <span class="cf">return</span> DICTIONNAIRE[randint(<span class="dv">0</span>, <span class="bu">len</span>(DICTIONNAIRE)<span class="op">-</span><span class="dv">1</span>)]</span></code></pre></div>
+<h3 id="exercice-d">Exercice <em>d</em></h3>
+<h4 id="notions-abordées-2">Notions abordées</h4>
+<ul>
+<li>Boucle <code>for</code> ;</li>
+<li>opérateur <code>in</code> ;</li>
+<li>fonction <code>range</code> ;</li>
+<li>index et chaîne de caractères.</li>
+</ul>
+<h4 id="solutions-2">Solutions</h4>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">def</span> lettreEstDansMot(lettre,mot):</span>
+<span id="cb5-2"><a href="#cb5-2"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="bu">len</span>(mot)):</span>
+<span id="cb5-3"><a href="#cb5-3"></a>        <span class="cf">if</span> mot[i] <span class="op">==</span> lettre:</span>
+<span id="cb5-4"><a href="#cb5-4"></a>            <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a></span>
+<span id="cb5-6"><a href="#cb5-6"></a>    <span class="cf">return</span> <span class="va">False</span></span></code></pre></div>
+<p>Une fois cette solution trouvée, on pourra proposer la solution suivante, en soulignant qu'elle est propre à <em>Python</em> (et certains autres langages).</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">def</span> lettreEstDansMot(lettre,mot):</span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="cf">return</span> lettre <span class="kw">in</span> mot</span></code></pre></div>
+<h3 id="exercice-e">Exercice <em>e</em></h3>
+<h4 id="notions-abordées-3">Notions abordées</h4>
+<ul>
+<li>Affectation d'une valeur à une variable ;</li>
+<li>concaténation de chaînes de caractères ;</li>
+<li>éventuellement instruction conditionnelle ternaire.</li>
+</ul>
+<h4 id="solutions-3">Solutions</h4>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">def</span> donnerMasque(mot,pioches):</span>
+<span id="cb7-2"><a href="#cb7-2"></a>    masque <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a>    <span class="cf">for</span> lettre <span class="kw">in</span> mot:</span>
+<span id="cb7-5"><a href="#cb7-5"></a>        <span class="cf">if</span> lettreEstDansMot(lettre,pioches):</span>
+<span id="cb7-6"><a href="#cb7-6"></a>            masque <span class="op">=</span> masque <span class="op">+</span> lettre</span>
+<span id="cb7-7"><a href="#cb7-7"></a>        <span class="cf">else</span>:</span>
+<span id="cb7-8"><a href="#cb7-8"></a>            masque <span class="op">=</span> masque <span class="op">+</span> <span class="st">&quot;_&quot;</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a></span>
+<span id="cb7-10"><a href="#cb7-10"></a>    <span class="cf">return</span> masque</span></code></pre></div>
+<p>Une fois cette solution trouvée, on pourra proposer de remplacer <code>masque = masque + …</code> par <code>masque += …</code>.</p>
+<p>On pourra également, à la place de :</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="cf">if</span> lettreEstDansMot(lettre,pioches):</span>
+<span id="cb8-2"><a href="#cb8-2"></a>    masque <span class="op">+=</span> lettre</span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="cf">else</span>:</span>
+<span id="cb8-4"><a href="#cb8-4"></a>    masque <span class="op">+=</span> <span class="st">&quot;_&quot;</span></span></code></pre></div>
+<p>proposer :</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>masque <span class="op">+=</span> lettre <span class="cf">if</span> lettreEstDansMot(lettre,pioches) <span class="cf">else</span> <span class="st">&quot;_&quot;</span></span></code></pre></div>
+<h3 id="exercice-f">Exercice <em>f</em></h3>
+<h4 id="notions-abordées-4">Notions abordées</h4>
+<p>Instructions conditionnelles multiples (équivalent du <em>case</em> <em>switch</em> d'autres langages).</p>
+<h4 id="solutions-4">Solutions</h4>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">def</span> majCorps(nombreErreurs):</span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="cf">if</span> nombreErreurs <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb10-3"><a href="#cb10-3"></a>    partieCorps <span class="op">=</span> P_TETE</span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="cf">elif</span> nombreErreurs <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb10-5"><a href="#cb10-5"></a>    partieCorps <span class="op">=</span> P_TRONC</span>
+<span id="cb10-6"><a href="#cb10-6"></a>  <span class="cf">elif</span> nombreErreurs <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb10-7"><a href="#cb10-7"></a>    partieCorps <span class="op">=</span> P_BRAS_GAUCHE</span>
+<span id="cb10-8"><a href="#cb10-8"></a>  <span class="cf">elif</span> nombreErreurs <span class="op">==</span> <span class="dv">4</span>:</span>
+<span id="cb10-9"><a href="#cb10-9"></a>    partieCorps <span class="op">=</span> P_BRAS_DROIT</span>
+<span id="cb10-10"><a href="#cb10-10"></a>  <span class="cf">elif</span> nombreErreurs <span class="op">==</span> <span class="dv">5</span>:</span>
+<span id="cb10-11"><a href="#cb10-11"></a>    partieCorps <span class="op">=</span> P_PIED_DROIT</span>
+<span id="cb10-12"><a href="#cb10-12"></a>  <span class="cf">elif</span> nombreErreurs <span class="op">==</span> <span class="dv">6</span>:</span>
+<span id="cb10-13"><a href="#cb10-13"></a>    partieCorps <span class="op">=</span> P_PIED_GAUCHE</span>
+<span id="cb10-14"><a href="#cb10-14"></a>  <span class="cf">elif</span> nombreErreurs <span class="op">==</span> <span class="dv">7</span>:</span>
+<span id="cb10-15"><a href="#cb10-15"></a>    partieCorps <span class="op">=</span> P_VISAGE</span>
+<span id="cb10-16"><a href="#cb10-16"></a></span>
+<span id="cb10-17"><a href="#cb10-17"></a>  dessinerPartieCorps(partieCorps)</span></code></pre></div>
+<p>Autre solution :</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>PARTIES_CORPS <span class="op">=</span> (</span>
+<span id="cb11-2"><a href="#cb11-2"></a>  P_TETE,</span>
+<span id="cb11-3"><a href="#cb11-3"></a>  P_TRONC,</span>
+<span id="cb11-4"><a href="#cb11-4"></a>  P_BRAS_GAUCHE,</span>
+<span id="cb11-5"><a href="#cb11-5"></a>  P_BRAS_DROIT,</span>
+<span id="cb11-6"><a href="#cb11-6"></a>  P_PIED_GAUCHE,</span>
+<span id="cb11-7"><a href="#cb11-7"></a>  P_PIED_DROIT,</span>
+<span id="cb11-8"><a href="#cb11-8"></a>  P_VISAGE</span>
+<span id="cb11-9"><a href="#cb11-9"></a>)</span>
+<span id="cb11-10"><a href="#cb11-10"></a></span>
+<span id="cb11-11"><a href="#cb11-11"></a><span class="kw">def</span> majCorps(nombreErreurs):</span>
+<span id="cb11-12"><a href="#cb11-12"></a>  dessinerPartieCorps(PARTIES_CORPS[nombreErreurs<span class="dv">-1</span>])</span></code></pre></div>
+</body>
+</html>

@@ -5,4 +5,4 @@ Pour les utilisateurs de Repl.it : le lancement se fait en cliquant le bouton v
 
 -->
 
-Voir le fichier `LISEZMOI.md`.
+Voir le fichier `LISEZMOI.html`.
