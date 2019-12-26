@@ -4,11 +4,11 @@
 
 ## Introduction
 
-De nos jour, la plupart des jeunes possèdent un smartphone. Il sera donc plus facile de les intéresser à la programmation avec des exercices qui s'utilisent comme les applications de leurs smartphones.
+De nos jour, la plupart des jeunes possèdent un smartphone. Il est donc plus facile de les intéresser à la programmation avec des exercices qui s'utilisent comme les applications de leurs smartphones.
 
-C'est pourquoi les exercices présentés ici ont une véritable interface graphique, au lieu de l'habituelle et austère interface texte. De plus, avec chaque exercice, un [code QR](https://fr.wikipedia.org/wiki/Code_QR)  y donnant accés à partir d'un smartphone est automatiquement affiché. Cela met en évidence, par l'exemple, qu'on peut utiliser ses propres applications sur son smartphone, et non pas seulement des applications comme *Facebook*, *YouTube*, *Twitter*….
+C'est pourquoi les exercices présentés ici ont une véritable interface graphique, au lieu de l'habituelle et austère interface texte. De plus, avec chaque exercice, un [code QR](https://fr.wikipedia.org/wiki/Code_QR)  y donnant accès à partir d'un smartphone est automatiquement affiché. Cela met en évidence, par l'exemple, qu'on peut utiliser ses propres applications sur son smartphone, et non pas seulement des applications comme *Facebook*, *YouTube*, *Twitter*….
 
-En outre, ils peuvent également partager l'accés avec leurs proches, directement sur leurs smartphones (ou n'importe quel dispositif équipé d'un navigateur web moderne connecté à internet) respectifs. Avec un minimum d'encouragement de la part de ces derniers, 
+En outre, ils peuvent également partager l'accès avec leurs proches, directement sur leurs smartphones (ou n'importe quel dispositif équipé d'un navigateur web moderne connecté à internet) respectifs. Avec un minimum d'encouragement de la part de ces derniers, 
 
 Vous trouverez plus de détails sur les caractéristiques de ce nouveau type d'exercices à cette adresse : https://q37.info/s/knf9hdwp.
 
@@ -27,14 +27,6 @@ Ls exercices ne sont pas conçus por être enchaînés directement, mais au fur 
 Il existe deux façon pour les élèves de 
 
 ### Utilisation en local
-
-
-
-
-
-
-
-
 
 Pour une utilisation en local, sur un ordinateur équipé de *Python*, il suffit aux élèves de télécharger et désarchiver le fichier suivant : https://github.com/epeios-q37/hangman-fr/…. Alternativement, s'ils possèdent les connaissances adéquates, ils peuvent aussi faire un `git clone https://github.com/epeios-q37/hangman-fr`.
 
