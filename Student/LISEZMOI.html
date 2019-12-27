@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Exercices de programmation du jeu du pendu</title>
+  <title>Exercices de programmation du jeu du pendu - document professeur</title>
   <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
@@ -130,11 +130,74 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       font-style: italic;
   }
   
+  nav {
+      max-width: 450px;
+      margin-left: auto;
+      margin-right: auto;
+      border: 15px ridge lightgrey;
+  }
+  
+  nav > ul {
+      list-style-type: none;
+  }
   </style>
 </head>
 <body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#exercices-de-programmation-du-jeu-du-pendu">Exercices de programmation du jeu du pendu</a><ul>
+<li><a href="#exercice-a">Exercice <em>a</em></a><ul>
+<li><a href="#objectifs">Objectifs</a></li>
+<li><a href="#préparation">Préparation</a></li>
+<li><a href="#tâches">Tâches</a></li>
+<li><a href="#pseudo-code">Pseudo-code</a></li>
+<li><a href="#aperçu">Aperçu</a></li>
+<li><a href="#tests">Tests</a></li>
+</ul></li>
+<li><a href="#exercice-b">Exercice <em>b</em></a><ul>
+<li><a href="#objectifs-1">Objectifs</a></li>
+<li><a href="#préparation-1">Préparation</a></li>
+<li><a href="#tâches-1">Tâches</a></li>
+<li><a href="#pseudo-code-1">Pseudo-code</a></li>
+<li><a href="#aperçu-1">Aperçu</a></li>
+<li><a href="#tests-1">Tests</a></li>
+</ul></li>
+<li><a href="#exercice-c">Exercice <em>c</em></a><ul>
+<li><a href="#objectifs-2">Objectifs</a></li>
+<li><a href="#préparation-2">Préparation</a></li>
+<li><a href="#tâches-2">Tâches</a></li>
+<li><a href="#pseudo-code-2">Pseudo-code</a></li>
+<li><a href="#aperçu-2">Aperçu</a></li>
+<li><a href="#tests-2">Tests</a></li>
+</ul></li>
+<li><a href="#exercice-d">Exercice <em>d</em></a><ul>
+<li><a href="#objectifs-3">Objectifs</a></li>
+<li><a href="#préparation-3">Préparation</a></li>
+<li><a href="#tâches-3">Tâches</a></li>
+<li><a href="#pseudo-code-3">Pseudo-code</a></li>
+<li><a href="#aperçu-3">Aperçu</a></li>
+<li><a href="#tests-3">Tests</a></li>
+</ul></li>
+<li><a href="#exercice-e">Exercice <em>e</em></a><ul>
+<li><a href="#objectifs-4">Objectifs</a></li>
+<li><a href="#préparation-4">Préparation</a></li>
+<li><a href="#tâches-4">Tâches</a></li>
+<li><a href="#pseudo-code-4">Pseudo-code</a></li>
+<li><a href="#aperçu-4">Aperçu</a></li>
+<li><a href="#tests-4">Tests</a></li>
+</ul></li>
+<li><a href="#exercice-f">Exercice <em>f</em></a><ul>
+<li><a href="#objectif">Objectif</a></li>
+<li><a href="#préparation-5">Préparation</a></li>
+<li><a href="#tâche">Tâche</a></li>
+<li><a href="#pseudo-code-5">Pseudo-code</a></li>
+<li><a href="#aperçu-5">Aperçu</a></li>
+<li><a href="#tests-5">Tests</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
 <h1 id="exercices-de-programmation-du-jeu-du-pendu">Exercices de programmation du jeu du pendu</h1>
-<p><a href="https://repl.it/github/epeios-q37/hangman-fr"><img src="https://img.shields.io/badge/essai-en_ligne-green.svg?labelColor=violet&amp;style=for-the-badge&amp;logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHJvbGU9ImltZyIgdmlld0JveD0iMCAwIDI0IDI0Ij48dGl0bGU+cmVwbC5pdCBpY29uPC90aXRsZT48cGF0aCBkPSJNMTIuMjY1LjAwMmExMS45MTEgMTEuOTExIDAgMDAtMi40MzcuMjA0YzEzLjg3NiAxLjcwNCAxMC4yNyAxNy45NCAxLjcxNyAxNy44MTkgMCAwIDEyLjQ1MyAxLjYyNSAxMS42NzMtMTAuMjE1QTExLjkxMSAxMS45MTEgMCAwMDEyLjI2NS4wMDJ6TTguMjEzLjgyN2MtLjIuMDAyLS40MDIuMDA4LS42MS4wMTZBMTEuODU2IDExLjg1NiAwIDAwLjE0NiAxMy42MDhDMi45My0uNDIxIDE4LjgwNSA0LjEyMiAxNy45IDEyLjY4OGMwIDAgMi44NS0xMi4wMTQtOS42ODgtMTEuODYxem0xLjQ1NCA1LjAzNUM2LjAwMiA1Ljg4Ni42OTEgNy40NS44MTYgMTYuMzQ0YTEyLjAxMyAxMi4wMTMgMCAwMDIuODk3IDQuMzNjLjA1Mi4wNTEuMTA4LjEuMTYyLjE0OWExMi4wMiAxMi4wMiAwIDAwMS4xMzcuOTI2Yy4wNjEuMDQ0LjEyLjA5Mi4xODEuMTM1YTExLjkzIDExLjkzIDAgMDAxLjMxMi43NzljLjEzMi4wNjguMjY2LjEzLjQuMTkzYTExLjg1NCAxMS44NTQgMCAwMDEuMTk5LjQ4NmMuMS4wMzQuMTk1LjA3Ny4yOTcuMTA5YTExLjg3NCAxMS44NzQgMCAwMDEuNDkuMzUzYy4xNTMuMDI3LjMwNy4wNS40NjEuMDdhMTIuMDE2IDEyLjAxNiAwIDAwMS41NzguMTIzbC4wNi4wMDNjLjQgMCAuNzkyLS4wMjEgMS4xOC0uMDYtMTMuOTQ5LTMuMzI3LTguNjQ1LTE4LjkyNC0uMTE0LTE3LjY4IDAgMC0xLjQ2OS0uNDEtMy4zODktLjM5OHptMi40MzYgMi43NjJhMy4zNTUgMy4zNTUgMCAxMDMuMzU0IDMuMzU2IDMuMzU1IDMuMzU1IDAgMDAtMy4zNTQtMy4zNTZ6bS01Ljk1IDIuMTkyUzIuODIgMjMuMDkgMTYuMTcyIDIzLjE5NmExMS45NzggMTEuOTc4IDAgMDA3Ljc0My05Ljk5MmMuMDMzLS4zMTkuMDQzLS42NDQuMDUtLjk3LjAwMS0uMDg1LjAxMy0uMTY4LjAxMy0uMjU1IDAtLjM3MS0uMDIzLS43MzctLjA1Ni0xLjEtMy41MjcgMTMuODg3LTE5LjEzMiA4LjQ0OC0xNy43Ny0uMDYzeiIvPjwvc3ZnPg==" alt="Essai en ligne" /></a></p>
 <p>Le série d'exercices qui suit permet de programmer une version du <a href="https://fr.wikipedia.org/wiki/Le_Pendu_(jeu)">jeu du pendu</a> jouable sur smartphone, et qui ressemblera à ça :</p>
 <p><img src="assets/Pendu.png" /></p>
 <p>Le professeur vous indiquera comment procéder pour le lancement des divers exercices.</p>
@@ -150,7 +213,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-5"><a href="#cb1-5"></a><span class="kw">def</span> choisirMot():</span>
 <span id="cb1-6"><a href="#cb1-6"></a></span>
 <span id="cb1-7"><a href="#cb1-7"></a>go(<span class="bu">globals</span>())</span></code></pre></div>
-<p>La variable booléenne <code>MONTRER_MOT_SECRET</code> permet de configurer le jeu pour qu'il affiche le mot à deviner. Sans cette possibilité, il serait compliqué de tester le jeu pour vérifier s'il fonctionne correctement. On donnera à cette variable la valeur<code>VRAI</code> (ou <code>True</code>) tout au long du développement et de la mise au point du jeu, et <code>FAUX</code> (ou <code>False</code>) une fois que le jeu sera au point, pour que le mot à deviner ne soit plus affiché.</p>
+<p>La variable booléenne <code>MONTRER_MOT_SECRET</code> permet de configurer le jeu pour qu'il affiche le mot à deviner. Sans cette possibilité, il serait compliqué de tester le jeu pour vérifier s'il fonctionne correctement. On donnera à cette variable la valeur <code>VRAI</code> (ou <code>True</code>) tout au long du développement et de la mise au point du jeu, et <code>FAUX</code> (ou <code>False</code>) une fois que le jeu sera au point, pour que le mot à deviner ne soit plus affiché.</p>
 <h3 id="tâches">Tâches</h3>
 <p>Écrire le contenu de la fonction <code>choisirMot</code> pour qu'elle retourne toujours la même chaîne de caractères contenant un mot.</p>
 <h3 id="pseudo-code">Pseudo-code</h3>

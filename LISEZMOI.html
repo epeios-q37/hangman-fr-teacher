@@ -130,31 +130,80 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       font-style: italic;
   }
   
+  nav {
+      max-width: 450px;
+      margin-left: auto;
+      margin-right: auto;
+      border: 15px ridge lightgrey;
+  }
+  
+  nav > ul {
+      list-style-type: none;
+  }
   </style>
 </head>
 <body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#exercices-de-programmation-du-jeu-du-pendu--documentation-professeur">Exercices de programmation du jeu du pendu ; documentation professeur</a><ul>
+<li><a href="#accès-rapide">Accès rapide</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#utilisation">Utilisation</a><ul>
+<li><a href="#utilisation-en-local">Utilisation en local</a></li>
+<li><a href="#utilisation-en-ligne">Utilisation en ligne</a></li>
+</ul></li>
+<li><a href="#les-exercices">Les exercices</a><ul>
+<li><a href="#exercice-a">Exercice <em>a</em></a></li>
+<li><a href="#exercice-b">Exercice <em>b</em></a></li>
+<li><a href="#exercice-c">Exercice <em>c</em></a></li>
+<li><a href="#exercice-d">Exercice <em>d</em></a></li>
+<li><a href="#exercice-e">Exercice <em>e</em></a></li>
+<li><a href="#exercice-f">Exercice <em>f</em></a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
 <h1 id="exercices-de-programmation-du-jeu-du-pendu--documentation-professeur">Exercices de programmation du jeu du pendu ; documentation professeur</h1>
-<p><a href="https://repl.it/github/epeios-q37/hangman-fr-teacher"><img src="https://img.shields.io/badge/essai-en_ligne-green.svg?labelColor=violet&amp;style=for-the-badge&amp;logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHJvbGU9ImltZyIgdmlld0JveD0iMCAwIDI0IDI0Ij48dGl0bGU+cmVwbC5pdCBpY29uPC90aXRsZT48cGF0aCBkPSJNMTIuMjY1LjAwMmExMS45MTEgMTEuOTExIDAgMDAtMi40MzcuMjA0YzEzLjg3NiAxLjcwNCAxMC4yNyAxNy45NCAxLjcxNyAxNy44MTkgMCAwIDEyLjQ1MyAxLjYyNSAxMS42NzMtMTAuMjE1QTExLjkxMSAxMS45MTEgMCAwMDEyLjI2NS4wMDJ6TTguMjEzLjgyN2MtLjIuMDAyLS40MDIuMDA4LS42MS4wMTZBMTEuODU2IDExLjg1NiAwIDAwLjE0NiAxMy42MDhDMi45My0uNDIxIDE4LjgwNSA0LjEyMiAxNy45IDEyLjY4OGMwIDAgMi44NS0xMi4wMTQtOS42ODgtMTEuODYxem0xLjQ1NCA1LjAzNUM2LjAwMiA1Ljg4Ni42OTEgNy40NS44MTYgMTYuMzQ0YTEyLjAxMyAxMi4wMTMgMCAwMDIuODk3IDQuMzNjLjA1Mi4wNTEuMTA4LjEuMTYyLjE0OWExMi4wMiAxMi4wMiAwIDAwMS4xMzcuOTI2Yy4wNjEuMDQ0LjEyLjA5Mi4xODEuMTM1YTExLjkzIDExLjkzIDAgMDAxLjMxMi43NzljLjEzMi4wNjguMjY2LjEzLjQuMTkzYTExLjg1NCAxMS44NTQgMCAwMDEuMTk5LjQ4NmMuMS4wMzQuMTk1LjA3Ny4yOTcuMTA5YTExLjg3NCAxMS44NzQgMCAwMDEuNDkuMzUzYy4xNTMuMDI3LjMwNy4wNS40NjEuMDdhMTIuMDE2IDEyLjAxNiAwIDAwMS41NzguMTIzbC4wNi4wMDNjLjQgMCAuNzkyLS4wMjEgMS4xOC0uMDYtMTMuOTQ5LTMuMzI3LTguNjQ1LTE4LjkyNC0uMTE0LTE3LjY4IDAgMC0xLjQ2OS0uNDEtMy4zODktLjM5OHptMi40MzYgMi43NjJhMy4zNTUgMy4zNTUgMCAxMDMuMzU0IDMuMzU2IDMuMzU1IDMuMzU1IDAgMDAtMy4zNTQtMy4zNTZ6bS01Ljk1IDIuMTkyUzIuODIgMjMuMDkgMTYuMTcyIDIzLjE5NmExMS45NzggMTEuOTc4IDAgMDA3Ljc0My05Ljk5MmMuMDMzLS4zMTkuMDQzLS42NDQuMDUtLjk3LjAwMS0uMDg1LjAxMy0uMTY4LjAxMy0uMjU1IDAtLjM3MS0uMDIzLS43MzctLjA1Ni0xLjEtMy41MjcgMTMuODg3LTE5LjEzMiA4LjQ0OC0xNy43Ny0uMDYzeiIvPjwvc3ZnPg==" alt="Essai en ligne" /></a></p>
+<h2 id="accès-rapide">Accès rapide</h2>
+<p>Cette section permet de retrouver rapidement les différents liens indiqués dans le reste du document.</p>
+<ul>
+<li>Documents professeur :
+<ul>
+<li>ce document : <a href="https://q37.info/s/mmdnch9t">https://q37.info/s/mmdnch9t</a>,</li>
+<li>le dépôt <em>GitHub</em> contenant les solutions aux exercices : <a href="https://github.com/epeios-q37/hangman-fr-teacher">https://github.com/epeios-q37/hangman-fr-teacher</a>,</li>
+<li>pour tester ces solutions en ligne : <a href="https://repl.it/github/epeios-q37/hangman-fr-teacher">https://repl.it/github/epeios-q37/hangman-fr-teacher</a> ;</li>
+</ul></li>
+<li>documents élèves :
+<ul>
+<li>le document contenant les instructions pour les élèves : <a href="https://q37.info/s/zmg4m3fx">https://q37.info/s/zmg4m3fx</a>,</li>
+<li>le dépôt <em>GitHub</em> contenant les fichiers destinés aux élèves : <a href="https://github.com/epeios-q37/hangman-fr">https://github.com/epeios-q37/hangman-fr</a>,</li>
+<li>pour faire travailler les élèves sur ces exercices dans un environnement de développement en ligne : <a href="https://repl.it/github/epeios-q37/hangman-fr">https://repl.it/github/epeios-q37/hangman-fr</a>.</li>
+</ul></li>
+</ul>
 <h2 id="introduction">Introduction</h2>
 <p>De nos jour, la plupart des jeunes possèdent un smartphone. Il est donc plus facile de les intéresser à la programmation avec des exercices qui s'utilisent comme les applications de leurs smartphones.</p>
-<p>C'est pourquoi les exercices présentés ici ont une véritable interface graphique, au lieu de l'habituelle et austère interface texte. De plus, avec chaque exercice, un <a href="https://fr.wikipedia.org/wiki/Code_QR">code QR</a> y donnant accès à partir d'un smartphone est automatiquement affiché. Cela met en évidence, par l'exemple, qu'on peut utiliser ses propres applications sur son smartphone, et non pas seulement des applications comme <em>Facebook</em>, <em>YouTube</em>, <em>Twitter</em>….</p>
-<p>En outre, ils peuvent également partager l'accès avec leurs proches, directement sur leurs smartphones (ou n'importe quel dispositif équipé d'un navigateur web moderne connecté à internet) respectifs. Avec un minimum d'encouragement de la part de ces derniers,</p>
-<p>Vous trouverez plus de détails sur les caractéristiques de ce nouveau type d'exercices à cette adresse : <a href="https://q37.info/s/knf9hdwp">https://q37.info/s/knf9hdwp</a>.</p>
-<p>Ces exercices aboutissent à la programmation, en <em>Python</em>, du [jeu du pendu](<a href="https://fr.wikipedia.org/wiki/Le_Pendu_(jeu)">https://fr.wikipedia.org/wiki/Le_Pendu_(jeu)</a> avec une interface graphique, sans avoir à manipuler directement cette interface. Chaque exercice s'appuie sur le précédent et l'ensemble reproduit les différentes étapes habituellement suivies pour la réalisation d'un tel jeu.</p>
+<p>C'est pourquoi les exercices présentés ici ont une véritable interface graphique, au lieu de l'habituelle et austère interface texte. De plus, avec chaque exercice, un <a href="https://fr.wikipedia.org/wiki/Code_QR">code QR</a> permettant d'y avoir accès à partir d'un smartphone est affiché. Ainsi, ils verront que l'usage de leurs smartphones n'est pas limité à des applications comme <em>Facebook</em>, <em>YouTube</em>, <em>Twitter</em>….</p>
+<p>En outre, ils peuvent partager cet accès avec leurs proches, directement sur leurs smartphones (ou n'importe quel dispositif équipé d'un navigateur web moderne connecté à internet) respectifs. Ils recueilleront ainsi plus facilement des encouragements, les incitant à progresser.</p>
+<p>Vous trouverez plus de détails sur ce nouveau type d'exercices à cette l'adresse <a href="https://q37.info/s/knf9hdwp">https://q37.info/s/knf9hdwp</a>.</p>
+<p>Ces exercices aboutissent à la programmation, en <em>Python</em>, du <a href="https://fr.wikipedia.org/wiki/Le_Pendu_(jeu)">jeu du pendu</a> avec une interface graphique, sans avoir à manipuler directement cette interface. Chaque exercice s'appuie sur le précédent et l'ensemble reproduit les différentes étapes menant à l'élaboration d'un tel jeu.</p>
+<p>Contrairement aux autres exercices de programmation, chaque exercice ne se concentre pas sur un concept, mais sur une fonctionnalité. L'assimilation des concepts informatiques est ainsi facilitée, car n'étant pas une fin en soi, mais seulement un moyen de parvenir au but, à savoir la programmation du jeu.</p>
 <p>Ces exercices portent sur la programmation en générale, et non pas sur la programmation en <em>Python</em>. C'est pour cela que les solutions générales seront données avant les solutions propres à <em>Python</em>.</p>
 <h2 id="utilisation">Utilisation</h2>
-<p>Le dépôt <a href="https://github.com/epeios-q37/hangman-fr">https://github.com/epeios-q37/hangman-fr</a> est destinés aux élèves. <a href="https://github.com/epeios-q37/hangman-fr-teacher">https://github.com/epeios-q37/hangman-fr-teacher</a> reprend le contenu de ce dépôt, en y ajoutant des informations utiles aux professeurs, notamment les solutions des exercices. De ce fait, ce dernier dépôt est réservé aux professeurs.</p>
-<p>Pour distribuer ces exercices aux élèves, vous pouvez directement utiliser le dépôt <a href="https://github.com/epeios-q37/hangman-fr">https://github.com/epeios-q37/hangman-fr</a>. Si vous êtes familiarisés avec <em>GitHub</em>, vous pouvez utiliser les outils mis à disposition pour créer votre propre dépôt. Dans ce cas, ils vous suffit de remplacer <code>epeios-q37</code> par votre nom d'utilisateur sur <em>GitHub</em>, et <code>hangman-fr</code> par le nom que vous avez donné à votre dépôt.</p>
-<p>Ls exercices ne sont pas conçus por être enchaînés directement, mais au fur et à mesure que les différentes notions informatiques auront été abordées par ailleurs. Vous pouvez tester ces exercices en allant à cette adresse : <a href="https://repl.it/github/epeios-q37/hangman-fr-teacher">https://repl.it/github/epeios-q37/hangman-fr-teacher</a>. Les fichiers contenus dans le répertoire <code>Student</code> sont ceux mis à disposition des étudiants.</p>
-<p>Il existe deux façon pour les élèves de</p>
+<p>Le dépôt <a href="https://github.com/epeios-q37/hangman-fr">https://github.com/epeios-q37/hangman-fr</a> est destiné aux élèves. <a href="https://github.com/epeios-q37/hangman-fr-teacher">https://github.com/epeios-q37/hangman-fr-teacher</a> reprend le contenu de ce dépôt, en y ajoutant des informations utiles aux professeurs, notamment les solutions des exercices. De ce fait, ce dernier dépôt est réservé aux professeurs.</p>
+<p>Pour distribuer ces exercices aux élèves, vous pouvez directement utiliser le dépôt <a href="https://github.com/epeios-q37/hangman-fr">https://github.com/epeios-q37/hangman-fr</a> ou, si vous êtes familiarisés avec <em>GitHub</em>, en utiliser les outils mis à disposition pour créer votre propre dépôt.</p>
+<p>Ls exercices ne sont pas destinés à être enchaînés directement, mais traités au fur et à mesure que les différentes notions informatiques nécessaires auront été abordées par ailleurs. Vous pouvez tester ces exercices en allant à cette adresse : <a href="https://repl.it/github/epeios-q37/hangman-fr-teacher">https://repl.it/github/epeios-q37/hangman-fr-teacher</a>. Les fichiers contenus dans le répertoire <code>Student</code> sont ceux mis à disposition des étudiants.</p>
+<p>Il existe deux façon pour les élèves de travailler sur ces exercices. Soit en utilisant un ordinateur avec <em>Python</em> d'installé (utilisation en local), soit dans un navigateur web (utilisation en ligne).</p>
 <h3 id="utilisation-en-local">Utilisation en local</h3>
 <p>Pour une utilisation en local, sur un ordinateur équipé de <em>Python</em>, il suffit aux élèves de télécharger et désarchiver le fichier suivant : <a href="https://github.com/epeios-q37/hangman-fr/…">https://github.com/epeios-q37/hangman-fr/…</a>. Alternativement, s'ils possèdent les connaissances adéquates, ils peuvent aussi faire un <code>git clone https://github.com/epeios-q37/hangman-fr</code>.</p>
 <p>Les exercices consistent à écrire du code dans le fichier <code>pendu.py</code> situé à la racine du dépôt. Pour le lancement, il suffira d'exécuter la commande <code>python3 pendu.py</code> dans une console, à partir de la racine du dépôt. S'ouvrira alors un navigateur web leur donnant accès à leur exercice. Le programme sera arrêté avec un <em>CTRL-C</em>.</p>
-<p>Ce dépôt contient, à la racine, un fichier PDF <code>LISEMOI.pdf</code> qui leur donnent les instructions pour chaque exercice.</p>
+<p>Ce dépôt contient, à la racine, un fichier <code>LISEZMOI.html</code> qui leur donnent les instructions pour chaque exercice.</p>
 <h3 id="utilisation-en-ligne">Utilisation en ligne</h3>
-<p>Pour une utilisation en ligne, en utilisant un navigateur web, sans rien avoir à installer, il suffit de suivre le lien suivant : <a href="https://repl.it/github/epeios-q37/hangman-fr">https://repl.it/github/epeios-q37/hangman-fr</a>.</p>
+<p>Pour une utilisation en ligne, en utilisant un navigateur web, sans rien avoir à installer, il suffit de suivre le lien suivant : <a href="https://repl.it/github/epeios-q37/hangman-fr">https://repl.it/github/epeios-q37/hangman-fr</a>. Cela ouvre ce dépôt dans <em>Repl.it</em>, un environnement de développement en ligne.</p>
+<p>Le fichier <code>LISEZMOI.html</code> leur donnant les instructions pour chaque exercice se situe à l'adresse <a href="https://q37.info/s/zmg4m3fx">https://q37.info/s/zmg4m3fx</a>. Il faut l'ouvrir via cette adresse, car <em>GitHub</em>, comme <em>Repl.it</em>, n'en afficheront que le code source.</p>
+<p>En plus de ce lien, il faudra leur faire ouvrir, dans une fenêtre ou un autre onglet le lien suivant qui leur donnera accès au fichier <code>LISEZMOI.html</code> leur donnant les instructions pour chaque exercice : <a href="https://q37.info/s/zmg4m3fx">https://q37.info/s/zmg4m3fx</a>.</p>
 <p>Comme ci-dessus, l'exercice consistera à écrire du code dans le fichier <code>pendu.py</code>. Pour lancer l'exercice, il suffira de cliquer sur le bouton vert <code>run</code>. Cela provoquera l'affichage d'un code QR que l'on cliquera (ou éventuellement scannera avec un smartphone) pour accèder à l'exercice.</p>
 <p>Pour revenir au code source, on fermera l'onglet (ou la fenêtre) qui s'est ouverte suite au click sur le code QR. Pour relancer l'application, il suffira de cliquer à nouveau sur le bouton vert (dont le libellé change en fonction du contexte).</p>
+<p><em>Repl.it</em> ne nécessite pas la création d'un compte pour être utilisé. Néanmoins, un compte permet d'y stocker ses projets et de les retrouver d'ue session à l'autre. On peut aussi, sans compte, sauvegarder en local l'ensemble d'un projet.</p>
 <h2 id="les-exercices">Les exercices</h2>
 <p>Les informations données ici viennent en complément de celles indiquées dans le fichier <code>Student/LISEZMOI.(md|pdf)</code>.</p>
 <h3 id="exercice-a">Exercice <em>a</em></h3>
