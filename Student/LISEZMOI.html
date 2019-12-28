@@ -146,6 +146,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <nav id="TOC" role="doc-toc">
 <ul>
 <li><a href="#exercices-de-programmation-du-jeu-du-pendu">Exercices de programmation du jeu du pendu</a><ul>
+<li><a href="#présentation">Présentation</a></li>
 <li><a href="#exercice-a">Exercice <em>a</em></a><ul>
 <li><a href="#objectifs">Objectifs</a></li>
 <li><a href="#préparation">Préparation</a></li>
@@ -198,9 +199,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </nav>
 <h1 id="exercices-de-programmation-du-jeu-du-pendu">Exercices de programmation du jeu du pendu</h1>
+<h2 id="présentation">Présentation</h2>
 <p>Le série d'exercices qui suit permet de programmer une version du <a href="https://fr.wikipedia.org/wiki/Le_Pendu_(jeu)">jeu du pendu</a> jouable sur smartphone, et qui ressemblera à ça :</p>
 <p><img src="assets/Pendu.png" /></p>
-<p>Le professeur vous indiquera comment procéder pour le lancement des divers exercices.</p>
+<p>Le professeur vous indiquera comment procéder pour le lancer les exercices.</p>
 <h2 id="exercice-a">Exercice <em>a</em></h2>
 <h3 id="objectifs">Objectifs</h3>
 <p>Se familiariser avec l'édition d'un fichier source, ainsi que le lancement et l'arrêt du jeu.</p>
@@ -214,6 +216,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-6"><a href="#cb1-6"></a></span>
 <span id="cb1-7"><a href="#cb1-7"></a>go(<span class="bu">globals</span>())</span></code></pre></div>
 <p>La variable booléenne <code>MONTRER_MOT_SECRET</code> permet de configurer le jeu pour qu'il affiche le mot à deviner. Sans cette possibilité, il serait compliqué de tester le jeu pour vérifier s'il fonctionne correctement. On donnera à cette variable la valeur <code>VRAI</code> (ou <code>True</code>) tout au long du développement et de la mise au point du jeu, et <code>FAUX</code> (ou <code>False</code>) une fois que le jeu sera au point, pour que le mot à deviner ne soit plus affiché.</p>
+<p><em>Attention</em> : lancer l'exécution de ce fichier en l'état provoquera l'affichage d'un message d'erreur.</p>
 <h3 id="tâches">Tâches</h3>
 <p>Écrire le contenu de la fonction <code>choisirMot</code> pour qu'elle retourne toujours la même chaîne de caractères contenant un mot.</p>
 <h3 id="pseudo-code">Pseudo-code</h3>
