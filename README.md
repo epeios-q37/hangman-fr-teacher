@@ -1,4 +1,4 @@
-# Exercices de programmation du jeu du pendu - documents professeurs
+# Exercices de programmation du jeu du pendu - documents professeur
 
 Les explications concernant ces exercices se trouvent à l'adresse https://q37.info/s/mmdnch9t.
 
