@@ -1,6 +1,6 @@
 # Exercices de programmation du jeu du pendu - documents professeur
 
-Les explications concernant ces exercices se trouvent à l'adresse https://q37.info/s/mmdnch9t (version *PDF* en cas de problèmes d'affichage : https://q37.info/s/khbq3tj3).
+Les explications concernant ces exercices se trouvent à l'adresse https://q37.info/s/mmdnch9t.
 
 Pour essayer les solutions à ces exercices dans *Repl.it* (un environnement de développement en ligne), cliquer sur le bouton ci-dessous.
 
