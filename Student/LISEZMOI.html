@@ -114,7 +114,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     margin-right: auto;
     border-radius: 15px;
     padding: 5px;
-    box-shadow: 1px 1px 12px #555;
+    box-shadow: 10px 10px 5px grey;  
   }
   
   h1 {
@@ -202,7 +202,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 id="présentation">Présentation</h2>
 <p>Le série d'exercices qui suit permet de programmer une version du <a href="https://fr.wikipedia.org/wiki/Le_Pendu_(jeu)">jeu du pendu</a> jouable sur smartphone, et qui ressemblera à ça :</p>
 <p><img src="assets/Pendu.png" /></p>
-<p>Le professeur vous indiquera comment procéder pour le lancer les exercices.</p>
+<p>Le professeur vous indiquera comment procéder pour lancer les exercices.</p>
 <h2 id="exercice-a">Exercice <em>a</em></h2>
 <h3 id="objectifs">Objectifs</h3>
 <p>Se familiariser avec l'édition d'un fichier source, ainsi que le lancement et l'arrêt du jeu.</p>
@@ -216,7 +216,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-6"><a href="#cb1-6"></a></span>
 <span id="cb1-7"><a href="#cb1-7"></a>go(<span class="bu">globals</span>())</span></code></pre></div>
 <p>La variable booléenne <code>MONTRER_MOT_SECRET</code> permet de configurer le jeu pour qu'il affiche le mot à deviner. Sans cette possibilité, il serait compliqué de tester le jeu pour vérifier s'il fonctionne correctement. On donnera à cette variable la valeur <code>VRAI</code> (ou <code>True</code>) tout au long du développement et de la mise au point du jeu, et <code>FAUX</code> (ou <code>False</code>) une fois que le jeu sera au point, pour que le mot à deviner ne soit plus affiché.</p>
-<p><em>Attention</em> : lancer l'exécution de ce fichier en l'état provoquera l'affichage d'un message d'erreur.</p>
+<p><em>Nota</em> : lancer l'exécution de ce fichier en l'état provoquera l'affichage d'un message d'erreur.</p>
 <h3 id="tâches">Tâches</h3>
 <p>Écrire le contenu de la fonction <code>choisirMot</code> pour qu'elle retourne toujours la même chaîne de caractères contenant un mot.</p>
 <h3 id="pseudo-code">Pseudo-code</h3>
@@ -415,7 +415,7 @@ Sinon<br />
 <h3 id="aperçu-4">Aperçu</h3>
 <p><img src="assets/e.png" /></p>
 <h3 id="tests-4">Tests</h3>
-<p>Sachant que le contenu du msque est affiché dans le cadre au-dessus du clavier :</p>
+<p>Sachant que le contenu du masque est affiché dans le cadre au-dessus du clavier :</p>
 <ul>
 <li>au lancement, le masque doit être constitué d'un nombre de <code>_</code> égal au nombre de caractères du mot à deviner ;</li>
 <li>cliquer sur une lettre contenue dans le mot à deviner : toutes les occurrences de cette lettre contenus dans le mot à deviner doivent être dévoilées, en plus des lettres déjà dévoilées ;</li>
