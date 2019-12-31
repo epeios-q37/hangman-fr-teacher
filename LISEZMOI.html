@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
 <head>
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
@@ -79,7 +79,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
-  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAMFBMVEUEAvyEhsxERuS8urQsKuycnsRkYtzc2qwUFvRUVtysrrx0ctTs6qTMyrSUksQ0NuyciPBdAAABHklEQVR42mNgwAa8zlxjDd2A4POfOXPmzZkFCAH2M8fNzyALzDlzg2ENssCbMwkMOsgCa858YOjBKxBzRoHhD7LAHiBH5swCT9HQ6A9ggZ4zp7YCrV0DdM6pBpAAG5Blc2aBDZA68wCsZPuZU0BDH07xvHOmAGKKvgMP2NA/Zw7ADIYJXGDgLQeBBSCBFu0aoAPYQUadMQAJAE29zwAVWMCWpgB08ZnDQGsbGhpsgCqBQHNfzRkDEIPlzFmo0T5nzoMovjPHoAK8Zw5BnA5yDosDSAVYQOYMKIDZzkoDzagAsjhqzjRAfXTmzAQgi/vMQZA6pjtAvhEk0E+ATWRRm6YBZuScCUCNN5szH1D4TGdOoSrggtiNAH3vBBjwAQCglIrSZkf1MQAAAABJRU5ErkJggg==" />
+  <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAMFBMVEUEAvyEhsxERuS8urQsKuycnsRkYtzc2qwUFvRUVtysrrx0ctTs6qTMyrSUksQ0NuyciPBdAAABHklEQVR42mNgwAa8zlxjDd2A4POfOXPmzZkFCAH2M8fNzyALzDlzg2ENssCbMwkMOsgCa858YOjBKxBzRoHhD7LAHiBH5swCT9HQ6A9ggZ4zp7YCrV0DdM6pBpAAG5Blc2aBDZA68wCsZPuZU0BDH07xvHOmAGKKvgMP2NA/Zw7ADIYJXGDgLQeBBSCBFu0aoAPYQUadMQAJAE29zwAVWMCWpgB08ZnDQGsbGhpsgCqBQHNfzRkDEIPlzFmo0T5nzoMovjPHoAK8Zw5BnA5yDosDSAVYQOYMKIDZzkoDzagAsjhqzjRAfXTmzAQgi/vMQZA6pjtAvhEk0E+ATWRRm6YBZuScCUCNN5szH1D4TGdOoSrggtiNAH3vBBjwAQCglIrSZkf1MQAAAABJRU5ErkJggg==" rel="icon" type="image/png" />
   <style>
   body {
       padding: 20px;
@@ -165,63 +165,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </nav>
 <h1 id="exercices-de-programmation-du-jeu-du-pendu---documentation-professeur">Exercices de programmation du jeu du pendu - documentation professeur</h1>
-<p><a href="https://repl.it/github/epeios-q37/hangman-fr-teacher"><img src="https://q37.info/s/pcn9vgnj.svg" alt="Utiliser en ligne" /></a></p>
+<p><a href="https://q37.info/s/jnkcprq4"><img src="data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTkxIiBoZWlnaHQ9IjI4Ij48ZyBzaGFwZS1yZW5kZXJpbmc9ImNyaXNwRWRnZXMiPjxwYXRoIGZpbGw9InZpb2xldCIgZD0iTTAgMGgxMDJ2MjhIMHoiLz48cGF0aCBmaWxsPSIjOTdjYTAwIiBkPSJNMTAyIDBoODl2MjhIMTAyeiIvPjwvZz48ZyBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iRGVqYVZ1IFNhbnMsVmVyZGFuYSxHZW5ldmEsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMDAiPjxpbWFnZSB4PSI5IiB5PSI3IiB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHhsaW5rOmhyZWY9ImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlISnZiR1U5SW1sdFp5SWdkbWxsZDBKdmVEMGlNQ0F3SURJMElESTBJajQ4ZEdsMGJHVStjbVZ3YkM1cGRDQnBZMjl1UEM5MGFYUnNaVDQ4Y0dGMGFDQmtQU0pOTVRJdU1qWTFMakF3TW1FeE1TNDVNVEVnTVRFdU9URXhJREFnTURBdE1pNDBNemN1TWpBMFl6RXpMamczTmlBeExqY3dOQ0F4TUM0eU55QXhOeTQ1TkNBeExqY3hOeUF4Tnk0NE1Ua2dNQ0F3SURFeUxqUTFNeUF4TGpZeU5TQXhNUzQyTnpNdE1UQXVNakUxUVRFeExqa3hNU0F4TVM0NU1URWdNQ0F3TURFeUxqSTJOUzR3TURKNlRUZ3VNakV6TGpneU4yTXRMakl1TURBeUxTNDBNREl1TURBNExTNDJNUzR3TVRaQk1URXVPRFUySURFeExqZzFOaUF3SURBd0xqRTBOaUF4TXk0Mk1EaERNaTQ1TXkwdU5ESXhJREU0TGpnd05TQTBMakV5TWlBeE55NDVJREV5TGpZNE9HTXdJREFnTWk0NE5TMHhNaTR3TVRRdE9TNDJPRGd0TVRFdU9EWXhlbTB4TGpRMU5DQTFMakF6TlVNMkxqQXdNaUExTGpnNE5pNDJPVEVnTnk0ME5TNDRNVFlnTVRZdU16UTBZVEV5TGpBeE15QXhNaTR3TVRNZ01DQXdNREl1T0RrM0lEUXVNek5qTGpBMU1pNHdOVEV1TVRBNExqRXVNVFl5TGpFME9XRXhNaTR3TWlBeE1pNHdNaUF3SURBd01TNHhNemN1T1RJMll5NHdOakV1TURRMExqRXlMakE1TWk0eE9ERXVNVE0xWVRFeExqa3pJREV4TGpreklEQWdNREF4TGpNeE1pNDNOemxqTGpFek1pNHdOamd1TWpZMkxqRXpMalF1TVRrellURXhMamcxTkNBeE1TNDROVFFnTUNBd01ERXVNVGs1TGpRNE5tTXVNUzR3TXpRdU1UazFMakEzTnk0eU9UY3VNVEE1WVRFeExqZzNOQ0F4TVM0NE56UWdNQ0F3TURFdU5Ea3VNelV6WXk0eE5UTXVNREkzTGpNd055NHdOUzQwTmpFdU1EZGhNVEl1TURFMklERXlMakF4TmlBd0lEQXdNUzQxTnpndU1USXpiQzR3Tmk0d01ETmpMalFnTUNBdU56a3lMUzR3TWpFZ01TNHhPQzB1TURZdE1UTXVPVFE1TFRNdU16STNMVGd1TmpRMUxURTRMamt5TkMwdU1URTBMVEUzTGpZNElEQWdNQzB4TGpRMk9TMHVOREV0TXk0ek9Ea3RMak01T0hwdE1pNDBNellnTWk0M05qSmhNeTR6TlRVZ015NHpOVFVnTUNBeE1ETXVNelUwSURNdU16VTJJRE11TXpVMUlETXVNelUxSURBZ01EQXRNeTR6TlRRdE15NHpOVFo2YlMwMUxqazFJREl1TVRreVV6SXVPRElnTWpNdU1Ea2dNVFl1TVRjeUlESXpMakU1Tm1FeE1TNDVOemdnTVRFdU9UYzRJREFnTURBM0xqYzBNeTA1TGprNU1tTXVNRE16TFM0ek1Ua3VNRFF6TFM0Mk5EUXVNRFV0TGprM0xqQXdNUzB1TURnMUxqQXhNeTB1TVRZNExqQXhNeTB1TWpVMUlEQXRMak0zTVMwdU1ESXpMUzQzTXpjdExqQTFOaTB4TGpFdE15NDFNamNnTVRNdU9EZzNMVEU1TGpFek1pQTRMalEwT0MweE55NDNOeTB1TURZemVpSXZQand2YzNablBnPT0iLz4gPHRleHQgeD0iNTk1IiB5PSIxNzUiIHRyYW5zZm9ybT0ic2NhbGUoLjEpIiB0ZXh0TGVuZ3RoPSI2MTAiPlVUSUxJU0VSPC90ZXh0Pjx0ZXh0IHg9IjE0NjUiIHk9IjE3NSIgZm9udC13ZWlnaHQ9ImJvbGQiIHRyYW5zZm9ybT0ic2NhbGUoLjEpIiB0ZXh0TGVuZ3RoPSI2NTAiPkVOIExJR05FPC90ZXh0PjwvZz4gPC9zdmc+" alt="Utiliser en ligne" /></a></p>
 <h2 id="accès-rapide">Accès rapide</h2>
 <p>Cette section permet de retrouver rapidement les différents liens présents dans ce document.</p>
 <ul>
-<li>Dépôt maître : <a href="https://github.com/epeios-q37/hangman-exercises">https://github.com/epeios-q37/hangman-exercises</a> ;</li>
-<li>formulaire pour contacter l'auteur : <a href="https://q37.info/s/ggq7x4w7">https://q37.info/s/ggq7x4w7</a> ;</li>
-<li>documents professeur :
+<li>Documents professeur :
 <ul>
 <li>ce document : <a href="https://q37.info/s/mmdnch9t">https://q37.info/s/mmdnch9t</a>,</li>
 <li>le dépôt <em>GitHub</em> contenant les solutions aux exercices : <a href="https://github.com/epeios-q37/hangman-fr-teacher">https://github.com/epeios-q37/hangman-fr-teacher</a>,</li>
-<li>essayer ces solutions en ligne : <a href="https://repl.it/github/epeios-q37/hangman-fr-teacher">https://repl.it/github/epeios-q37/hangman-fr-teacher</a> ;</li>
+<li>essayer les exercices en ligne : <a href="https://q37.info/s/jnkcprq4">https://q37.info/s/jnkcprq4</a> ;</li>
 </ul></li>
 <li>documents élèves :
 <ul>
 <li>le document contenant les instructions pour les élèves : <a href="https://q37.info/s/zmg4m3fx">https://q37.info/s/zmg4m3fx</a>,</li>
 <li>le dépôt <em>GitHub</em> contenant les fichiers destinés aux élèves : <a href="https://github.com/epeios-q37/hangman-fr">https://github.com/epeios-q37/hangman-fr</a>,</li>
-<li>pour travailler sur ces exercices dans un environnement de développement en ligne : <a href="https://repl.it/github/epeios-q37/hangman-fr">https://repl.it/github/epeios-q37/hangman-fr</a>.</li>
+<li>pour travailler sur ces exercices dans un environnement de développement en ligne : <a href="https://q37.info/s/jzw7knww">https://q37.info/s/jzw7knww</a>,</li>
 </ul></li>
+<li>dépôt maître : <a href="https://github.com/epeios-q37/hangman-exercises">https://github.com/epeios-q37/hangman-exercises</a> ;</li>
+<li>formulaire pour contacter l&#39;auteur : <a href="https://q37.info/s/ggq7x4w7">https://q37.info/s/ggq7x4w7</a>.</li>
 </ul>
 <h2 id="présentation">Présentation</h2>
-<p>De nos jour, la plupart des jeunes possèdent un smartphone. Il est donc plus facile de les intéresser à la programmation si les exercices se présentent comme les applications qu'ils utilisent sur leurs smartphones.</p>
-<p>C'est pourquoi les exercices proposés ici ont une véritable interface graphique, au lieu de l'habituelle et austère interface texte. De plus, avec chaque exercice, un <a href="https://fr.wikipedia.org/wiki/Code_QR">code QR</a> y donnant accès à partir d'un smartphone est affiché. Ainsi, ils verront qu'ils peuvent utiliser leurs smartphones pour accèder à leurs propres applications, et non pas seulement à des applications comme <em>Facebook</em>, <em>YouTube</em>, <em>Twitter</em>….</p>
-<p>En outre, ils peuvent facilement partager cet accès avec leurs proches, directement sur leurs smartphones (ou n'importe quel dispositif équipé d'un navigateur web moderne connecté à internet) respectifs. Ces derniers auront ainsi plus d'occasion de les encourager, et les inciter ainsi à progresser.</p>
-<p>Vous trouverez plus de détails sur ce type d'exercices à l'adresse <a href="https://q37.info/s/knf9hdwp">https://q37.info/s/knf9hdwp</a>.</p>
-<p>Les exercices présentés ici reproduisent les étapes menant à l'élaboration d'un programme, chaque exercice s'appuyant sur le précédent. Ils renforcent l'intérêt des élèves pour la programmation par une utilisation concrète des concepts abordés par les nombreux exercices de programmations que l'on trouve par ailleurs.</p>
-<p>Contrairement à la plupart des autres exercices de programmation, chaque exercice ne porte pas sur un concept informatique, mais sur l'élaboration d'une fonctionnalité du programme. L'assimilation des concepts en est ainsi facilitée, car n'étant pas une fin en soi, mais une étape dans la réalisation du programme.</p>
+<p>De nos jour, la plupart des jeunes possèdent un smartphone. Il est donc plus facile de les intéresser à la programmation si les exercices se présentent comme les applications qu&#39;ils utilisent sur leurs smartphones.</p>
+<p>C&#39;est pourquoi les exercices proposés ici ont une véritable interface graphique, au lieu de l&#39;habituelle et austère interface texte. De plus, avec chaque exercice, un <a href="https://fr.wikipedia.org/wiki/Code_QR">code QR</a> y donnant accès à partir d&#39;un smartphone est affiché. Ainsi, ils verront qu&#39;ils peuvent utiliser leurs smartphones pour accèder à leurs propres applications, et non pas seulement à des applications comme <em>Facebook</em>, <em>YouTube</em>, <em>Twitter</em>….</p>
+<p>En outre, ils peuvent facilement partager cet accès avec leurs proches, directement sur leurs smartphones (ou n&#39;importe quel dispositif équipé d&#39;un navigateur web moderne connecté à internet) respectifs. Ces derniers auront ainsi plus d&#39;occasion de les encourager, et les inciter ainsi à progresser.</p>
+<p>Vous trouverez plus de détails sur ce type d&#39;exercices à l&#39;adresse <a href="https://q37.info/s/knf9hdwp">https://q37.info/s/knf9hdwp</a>.</p>
+<p>Les exercices présentés ici reproduisent les étapes menant à l&#39;élaboration d&#39;un programme, chaque exercice s&#39;appuyant sur le précédent. Ils renforcent l&#39;intérêt des élèves pour la programmation par une utilisation concrète des concepts abordés par les nombreux exercices de programmations que l&#39;on trouve par ailleurs.</p>
+<p>Contrairement à la plupart des autres exercices de programmation, chaque exercice ne porte pas sur un concept informatique, mais sur l&#39;élaboration d&#39;une fonctionnalité du programme. L&#39;assimilation des concepts en est ainsi facilitée, car n&#39;étant pas une fin en soi, mais une étape dans la réalisation du programme.</p>
 <p>Pour confèrer une dimension ludique à ces exercices, le programme en question est un jeu, le <a href="https://fr.wikipedia.org/wiki/Le_Pendu_(jeu)">jeu du pendu</a>.</p>
-<p>Bien que s'appuyant sur le langage <em>Python</em>, ces exercices portent sur la programmation en générale, et non pas sur la programmation en <em>Python</em>. C'est pour cela que les solutions générales seront données avant les solutions propres à <em>Python</em>.</p>
+<p>Bien que s&#39;appuyant sur le langage <em>Python</em>, ces exercices portent sur la programmation en générale, et non pas sur la programmation en <em>Python</em>. C&#39;est pour cela que les solutions générales seront données avant les solutions propres à <em>Python</em>.</p>
+<p>Si vous avez des questions/suggestions/remarques… concernant ces exercices, vous pouvez contacter l&#39;auteur via le formulaire <a href="https://q37.info/s/ggq7x4w7">https://q37.info/s/ggq7x4w7</a>, ou utiliser les système de suivi de <em>GitHub</em> du dépôt principal à l&#39;adresse <a href="https://github.com/epeios-q37/hangman-exercises">https://github.com/epeios-q37/hangman-exercises</a>.</p>
 <h2 id="utilisation">Utilisation</h2>
 <p>Pour aborder ces exercices, seules des notions de base en développement <em>Python</em> sont nécessaires. Ils sont particulièrement indiqués pour faire découvrir ou initier à la programmation.</p>
 <p>Le dépôt <a href="https://github.com/epeios-q37/hangman-fr">https://github.com/epeios-q37/hangman-fr</a> est destiné aux élèves. <a href="https://github.com/epeios-q37/hangman-fr-teacher">https://github.com/epeios-q37/hangman-fr-teacher</a> reprend le contenu de ce dépôt, en y ajoutant des informations utiles aux professeurs, notamment les solutions des exercices. De ce fait, ce dernier dépôt est réservé aux professeurs.</p>
 <p>Pour distribuer ces exercices aux élèves, vous pouvez directement utiliser le dépôt <a href="https://github.com/epeios-q37/hangman-fr">https://github.com/epeios-q37/hangman-fr</a> ou, si vous êtes familiarisés avec <em>GitHub</em>, en utiliser les fonctionnalités pour créer votre propre version de ce dépôt.</p>
-<p>Les solutions aux exercices présentées dans ce document peuvent être vue à l'œuvre en allant à l'adresse <a href="https://repl.it/github/epeios-q37/hangman-fr-teacher">https://repl.it/github/epeios-q37/hangman-fr-teacher</a>. Les fichiers contenus dans le répertoire <code>Student</code> sont ceux mis à disposition des étudiants.</p>
-<p>Si vous avez des retours à faire concernant ces exercices, vous pouvez contacter l'auteur à l'adresse <a href="https://q37.info/s/ggq7x4w7">https://q37.info/s/ggq7x4w7</a>, ou passer par le dépôt maître, d'où sont dérivés les deux dépôts présentés ici, à l'adresse <a href="https://github.com/epeios-q37/hangman-exercises">https://github.com/epeios-q37/hangman-exercises</a>.</p>
+<p>Les solutions aux exercices présentées dans ce document peuvent être vue à l&#39;œuvre en allant à l&#39;adresse <a href="https://repl.it/github/epeios-q37/hangman-fr-teacher">https://repl.it/github/epeios-q37/hangman-fr-teacher</a>. Les fichiers contenus dans le répertoire <code>Student</code> sont ceux mis à disposition des étudiants.</p>
+<p>Si vous avez des retours à faire concernant ces exercices, vous pouvez contacter l&#39;auteur à l&#39;adresse <a href="https://q37.info/s/ggq7x4w7">https://q37.info/s/ggq7x4w7</a>, ou passer par le dépôt maître, d&#39;où sont dérivés les deux dépôts présentés ici, à l&#39;adresse <a href="https://github.com/epeios-q37/hangman-exercises">https://github.com/epeios-q37/hangman-exercises</a>.</p>
 <p>Il existe deux façons pour les élèves de travailler sur ces exercices. Soit en utilisant un ordinateur sur lequel est installé <em>Python</em> (utilisation en local), soit dans un navigateur web (utilisation en ligne).</p>
 <h3 id="utilisation-en-local">Utilisation en local</h3>
-<p>Pour une utilisation en local sur un ordinateur équipé de <em>Python</em>, il suffit aux élèves de télécharger et désarchiver le fichier suivant : <a href="https://github.com/epeios-q37/hangman-fr/archive/master.zip">https://github.com/epeios-q37/hangman-fr/archive/master.zip</a>. Alternativement, s'ils possèdent les connaissances adéquates, ils peuvent aussi faire un <code>git clone https://github.com/epeios-q37/hangman-fr</code> à partir d'une console.</p>
-<p>Les exercices consistent à écrire du code dans le fichier <code>pendu.py</code> situé à la racine du dépôt. Pour le lancement, il suffira d'exécuter la commande <code>python3 pendu.py</code> dans une console, à partir de la racine du dépôt. S'ouvrira alors un navigateur web leur donnant accès à leur exercice. Le programme sera arrêté avec un <em>CTRL-C</em>.</p>
+<p>Pour une utilisation en local sur un ordinateur équipé de <em>Python</em>, il suffit aux élèves de télécharger et désarchiver le fichier suivant : <a href="https://github.com/epeios-q37/hangman-fr/archive/master.zip">https://github.com/epeios-q37/hangman-fr/archive/master.zip</a>. Alternativement, s&#39;ils possèdent les connaissances adéquates, ils peuvent aussi faire un <code>git clone https://github.com/epeios-q37/hangman-fr</code> à partir d&#39;une console.</p>
+<p>Les exercices consistent à écrire du code dans le fichier <code>pendu.py</code> situé à la racine du dépôt. Pour le lancement, il suffira d&#39;exécuter la commande <code>python3 pendu.py</code> dans une console, à partir de la racine du dépôt. S&#39;ouvrira alors un navigateur web leur donnant accès à leur exercice. Le programme sera arrêté avec un <em>CTRL-C</em>.</p>
 <p>Ce dépôt contient, à la racine, un fichier <code>LISEZMOI.html</code> qui leur donne les instructions pour chaque exercice.</p>
 <h3 id="utilisation-en-ligne">Utilisation en ligne</h3>
 <p>Pour une utilisation en ligne en utilisant un navigateur web, sans rien avoir à installer, il suffit de suivre le lien suivant : <a href="https://repl.it/github/epeios-q37/hangman-fr">https://repl.it/github/epeios-q37/hangman-fr</a>. Cela ouvre une session dans <em>Repl.it</em>, un environnement de développement en ligne.</p>
-<p>Le fichier <code>LISEZMOI.html</code> leur donnant les instructions pour chaque exercice se situe à l'adresse <a href="https://q37.info/s/zmg4m3fx">https://q37.info/s/zmg4m3fx</a>. Il faut l'ouvrir via cette adresse, car l"accès à ce fichier via <em>GitHub</em> ou <em>Repl.it</em> n'en affichera que le code source.</p>
-<p>Comme ci-dessus, l'exercice consistera à écrire du code dans le fichier <code>pendu.py</code>. Pour lancer l'exercice, il suffira de cliquer sur le bouton vert. Cela provoquera l'affichage d'un code QR que l'on cliquera (ou éventuellement scannera avec un smartphone) pour accèder à l'interface de l'exercice.</p>
-<p>Pour revenir au code source, on fermera l'onglet (ou la fenêtre) qui s'est ouverte suite au click sur le code QR. Pour relancer l'application, il suffira de cliquer à nouveau sur le bouton vert (dont le libellé change en fonction du contexte).</p>
-<p><em>Repl.it</em> ne nécessite pas la création d'un compte pour être utilisé. Néanmoins, ouvrir un compte permet d'y stocker ses projets et de les retrouver d'une session à l'autre. On peut aussi, sans compte, sauvegarder en local l'ensemble d'un projet.</p>
+<p>Le fichier <code>LISEZMOI.html</code> leur donnant les instructions pour chaque exercice se situe à l&#39;adresse <a href="https://q37.info/s/zmg4m3fx">https://q37.info/s/zmg4m3fx</a>. Il faut l&#39;ouvrir via cette adresse, car l&quot;accès à ce fichier via <em>GitHub</em> ou <em>Repl.it</em> n&#39;en affichera que le code source.</p>
+<p>Comme ci-dessus, l&#39;exercice consistera à écrire du code dans le fichier <code>pendu.py</code>. Pour lancer l&#39;exercice, il suffira de cliquer sur le bouton vert. Cela provoquera l&#39;affichage d&#39;un code QR que l&#39;on cliquera (ou éventuellement scannera avec un smartphone) pour accèder à l&#39;interface de l&#39;exercice.</p>
+<p>Pour revenir au code source, on fermera l&#39;onglet (ou la fenêtre) qui s&#39;est ouverte suite au click sur le code QR. Pour relancer l&#39;application, il suffira de cliquer à nouveau sur le bouton vert (dont le libellé change en fonction du contexte).</p>
+<p><em>Repl.it</em> ne nécessite pas la création d&#39;un compte pour être utilisé. Néanmoins, ouvrir un compte permet d&#39;y stocker ses projets et de les retrouver d&#39;une session à l&#39;autre. On peut aussi, sans compte, sauvegarder en local l&#39;ensemble d&#39;un projet.</p>
 <h2 id="les-exercices">Les exercices</h2>
 <p>Les informations données ici viennent en complément de celles indiquées dans le fichier <code>Student/LISEZMOI.html</code>.</p>
-<p><strong>ATTENTION</strong> : ne pas oublier de modifier la ligne <code>from workshop.fr.… import *</code> en fonction de l'exercice.</p>
+<p><strong>ATTENTION</strong> : ne pas oublier de modifier la ligne <code>from workshop.fr.… import *</code> en fonction de l&#39;exercice.</p>
 <h3 id="exercice-a">Exercice <em>a</em></h3>
 <h4 id="particularités">Particularités</h4>
 <ul>
-<li>Édition d'un fichier source ;</li>
-<li>lancement d'un programme ;</li>
-<li>arrêt d'un programme ;</li>
-<li>affectation d'un booléen ;</li>
-<li>création d'une chaîne de caractères ;</li>
-<li>valeur de retour d'une fonction.</li>
+<li>Édition d&#39;un fichier source ;</li>
+<li>lancement d&#39;un programme ;</li>
+<li>arrêt d&#39;un programme ;</li>
+<li>affectation d&#39;un booléen ;</li>
+<li>création d&#39;une chaîne de caractères ;</li>
+<li>valeur de retour d&#39;une fonction.</li>
 </ul>
 <h4 id="solution">Solution</h4>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> choisirMot():</span>
@@ -231,7 +232,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Paramètre de fonction ;</li>
 <li>instruction conditionnelle ;</li>
-<li>taille d'une chaîne de caractères ;</li>
+<li>taille d&#39;une chaîne de caractères ;</li>
 <li>booléen :
 <ul>
 <li>test,</li>
@@ -246,20 +247,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-3"><a href="#cb2-3"></a>    <span class="cf">return</span> suggestion</span>
 <span id="cb2-4"><a href="#cb2-4"></a>  <span class="cf">else</span>:</span>
 <span id="cb2-5"><a href="#cb2-5"></a>    <span class="cf">return</span> <span class="st">&quot;arbre&quot;</span></span></code></pre></div>
-<p>Une fois que cette solution aura été trouvée, on pourra proposer de remplacer <code>if len(suggestion) != 0:</code> par <code>if len(suggestion):</code>, puis par <code>if suggestion:</code> en soulignant que c'est propre à <em>Python</em> (et à certains autres langages).</p>
+<p>Une fois que cette solution aura été trouvée, on pourra proposer de remplacer <code>if len(suggestion) != 0:</code> par <code>if len(suggestion):</code>, puis par <code>if suggestion:</code> en soulignant que c&#39;est propre à <em>Python</em> (et à certains autres langages).</p>
 <h3 id="exercice-c">Exercice <em>c</em></h3>
 <p>La seconde solution est optionnelle, et on pourra y revenir plus tard.</p>
 <h4 id="particularités-2">Particularités</h4>
-<p>Pour la première version, aucune en particulier ; il s'agit juste d'une amélioration.</p>
+<p>Pour la première version, aucune en particulier ; il s&#39;agit juste d&#39;une amélioration.</p>
 <p>Pour la seconde version :</p>
 <ul>
 <li>tuples :
 <ul>
 <li>création,</li>
-<li>récupération d'un élément par son index,</li>
+<li>récupération d&#39;un élément par son index,</li>
 <li>récupération taille ;</li>
 </ul></li>
-<li>import d'une fonction particulière d'un module,</li>
+<li>import d&#39;une fonction particulière d&#39;un module,</li>
 <li>fonction <code>randint</code>.</li>
 </ul>
 <h4 id="solutions-1">Solutions</h4>
@@ -298,13 +299,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-4"><a href="#cb5-4"></a>            <span class="cf">return</span> <span class="va">True</span></span>
 <span id="cb5-5"><a href="#cb5-5"></a></span>
 <span id="cb5-6"><a href="#cb5-6"></a>    <span class="cf">return</span> <span class="va">False</span></span></code></pre></div>
-<p>Une fois cette solution trouvée, on pourra proposer la solution suivante, en soulignant qu'elle est propre à <em>Python</em> (et certains autres langages).</p>
+<p>Une fois cette solution trouvée, on pourra proposer la solution suivante, en soulignant qu&#39;elle est propre à <em>Python</em> (et certains autres langages).</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">def</span> lettreEstDansMot(lettre,mot):</span>
 <span id="cb6-2"><a href="#cb6-2"></a>  <span class="cf">return</span> lettre <span class="kw">in</span> mot</span></code></pre></div>
 <h3 id="exercice-e">Exercice <em>e</em></h3>
 <h4 id="particularités-4">Particularités</h4>
 <ul>
-<li>Affectation d'une valeur à une variable ;</li>
+<li>Affectation d&#39;une valeur à une variable ;</li>
 <li>concaténation de chaînes de caractères ;</li>
 <li>éventuellement instruction conditionnelle ternaire.</li>
 </ul>
@@ -329,7 +330,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>masque <span class="op">+=</span> lettre <span class="cf">if</span> lettreEstDansMot(lettre,pioches) <span class="cf">else</span> <span class="st">&quot;_&quot;</span></span></code></pre></div>
 <h3 id="exercice-f">Exercice <em>f</em></h3>
 <h4 id="particularités-5">Particularités</h4>
-<p>Instructions conditionnelles multiples (équivalent du <em>switch…</em> <em>case…</em> d'autres langages).</p>
+<p>Instructions conditionnelles multiples (équivalent du <em>switch…</em> <em>case…</em> d&#39;autres langages).</p>
 <h4 id="solutions-4">Solutions</h4>
 <div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">def</span> majCorps(nombreErreurs):</span>
 <span id="cb10-2"><a href="#cb10-2"></a>  <span class="cf">if</span> nombreErreurs <span class="op">==</span> <span class="dv">1</span>:</span>
@@ -362,6 +363,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb11-11"><a href="#cb11-11"></a><span class="kw">def</span> majCorps(nombreErreurs):</span>
 <span id="cb11-12"><a href="#cb11-12"></a>  dessinerPartieCorps(PARTIES_CORPS[nombreErreurs<span class="dv">-1</span>])</span></code></pre></div>
 <h2 id="autres-exercices">Autres exercices</h2>
-<p>La partie des notices professeurs et élèves concernant ces exercices sont en cours d'élaboration.</p>
+<p>La partie des notices professeurs et élèves concernant ces exercices sont en cours d&#39;élaboration.</p>
 </body>
 </html>
