@@ -159,6 +159,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#exercice-d">Exercice <em>d</em></a></li>
 <li><a href="#exercice-e">Exercice <em>e</em></a></li>
 <li><a href="#exercice-f">Exercice <em>f</em></a></li>
+<li><a href="#exercice-g">Exercice <em>g</em></a></li>
+<li><a href="#exercice-h">Exercice <em>h</em></a></li>
 </ul></li>
 <li><a href="#autres-exercices">Autres exercices</a></li>
 </ul></li>
@@ -329,7 +331,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>proposer :</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>masque <span class="op">+=</span> lettre <span class="cf">if</span> lettreEstDansMot(lettre,pioches) <span class="cf">else</span> <span class="st">&quot;_&quot;</span></span></code></pre></div>
 <h3 id="exercice-f">Exercice <em>f</em></h3>
-<h4 id="particularités-5">Particularités</h4>
+<h4 id="particularité">Particularité</h4>
 <p>Instructions conditionnelles multiples (équivalent du <em>switch…</em> <em>case…</em> d&#39;autres langages).</p>
 <h4 id="solutions-4">Solutions</h4>
 <div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">def</span> majCorps(nombreErreurs):</span>
@@ -349,19 +351,71 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb10-15"><a href="#cb10-15"></a>    partieCorps <span class="op">=</span> P_VISAGE</span>
 <span id="cb10-16"><a href="#cb10-16"></a></span>
 <span id="cb10-17"><a href="#cb10-17"></a>  dessinerPartieCorps(partieCorps)</span></code></pre></div>
-<p>Autre solution :</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>PARTIES_CORPS <span class="op">=</span> (</span>
-<span id="cb11-2"><a href="#cb11-2"></a>  P_TETE,</span>
-<span id="cb11-3"><a href="#cb11-3"></a>  P_TRONC,</span>
-<span id="cb11-4"><a href="#cb11-4"></a>  P_BRAS_GAUCHE,</span>
-<span id="cb11-5"><a href="#cb11-5"></a>  P_BRAS_DROIT,</span>
-<span id="cb11-6"><a href="#cb11-6"></a>  P_PIED_GAUCHE,</span>
-<span id="cb11-7"><a href="#cb11-7"></a>  P_PIED_DROIT,</span>
-<span id="cb11-8"><a href="#cb11-8"></a>  P_VISAGE</span>
-<span id="cb11-9"><a href="#cb11-9"></a>)</span>
-<span id="cb11-10"><a href="#cb11-10"></a></span>
-<span id="cb11-11"><a href="#cb11-11"></a><span class="kw">def</span> majCorps(nombreErreurs):</span>
-<span id="cb11-12"><a href="#cb11-12"></a>  dessinerPartieCorps(PARTIES_CORPS[nombreErreurs<span class="dv">-1</span>])</span></code></pre></div>
+<p>Pour éviter une erreur lorsque cette fonction est appelée avec un nombre d&#39;erreur dépassant le maximum possible (i.e. le nombre de parties de corps disponibles), on testera ce nombre avant de dessiner. La constante <code>P_NOMBRE</code> contient le nombre de parties de corps disponibles.</p>
+<p>Ainsi, on pourra remplacer :</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>  dessinerPartieCorps(partieCorps)</span></code></pre></div>
+<p>par :</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>  <span class="cf">if</span> nombreErreurs <span class="op">&lt;=</span> P_NOMBRE:</span>
+<span id="cb12-2"><a href="#cb12-2"></a>    dessinerPartieCorps(partieCorps)</span></code></pre></div>
+<h3 id="exercice-g">Exercice <em>g</em></h3>
+<h4 id="particularités-5">Particularités</h4>
+<ul>
+<li>Création d&#39;un <em>tuple</em> ;</li>
+<li>récupération d&#39;un membre d&#39;un <em>tuple</em> par son index ;</li>
+<li>récupération du nombre d&#39;éléments d&#39;un <em>tuple</em>.</li>
+</ul>
+<h4 id="solution-1">Solution</h4>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>PARTIES_CORPS <span class="op">=</span> (</span>
+<span id="cb13-2"><a href="#cb13-2"></a>  P_TETE,</span>
+<span id="cb13-3"><a href="#cb13-3"></a>  P_TRONC,</span>
+<span id="cb13-4"><a href="#cb13-4"></a>  P_BRAS_GAUCHE,</span>
+<span id="cb13-5"><a href="#cb13-5"></a>  P_BRAS_DROIT,</span>
+<span id="cb13-6"><a href="#cb13-6"></a>  P_PIED_GAUCHE,</span>
+<span id="cb13-7"><a href="#cb13-7"></a>  P_PIED_DROIT,</span>
+<span id="cb13-8"><a href="#cb13-8"></a>  P_VISAGE</span>
+<span id="cb13-9"><a href="#cb13-9"></a>)</span>
+<span id="cb13-10"><a href="#cb13-10"></a></span>
+<span id="cb13-11"><a href="#cb13-11"></a><span class="kw">def</span> majCorps(nombreErreurs):</span>
+<span id="cb13-12"><a href="#cb13-12"></a>  dessinerPartieCorps(PARTIES_CORPS[nombreErreurs<span class="dv">-1</span>])</span></code></pre></div>
+<p>Dans un second temps, pour éviter une erreur lors du dépassement du nombre d&#39;erreurs autorisées, on remplacera :</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">def</span> majCorps(nombreErreurs):</span>
+<span id="cb14-2"><a href="#cb14-2"></a>  dessinerPartieCorps(PARTIES_CORPS[nombreErreurs<span class="dv">-1</span>])</span></code></pre></div>
+<p>par :</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="kw">def</span> majCorps(nombreErreurs):</span>
+<span id="cb15-3"><a href="#cb15-3"></a>  <span class="cf">if</span> nombreErreurs <span class="op">&lt;=</span> <span class="bu">len</span>(PARTIES_CORPS)</span>
+<span id="cb15-4"><a href="#cb15-4"></a>    dessinerPartieCorps(PARTIES_CORPS[nombreErreurs<span class="dv">-1</span>])</span></code></pre></div>
+<p>Noter que, pour cet exercice, et les suivants, on peut stocker le résultat de <code>len(PARTIES_CORPS)</code> dans une constante juste aprés la définition de <code>PARTIES_CORPS</code>, et utiliser cette constante en lieu et place des appels à <code>len(PARTIES_CORPS)</code>.</p>
+<h3 id="exercice-h">Exercice <em>h</em></h3>
+<h4 id="particularités-6">Particularités</h4>
+<p>Rien de particulier ; il s&#39;agit juste d&#39;une amélioration.</p>
+<h4 id="solution-2">Solution</h4>
+<p>Noter que, par rapport à la solution précédente, <code>PARTIES_CORPS</code> ne contient plus la constante <code>P_VISAGE</code>.</p>
+<p>On pourra faire remarquer que le test sur le nombre d&#39;erreurs autorisés, bien qu&#39;il soit réduit d&#39;un, reste correct, du fait qu&#39;il s&#39;appuie sur le nombre d&#39;éléments contenus dans <code>PARTIES_CORPS</code>.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>PARTIES_CORPS <span class="op">=</span> (</span>
+<span id="cb16-2"><a href="#cb16-2"></a>  P_TETE,</span>
+<span id="cb16-3"><a href="#cb16-3"></a>  P_TRONC,</span>
+<span id="cb16-4"><a href="#cb16-4"></a>  P_BRAS_GAUCHE,</span>
+<span id="cb16-5"><a href="#cb16-5"></a>  P_BRAS_DROIT,</span>
+<span id="cb16-6"><a href="#cb16-6"></a>  P_PIED_GAUCHE,</span>
+<span id="cb16-7"><a href="#cb16-7"></a>  P_PIED_DROIT</span>
+<span id="cb16-8"><a href="#cb16-8"></a>)</span>
+<span id="cb16-9"><a href="#cb16-9"></a></span>
+<span id="cb16-10"><a href="#cb16-10"></a><span class="kw">def</span> majCorps(nombreErreurs):</span>
+<span id="cb16-11"><a href="#cb16-11"></a>  <span class="cf">if</span> nombreErreurs <span class="op">&lt;=</span> <span class="bu">len</span>(PARTIES_CORPS):</span>
+<span id="cb16-12"><a href="#cb16-12"></a>    dessinerPartieCorps(PARTIES_CORPS[nombreErreurs<span class="dv">-1</span>])</span>
+<span id="cb16-13"><a href="#cb16-13"></a></span>
+<span id="cb16-14"><a href="#cb16-14"></a>  <span class="cf">if</span> nombreErreurs <span class="op">&gt;=</span> <span class="bu">len</span>(PARTIES_CORPS):</span>
+<span id="cb16-15"><a href="#cb16-15"></a>    dessinerPartieCorps(P_VISAGE)</span></code></pre></div>
+<p>Variante (le second test est imbriqué dans le premier):</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>…</span>
+<span id="cb17-2"><a href="#cb17-2"></a></span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="kw">def</span> majCorps(nombreErreurs):</span>
+<span id="cb17-4"><a href="#cb17-4"></a>  <span class="cf">if</span> nombreErreurs <span class="op">&lt;=</span> <span class="bu">len</span>(PARTIES_CORPS):</span>
+<span id="cb17-5"><a href="#cb17-5"></a>    dessinerPartieCorps(PARTIES_CORPS[nombreErreurs<span class="dv">-1</span>])</span>
+<span id="cb17-6"><a href="#cb17-6"></a></span>
+<span id="cb17-7"><a href="#cb17-7"></a>    <span class="cf">if</span> nombreErreurs <span class="op">==</span> <span class="bu">len</span>(PARTIES_CORPS):</span>
+<span id="cb17-8"><a href="#cb17-8"></a>      dessinerPartieCorps(P_VISAGE)</span></code></pre></div>
 <h2 id="autres-exercices">Autres exercices</h2>
 <p>La partie des notices enseignant et élèves concernant ces exercices sont en cours d&#39;élaboration.</p>
 </body>

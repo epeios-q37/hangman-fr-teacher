@@ -195,6 +195,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#aperçu-5">Aperçu</a></li>
 <li><a href="#tests-5">Tests</a></li>
 </ul></li>
+<li><a href="#exercice-g">Exercice <em>g</em></a><ul>
+<li><a href="#objectif-1">Objectif</a></li>
+<li><a href="#préparation-6">Préparation</a></li>
+<li><a href="#tâches-5">Tâches</a></li>
+<li><a href="#pseudo-code-6">Pseudo-code</a></li>
+<li><a href="#aperçu-6">Aperçu</a></li>
+<li><a href="#test">Test</a></li>
+</ul></li>
+<li><a href="#exercice-h">Exercice <em>h</em></a><ul>
+<li><a href="#objectif-2">Objectif</a></li>
+<li><a href="#préparation-7">Préparation</a></li>
+<li><a href="#tâches-6">Tâches</a></li>
+<li><a href="#pseudo-code-7">Pseudo-code</a></li>
+<li><a href="#aperçu-7">Aperçu</a></li>
+<li><a href="#tests-6">Tests</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -219,7 +235,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-5"><a href="#cb1-5"></a><span class="kw">def</span> choisirMot():</span>
 <span id="cb1-6"><a href="#cb1-6"></a></span>
 <span id="cb1-7"><a href="#cb1-7"></a>go(<span class="bu">globals</span>())</span></code></pre></div>
-<p>La variable booléenne <code>MONTRER_MOT_SECRET</code> permet de configurer le jeu pour qu&#39;il affiche le mot à deviner. Sans cette possibilité, il serait compliqué de tester le jeu pour vérifier s&#39;il fonctionne correctement. On donnera à cette variable la valeur <code>VRAI</code> (ou <code>True</code>) tout au long du développement et de la mise au point du jeu, et <code>FAUX</code> (ou <code>False</code>) une fois que le jeu sera au point, pour que le mot à deviner ne soit plus affiché.</p>
+<p>La variable booléenne <code>DIVULGUER_MOT_SECRET</code> permet de configurer le jeu pour qu&#39;il affiche le mot à deviner. Sans cette possibilité, il serait compliqué de tester le jeu pour vérifier s&#39;il fonctionne correctement. On donnera à cette variable la valeur <code>VRAI</code> (ou <code>True</code>) tout au long du développement et de la mise au point du jeu, et <code>FAUX</code> (ou <code>False</code>) une fois que le jeu sera au point, pour que le mot à deviner ne soit plus affiché.</p>
 <p><em>Nota</em> : lancer l&#39;exécution de ce fichier en l&#39;état provoquera l&#39;affichage d&#39;un message d&#39;erreur.</p>
 <h3 id="tâches">Tâches</h3>
 <p>Écrire le contenu de la fonction <code>choisirMot</code> pour qu&#39;elle retourne toujours la même chaîne de caractères contenant un mot.</p>
@@ -450,7 +466,7 @@ Sinon<br />
 <li><code>nombreErreurs</code> est le nombre d&#39;erreurs commises par le joueur, c&#39;est-à-dire le nombre de lettres qu&#39;il a choisi est qui ne sont pas contenus dans le mot à deviner ;</li>
 </ul>
 <p>écrire le code de la fonction <code>majCorps</code> pour qu&#39;elle dessine la partie du corps correspondant au nombre d&#39;erreurs.</p>
-<p>Pour cette tâche, utiliser la fonction <code>dessinerPartieCorps</code> qui peut prendre, comme paramètre, une des valeurs suivantes :</p>
+<p>Pour cette tâche, utiliser la fonction <code>dessinerPartieCorps</code> qui prend, comme paramètre, une des valeurs suivantes :</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>P_TETE          <span class="co"># pour dessiner la tête,</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a>P_TRONC         <span class="co"># pour dessiner le tronc,</span></span>
 <span id="cb7-3"><a href="#cb7-3"></a>P_BRAS_GAUCHE   <span class="co"># pour dessiner le bras gauche,</span></span>
@@ -458,14 +474,14 @@ Sinon<br />
 <span id="cb7-5"><a href="#cb7-5"></a>P_PIED_GAUCHE   <span class="co"># pour dessiner le pied gauche,</span></span>
 <span id="cb7-6"><a href="#cb7-6"></a>P_PIED_DROIT    <span class="co"># pour dessiner le pied droit,</span></span>
 <span id="cb7-7"><a href="#cb7-7"></a>P_VISAGE        <span class="co"># pour dessiner la visage.</span></span></code></pre></div>
-<p><code>maj</code> signifie <em>mise-à-jour</em>, car la fonction est appelée à chaque nouvelle erreur. Cela veut dire que la valeur du paramètre <code>nombreErreurs</code> est incrémenté d&#39;un appel à l&#39;autre. Aussi ne va-t-on pas redessiner tous le corps, mais juste la partie correspondant au nombre d&#39;erreurs.</p>
+<p><code>maj</code> signifie <em>mise-à-jour</em>, car la fonction est appelée à chaque nouvelle erreur. Cela veut dire que la valeur du paramètre <code>nombreErreurs</code> est incrémenté d&#39;un appel à l&#39;autre. Aussi ne va-t-on pas redessiner tout le corps, mais juste la partie correspondant au nombre d&#39;erreurs.</p>
 <h3 id="pseudo-code-5">Pseudo-code</h3>
 <blockquote>
 <p>Si <code>nombreErreurs</code> est égal à 1<br />
   Dessiner la tête<br />
 Sinon si <code>nombreErreurs</code> est égal à 2<br />
   Dessiner le tronc<br />
-Sinon si <code>nombreErreur</code> est égal à 3<br />
+Sinon si <code>nombreErreurs</code> est égal à 3<br />
   Dessiner le bras gauche</p>
 <p><em>et ainsi de suite pour dessiner le bras droit, le pied gauche, le pied droit et enfin le visage.</em></p>
 </blockquote>
@@ -476,5 +492,65 @@ Sinon si <code>nombreErreur</code> est égal à 3<br />
 <li>Pour chaque lettre contenue dans le mot à deviner, vérifier que le jeu se comporte comme dans l&#39;exercice précédent ;</li>
 <li>pour chaque lettre <strong>non</strong> contenue dans le mot à deviner, vérifier que le dessin du pendu se complète peu à peu.</li>
 </ul>
+<h2 id="exercice-g">Exercice <em>g</em></h2>
+<h3 id="objectif-1">Objectif</h3>
+<p>Simplification de la fonction <code>majCorps</code>, grâce à l&#39;utilisation d&#39;un <em>tuple</em>.</p>
+<h3 id="préparation-6">Préparation</h3>
+<ul>
+<li>Dans la première ligne, remplacer le <code>f</code> par un <code>g</code>.</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="im">from</span> workshop.fr.g <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a></span>
+<span id="cb8-3"><a href="#cb8-3"></a>…</span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="kw">def</span> majCorps(nombreErreurs):    </span>
+<span id="cb8-6"><a href="#cb8-6"></a>    …</span>
+<span id="cb8-7"><a href="#cb8-7"></a></span>
+<span id="cb8-8"><a href="#cb8-8"></a>go(<span class="bu">globals</span>())</span></code></pre></div>
+<h3 id="tâches-5">Tâches</h3>
+<ul>
+<li>Créer un <em>tuple</em> appelé <code>PARTIES_CORPS</code> contenant les constantes <code>P_…</code> listées dans l&#39;exercice précédent, dans l&#39;ordre dans lequel les parties du corps correspondantes doivent être dessinées ;</li>
+<li>modifier la fonction <code>majCorps</code> pour qu&#39;elle réalise la même tâche que dans l&#39;exercice précédent, mais en utilisant le <em>tuple</em> ci-dessus.</li>
+</ul>
+<h3 id="pseudo-code-6">Pseudo-code</h3>
+<blockquote>
+<p>Affecter à <code>PARTIES_CORPS</code> un <em>tuple</em> contenant les constantes <code>P_…</code></p>
+<p>Dessiner la partie du corps stockée dans <code>PARTIES_CORPS</code> correspondant à <code>nombreErreurs</code></p>
+</blockquote>
+<h3 id="aperçu-6">Aperçu</h3>
+<p>Le même que pour l&#39;exercice précédent.</p>
+<h3 id="test">Test</h3>
+<p>Les mêmes que pour l&#39;exercice précédent.</p>
+<h2 id="exercice-h">Exercice <em>h</em></h2>
+<h3 id="objectif-2">Objectif</h3>
+<p>Lorsque le dernier membre du corps du pendu est dessiné, le visage doit également être dessiné, pour indiquer que la partie est perdue.</p>
+<h3 id="préparation-7">Préparation</h3>
+<ul>
+<li>Dans la première ligne, remplacer le <code>g</code> par un <code>h</code>.</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="im">from</span> workshop.fr.h <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a></span>
+<span id="cb9-3"><a href="#cb9-3"></a>…</span>
+<span id="cb9-4"><a href="#cb9-4"></a></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="kw">def</span> majCorps(nombreErreurs):    </span>
+<span id="cb9-6"><a href="#cb9-6"></a>    …</span>
+<span id="cb9-7"><a href="#cb9-7"></a></span>
+<span id="cb9-8"><a href="#cb9-8"></a>go(<span class="bu">globals</span>())</span></code></pre></div>
+<h3 id="tâches-6">Tâches</h3>
+<ul>
+<li>Retirer du <em>tuple</em> <code>PARTIES_CORPS</code> la constante <code>P_VISAGE</code> ;</li>
+<li>modifier le code de la fonction <code>majCorps</code> pour dessiner explicitement le visage (utilisation de la constante <code>P_VISAGE</code>) lorsque la dernière partie du corps, tel que contenue dans <code>PARTIES_CORPS</code>, est dessinée.</li>
+</ul>
+<p>On pourra se servir de la taille du <em>tuple</em> pour détecter quand est dessinée la dernière partie du corps.</p>
+<h3 id="pseudo-code-7">Pseudo-code</h3>
+<blockquote>
+<p>Dessiner la partie du corps correspondant à <code>nombreErreurs</code></p>
+<p>Si <code>nombreErreur</code> supérieur au nombre d&#39;erreurs autorisées<br />
+  Dessiner le visage</p>
+</blockquote>
+<h3 id="aperçu-7">Aperçu</h3>
+<p>Le même que pour l&#39;exercice précédent.</p>
+<h3 id="tests-6">Tests</h3>
+<p>Reprendre les tests de l&#39;exercice précédent, et vérifier qu&#39;au lieu d&#39;être dessiné à part, le visage est dessiné en même temps que la dernière partie du corps.</p>
 </body>
 </html>
