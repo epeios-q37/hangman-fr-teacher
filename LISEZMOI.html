@@ -161,6 +161,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#exercice-f">Exercice <em>f</em></a></li>
 <li><a href="#exercice-g">Exercice <em>g</em></a></li>
 <li><a href="#exercice-h">Exercice <em>h</em></a></li>
+<li><a href="#exercice-i">Exercice <em>i</em></a></li>
 </ul></li>
 <li><a href="#autres-exercices">Autres exercices</a></li>
 </ul></li>
@@ -214,7 +215,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Pour revenir au code source, on fermera l&#39;onglet (ou la fenêtre) qui s&#39;est ouverte suite au click sur le code QR. Pour relancer l&#39;application, il suffira de cliquer à nouveau sur le bouton vert (dont le libellé change en fonction du contexte).</p>
 <p><em>Repl.it</em> ne nécessite pas la création d&#39;un compte pour être utilisé. Néanmoins, ouvrir un compte permet d&#39;y stocker ses projets et de les retrouver d&#39;une session à l&#39;autre. On peut aussi, sans compte, sauvegarder en local l&#39;ensemble d&#39;un projet.</p>
 <h2 id="les-exercices">Les exercices</h2>
-<p>Les informations données ici viennent en complément de celles indiquées dans le fichier <code>Student/LISEZMOI.html</code>.</p>
+<p>Les informations données ici viennent en complément de celles indiquées dans le fichier <code>Student/LISEZMOI.html</code>, qui est la notice destinée aux étudiants.</p>
 <p><strong>ATTENTION</strong> : ne pas oublier de modifier la ligne <code>from workshop.fr.… import *</code> en fonction de l&#39;exercice.</p>
 <h3 id="exercice-a">Exercice <em>a</em></h3>
 <h4 id="particularités">Particularités</h4>
@@ -229,6 +230,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4 id="solution">Solution</h4>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> choisirMot():</span>
 <span id="cb1-2"><a href="#cb1-2"></a>  <span class="cf">return</span> <span class="st">&quot;arbre&quot;</span></span></code></pre></div>
+<h4 id="remarques">Remarques</h4>
+<p>Veiller à ce que le rôle l&#39;indentation soit bien comprise par les étudiants ; insisté que, bien que l&#39;indentation joue un rôle particulier en <em>Python</em>, son utilisation est indispensable avec n&#39;importe quel langage pour une bonne compréhension du code.</p>
 <h3 id="exercice-b">Exercice <em>b</em></h3>
 <h4 id="particularités-1">Particularités</h4>
 <ul>
@@ -243,15 +246,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>opérateur de comparaison ;</li>
 <li>instruction conditionnelles.</li>
 </ul>
-<h4 id="solutions">Solutions</h4>
+<h4 id="solution-1">Solution</h4>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">def</span> choisirMot(suggestion):</span>
 <span id="cb2-2"><a href="#cb2-2"></a>  <span class="cf">if</span> <span class="bu">len</span>(suggestion) <span class="op">!=</span> <span class="dv">0</span>:</span>
 <span id="cb2-3"><a href="#cb2-3"></a>    <span class="cf">return</span> suggestion</span>
 <span id="cb2-4"><a href="#cb2-4"></a>  <span class="cf">else</span>:</span>
 <span id="cb2-5"><a href="#cb2-5"></a>    <span class="cf">return</span> <span class="st">&quot;arbre&quot;</span></span></code></pre></div>
-<p>Une fois que cette solution aura été trouvée, on pourra proposer de remplacer <code>if len(suggestion) != 0:</code> par <code>if len(suggestion):</code>, puis par <code>if suggestion:</code> en soulignant que c&#39;est propre à <em>Python</em> (et à certains autres langages).</p>
+<h4 id="remarque">Remarque</h4>
+<p>Une fois que la solution ci-dessus trouvée, on pourra proposer de remplacer <code>if len(suggestion) != 0:</code> par <code>if len(suggestion):</code>, puis par <code>if suggestion:</code>, en soulignant que c&#39;est propre à <em>Python</em> (et à certains autres langages).</p>
 <h3 id="exercice-c">Exercice <em>c</em></h3>
-<p>La seconde solution est optionnelle, et on pourra y revenir plus tard.</p>
 <h4 id="particularités-2">Particularités</h4>
 <p>Pour la première version, aucune en particulier ; il s&#39;agit juste d&#39;une amélioration.</p>
 <p>Pour la seconde version :</p>
@@ -265,14 +268,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>import d&#39;une fonction particulière d&#39;un module,</li>
 <li>fonction <code>randint</code>.</li>
 </ul>
-<h4 id="solutions-1">Solutions</h4>
+<h4 id="solutions">Solutions</h4>
 <p>Première version :</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">def</span> choisirMot(suggestion,motAuHasard):</span>
 <span id="cb3-2"><a href="#cb3-2"></a>  <span class="cf">if</span> suggestion:</span>
 <span id="cb3-3"><a href="#cb3-3"></a>    <span class="cf">return</span> suggestion</span>
 <span id="cb3-4"><a href="#cb3-4"></a>  <span class="cf">else</span>:</span>
 <span id="cb3-5"><a href="#cb3-5"></a>    <span class="cf">return</span> motAuHasard</span></code></pre></div>
-<p>seconde version :</p>
+<p>Seconde version :</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">from</span> random <span class="im">import</span> randint</span>
 <span id="cb4-2"><a href="#cb4-2"></a></span>
 <span id="cb4-3"><a href="#cb4-3"></a>…</span>
@@ -286,6 +289,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-11"><a href="#cb4-11"></a>    <span class="cf">return</span> suggestion</span>
 <span id="cb4-12"><a href="#cb4-12"></a>  <span class="cf">else</span>:</span>
 <span id="cb4-13"><a href="#cb4-13"></a>    <span class="cf">return</span> DICTIONNAIRE[randint(<span class="dv">0</span>, <span class="bu">len</span>(DICTIONNAIRE)<span class="op">-</span><span class="dv">1</span>)]</span></code></pre></div>
+<h4 id="remarque-1">Remarque</h4>
+<p>La seconde solution est optionnelle. On pourra y revenir plus tard, une fois les <em>tuple</em> abordés. Dans ce cas, ne pas oublier de remettre <code>from workshop.fr.c import *</code>…</p>
 <h3 id="exercice-d">Exercice <em>d</em></h3>
 <h4 id="particularités-3">Particularités</h4>
 <ul>
@@ -294,13 +299,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>fonction <code>range</code> ;</li>
 <li>index et chaîne de caractères.</li>
 </ul>
-<h4 id="solutions-2">Solutions</h4>
+<h4 id="solutions-1">Solutions</h4>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">def</span> lettreEstDansMot(lettre,mot):</span>
 <span id="cb5-2"><a href="#cb5-2"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="bu">len</span>(mot)):</span>
 <span id="cb5-3"><a href="#cb5-3"></a>        <span class="cf">if</span> mot[i] <span class="op">==</span> lettre:</span>
 <span id="cb5-4"><a href="#cb5-4"></a>            <span class="cf">return</span> <span class="va">True</span></span>
 <span id="cb5-5"><a href="#cb5-5"></a></span>
 <span id="cb5-6"><a href="#cb5-6"></a>    <span class="cf">return</span> <span class="va">False</span></span></code></pre></div>
+<h4 id="remarque-2">Remarque</h4>
 <p>Une fois cette solution trouvée, on pourra proposer la solution suivante, en soulignant qu&#39;elle est propre à <em>Python</em> (et certains autres langages).</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">def</span> lettreEstDansMot(lettre,mot):</span>
 <span id="cb6-2"><a href="#cb6-2"></a>  <span class="cf">return</span> lettre <span class="kw">in</span> mot</span></code></pre></div>
@@ -311,7 +317,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>concaténation de chaînes de caractères ;</li>
 <li>éventuellement instruction conditionnelle ternaire.</li>
 </ul>
-<h4 id="solutions-3">Solutions</h4>
+<h4 id="solution-2">Solution</h4>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">def</span> donnerMasque(mot,pioches):</span>
 <span id="cb7-2"><a href="#cb7-2"></a>    masque <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
 <span id="cb7-3"><a href="#cb7-3"></a></span>
@@ -322,6 +328,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb7-8"><a href="#cb7-8"></a>            masque <span class="op">=</span> masque <span class="op">+</span> <span class="st">&quot;_&quot;</span></span>
 <span id="cb7-9"><a href="#cb7-9"></a></span>
 <span id="cb7-10"><a href="#cb7-10"></a>    <span class="cf">return</span> masque</span></code></pre></div>
+<h4 id="remarque-3">Remarque</h4>
 <p>Une fois cette solution trouvée, on pourra proposer de remplacer <code>masque = masque + …</code> par <code>masque += …</code>.</p>
 <p>On pourra également, à la place de :</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="cf">if</span> lettreEstDansMot(lettre,pioches):</span>
@@ -333,7 +340,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 id="exercice-f">Exercice <em>f</em></h3>
 <h4 id="particularité">Particularité</h4>
 <p>Instructions conditionnelles multiples (équivalent du <em>switch…</em> <em>case…</em> d&#39;autres langages).</p>
-<h4 id="solutions-4">Solutions</h4>
+<h4 id="solution-3">Solution</h4>
 <div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">def</span> majCorps(nombreErreurs):</span>
 <span id="cb10-2"><a href="#cb10-2"></a>  <span class="cf">if</span> nombreErreurs <span class="op">==</span> <span class="dv">1</span>:</span>
 <span id="cb10-3"><a href="#cb10-3"></a>    partieCorps <span class="op">=</span> P_TETE</span>
@@ -351,6 +358,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb10-15"><a href="#cb10-15"></a>    partieCorps <span class="op">=</span> P_VISAGE</span>
 <span id="cb10-16"><a href="#cb10-16"></a></span>
 <span id="cb10-17"><a href="#cb10-17"></a>  dessinerPartieCorps(partieCorps)</span></code></pre></div>
+<h4 id="remarque-4">Remarque</h4>
 <p>Pour éviter une erreur lorsque cette fonction est appelée avec un nombre d&#39;erreur dépassant le maximum possible (i.e. le nombre de parties de corps disponibles), on testera ce nombre avant de dessiner. La constante <code>P_NOMBRE</code> contient le nombre de parties de corps disponibles.</p>
 <p>Ainsi, on pourra remplacer :</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>  dessinerPartieCorps(partieCorps)</span></code></pre></div>
@@ -364,7 +372,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>récupération d&#39;un membre d&#39;un <em>tuple</em> par son index ;</li>
 <li>récupération du nombre d&#39;éléments d&#39;un <em>tuple</em>.</li>
 </ul>
-<h4 id="solution-1">Solution</h4>
+<h4 id="solution-4">Solution</h4>
 <div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>PARTIES_CORPS <span class="op">=</span> (</span>
 <span id="cb13-2"><a href="#cb13-2"></a>  P_TETE,</span>
 <span id="cb13-3"><a href="#cb13-3"></a>  P_TRONC,</span>
@@ -377,6 +385,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb13-10"><a href="#cb13-10"></a></span>
 <span id="cb13-11"><a href="#cb13-11"></a><span class="kw">def</span> majCorps(nombreErreurs):</span>
 <span id="cb13-12"><a href="#cb13-12"></a>  dessinerPartieCorps(PARTIES_CORPS[nombreErreurs<span class="dv">-1</span>])</span></code></pre></div>
+<h4 id="remarques-1">Remarques</h4>
 <p>Dans un second temps, pour éviter une erreur lors du dépassement du nombre d&#39;erreurs autorisées, on remplacera :</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">def</span> majCorps(nombreErreurs):</span>
 <span id="cb14-2"><a href="#cb14-2"></a>  dessinerPartieCorps(PARTIES_CORPS[nombreErreurs<span class="dv">-1</span>])</span></code></pre></div>
@@ -389,7 +398,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 id="exercice-h">Exercice <em>h</em></h3>
 <h4 id="particularités-6">Particularités</h4>
 <p>Rien de particulier ; il s&#39;agit juste d&#39;une amélioration.</p>
-<h4 id="solution-2">Solution</h4>
+<h4 id="solution-5">Solution</h4>
 <p>Noter que, par rapport à la solution précédente, <code>PARTIES_CORPS</code> ne contient plus la constante <code>P_VISAGE</code>.</p>
 <p>On pourra faire remarquer que le test sur le nombre d&#39;erreurs autorisés, bien qu&#39;il soit réduit d&#39;un, reste correct, du fait qu&#39;il s&#39;appuie sur le nombre d&#39;éléments contenus dans <code>PARTIES_CORPS</code>.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>PARTIES_CORPS <span class="op">=</span> (</span>
@@ -407,7 +416,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb16-13"><a href="#cb16-13"></a></span>
 <span id="cb16-14"><a href="#cb16-14"></a>  <span class="cf">if</span> nombreErreurs <span class="op">&gt;=</span> <span class="bu">len</span>(PARTIES_CORPS):</span>
 <span id="cb16-15"><a href="#cb16-15"></a>    dessinerPartieCorps(P_VISAGE)</span></code></pre></div>
-<p>Variante (le second test est imbriqué dans le premier):</p>
+<h4 id="remarque-5">Remarque</h4>
+<p>On peut également considéré la variante (le second test est imbriqué dans le premier) :</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>…</span>
 <span id="cb17-2"><a href="#cb17-2"></a></span>
 <span id="cb17-3"><a href="#cb17-3"></a><span class="kw">def</span> majCorps(nombreErreurs):</span>
@@ -416,7 +426,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb17-6"><a href="#cb17-6"></a></span>
 <span id="cb17-7"><a href="#cb17-7"></a>    <span class="cf">if</span> nombreErreurs <span class="op">==</span> <span class="bu">len</span>(PARTIES_CORPS):</span>
 <span id="cb17-8"><a href="#cb17-8"></a>      dessinerPartieCorps(P_VISAGE)</span></code></pre></div>
+<p>Cela permet, dans certains cas, d&#39;éviter un test inutile. Cependant, ce cas se présentant rarement, l&#39;intérêt est limité.</p>
+<h3 id="exercice-i">Exercice <em>i</em></h3>
+<h4 id="particularités-7">Particularités</h4>
+<ul>
+<li>Distinction variables globales/locales ;</li>
+<li>distinction entre une variable contenant une chaîne de caractères, et une variable contenant un entier ;</li>
+<li>problématique <a href="https://fr.wikipedia.org/wiki/Thread_safety"><em>thread-safety</em></a>.</li>
+</ul>
+<h4 id="solution-6">Solution</h4>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>bonnesPioches <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>nbErreurs <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a></span>
+<span id="cb18-4"><a href="#cb18-4"></a><span class="kw">def</span> raz(suggestion,motAuHasard):</span>
+<span id="cb18-5"><a href="#cb18-5"></a>  <span class="kw">global</span> bonnesPioches,nbErreurs</span>
+<span id="cb18-6"><a href="#cb18-6"></a></span>
+<span id="cb18-7"><a href="#cb18-7"></a>  bonnesPioches <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb18-8"><a href="#cb18-8"></a>  nbErreurs <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb18-9"><a href="#cb18-9"></a></span>
+<span id="cb18-10"><a href="#cb18-10"></a>  motSecret <span class="op">=</span> choisirMot(suggestion,motAuHasard)</span>
+<span id="cb18-11"><a href="#cb18-11"></a></span>
+<span id="cb18-12"><a href="#cb18-12"></a>  afficher(donnerMasque(motSecret,<span class="st">&quot;&quot;</span>))</span>
+<span id="cb18-13"><a href="#cb18-13"></a></span>
+<span id="cb18-14"><a href="#cb18-14"></a>  <span class="cf">return</span> motSecret</span>
+<span id="cb18-15"><a href="#cb18-15"></a></span>
+<span id="cb18-16"><a href="#cb18-16"></a></span>
+<span id="cb18-17"><a href="#cb18-17"></a><span class="kw">def</span> traiterPioche(pioche,motSecret):</span>
+<span id="cb18-18"><a href="#cb18-18"></a>  <span class="kw">global</span> bonnesPioches,nbErreurs</span>
+<span id="cb18-19"><a href="#cb18-19"></a></span>
+<span id="cb18-20"><a href="#cb18-20"></a>  <span class="cf">if</span> lettreEstDansMot(pioche,motSecret):</span>
+<span id="cb18-21"><a href="#cb18-21"></a>    <span class="cf">if</span> <span class="kw">not</span> lettreEstDansMot(pioche,bonnesPioches):</span>
+<span id="cb18-22"><a href="#cb18-22"></a>      bonnesPioches <span class="op">+=</span> pioche</span>
+<span id="cb18-23"><a href="#cb18-23"></a>      afficher(donnerMasque(motSecret,bonnesPioches))</span>
+<span id="cb18-24"><a href="#cb18-24"></a>  <span class="cf">else</span>:</span>
+<span id="cb18-25"><a href="#cb18-25"></a>    nbErreurs <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb18-26"><a href="#cb18-26"></a>    majCorps(nbErreurs)</span></code></pre></div>
+<h4 id="remarques-2">Remarques</h4>
+<p>Les deux premières lignes sont inutiles, la fonction <code>raz(…)</code> étant appelée avant toute utilisation d&#39;une des deux variables. Cependant, c&#39;est une bonne pratique pour la clarté du code (permet de repérer rapidement les variables globales).</p>
+<p>Veiller à ce que les élèves ne soient pas bloqués par l&#39;absence de la ligne <code>global bonnesPioches,nbErreurs</code> dans les deux fonctions.</p>
+<p>Dans un premier temps, le test <code>if not lettreEstDansMot(pioche,bonnesPioches):</code> pourra être omis.</p>
+<p>Le paramètre <code>motAuHasard</code> de la fonction <code>raz(…)</code> ne sera peut-être pas utilisé ; cela dépendra de la manière dont la fonction <code>motAuHasard(…)</code> aura été codée dans les précédents exercices.</p>
+<p>En lançant deux ou plusieurs instances simultanées, du fait que les variables <code>bonnesPioches</code> et <code>nbErreurs</code> sont communes à toutes les instances, il sera facile de montrer que les actions effectuées dans une instance influent les autres, notamment :</p>
+<ul>
+<li>des lettres piochées disparaissent ou apparaissent de manière inopinée ;</li>
+<li>le pendu est dessiné d&#39;une manière inconsistante.</li>
+</ul>
+<p>À noter que ces problèmes de <em>thread-safety</em> ne sont <strong>pas</strong> présents dans les exercices précedents, car les variables <code>bonnesPioches</code> et <code>nbErreurs</code> sont gérés par le système en tenant compte de cette problématique.</p>
 <h2 id="autres-exercices">Autres exercices</h2>
-<p>La partie des notices enseignant et élèves concernant ces exercices sont en cours d&#39;élaboration.</p>
+<p>La partie des notices enseignant et élèves concernant ces exercices sont en cours d&#39;élaboration, et devraient être disponibles d&#39;ici une semaine ou deux.</p>
 </body>
 </html>
