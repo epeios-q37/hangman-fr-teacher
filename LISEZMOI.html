@@ -162,8 +162,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#exercice-g">Exercice <em>g</em></a></li>
 <li><a href="#exercice-h">Exercice <em>h</em></a></li>
 <li><a href="#exercice-i">Exercice <em>i</em></a></li>
+<li><a href="#exercice-j">Exercice <em>j</em></a></li>
+<li><a href="#exercice-k">Exercice <em>k</em></a></li>
+<li><a href="#exercice-l">Exercice <em>l</em></a></li>
 </ul></li>
-<li><a href="#autres-exercices">Autres exercices</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -436,13 +438,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <h4 id="solution-6">Solution</h4>
 <div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>bonnesPioches <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a>nbErreurs <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>nombreErreurs <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb18-3"><a href="#cb18-3"></a></span>
 <span id="cb18-4"><a href="#cb18-4"></a><span class="kw">def</span> raz(suggestion,motAuHasard):</span>
-<span id="cb18-5"><a href="#cb18-5"></a>  <span class="kw">global</span> bonnesPioches,nbErreurs</span>
+<span id="cb18-5"><a href="#cb18-5"></a>  <span class="kw">global</span> bonnesPioches,nombreErreurs</span>
 <span id="cb18-6"><a href="#cb18-6"></a></span>
 <span id="cb18-7"><a href="#cb18-7"></a>  bonnesPioches <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
-<span id="cb18-8"><a href="#cb18-8"></a>  nbErreurs <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb18-8"><a href="#cb18-8"></a>  nombreErreurs <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb18-9"><a href="#cb18-9"></a></span>
 <span id="cb18-10"><a href="#cb18-10"></a>  motSecret <span class="op">=</span> choisirMot(suggestion,motAuHasard)</span>
 <span id="cb18-11"><a href="#cb18-11"></a></span>
@@ -452,27 +454,227 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb18-15"><a href="#cb18-15"></a></span>
 <span id="cb18-16"><a href="#cb18-16"></a></span>
 <span id="cb18-17"><a href="#cb18-17"></a><span class="kw">def</span> traiterPioche(pioche,motSecret):</span>
-<span id="cb18-18"><a href="#cb18-18"></a>  <span class="kw">global</span> bonnesPioches,nbErreurs</span>
+<span id="cb18-18"><a href="#cb18-18"></a>  <span class="kw">global</span> bonnesPioches,nombreErreurs</span>
 <span id="cb18-19"><a href="#cb18-19"></a></span>
 <span id="cb18-20"><a href="#cb18-20"></a>  <span class="cf">if</span> lettreEstDansMot(pioche,motSecret):</span>
 <span id="cb18-21"><a href="#cb18-21"></a>    <span class="cf">if</span> <span class="kw">not</span> lettreEstDansMot(pioche,bonnesPioches):</span>
 <span id="cb18-22"><a href="#cb18-22"></a>      bonnesPioches <span class="op">+=</span> pioche</span>
 <span id="cb18-23"><a href="#cb18-23"></a>      afficher(donnerMasque(motSecret,bonnesPioches))</span>
 <span id="cb18-24"><a href="#cb18-24"></a>  <span class="cf">else</span>:</span>
-<span id="cb18-25"><a href="#cb18-25"></a>    nbErreurs <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb18-26"><a href="#cb18-26"></a>    majCorps(nbErreurs)</span></code></pre></div>
+<span id="cb18-25"><a href="#cb18-25"></a>    nombreErreurs <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb18-26"><a href="#cb18-26"></a>    majCorps(nombreErreurs)</span></code></pre></div>
 <h4 id="remarques-2">Remarques</h4>
 <p>Les deux premières lignes sont inutiles, la fonction <code>raz(…)</code> étant appelée avant toute utilisation d&#39;une des deux variables. Cependant, c&#39;est une bonne pratique pour la clarté du code (permet de repérer rapidement les variables globales).</p>
-<p>Veiller à ce que les élèves ne soient pas bloqués par l&#39;absence de la ligne <code>global bonnesPioches,nbErreurs</code> dans les deux fonctions.</p>
+<p>Veiller à ce que les élèves ne soient pas bloqués par l&#39;absence de la ligne <code>global bonnesPioches,nombreErreurs</code> dans les deux fonctions.</p>
 <p>Dans un premier temps, le test <code>if not lettreEstDansMot(pioche,bonnesPioches):</code> pourra être omis.</p>
 <p>Le paramètre <code>motAuHasard</code> de la fonction <code>raz(…)</code> ne sera peut-être pas utilisé ; cela dépendra de la manière dont la fonction <code>motAuHasard(…)</code> aura été codée dans les précédents exercices.</p>
-<p>En lançant deux ou plusieurs instances simultanées, du fait que les variables <code>bonnesPioches</code> et <code>nbErreurs</code> sont communes à toutes les instances, il sera facile de montrer que les actions effectuées dans une instance influent les autres, notamment :</p>
+<p>En lançant deux ou plusieurs instances simultanées, du fait que les variables <code>bonnesPioches</code> et <code>nombreErreurs</code> sont communes à toutes les instances, il sera facile de montrer que les actions effectuées dans une instance influent les autres, notamment :</p>
 <ul>
 <li>des lettres piochées disparaissent ou apparaissent de manière inopinée ;</li>
 <li>le pendu est dessiné d&#39;une manière inconsistante.</li>
 </ul>
-<p>À noter que ces problèmes de <em>thread-safety</em> ne sont <strong>pas</strong> présents dans les exercices précedents, car les variables <code>bonnesPioches</code> et <code>nbErreurs</code> sont gérés par le système en tenant compte de cette problématique.</p>
-<h2 id="autres-exercices">Autres exercices</h2>
-<p>La partie des notices enseignant et élèves concernant ces exercices sont en cours d&#39;élaboration, et devraient être disponibles d&#39;ici une semaine ou deux.</p>
+<p>À noter que ces problèmes de <em>thread-safety</em> ne sont <strong>pas</strong> présents dans les exercices précedents, car les variables <code>bonnesPioches</code> et <code>nombreErreurs</code> sont directement gérées par des bibliothèques logicielles qui tiennent compte de cette problématique.</p>
+<h3 id="exercice-j">Exercice <em>j</em></h3>
+<h4 id="particularités-8">Particularités</h4>
+<p>Programmation orientée objet :</p>
+<ul>
+<li>Classe ;</li>
+<li>fonction membre (méthode) ;</li>
+<li>variable membre ;</li>
+<li>constructeur ;</li>
+<li>utilisation de la <em>POO</em> pour gérer le <em>thread-safety</em>.</li>
+</ul>
+<h4 id="solution-7">Solution</h4>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="kw">class</span> Pendu:</span>
+<span id="cb19-2"><a href="#cb19-2"></a>  <span class="kw">def</span> raz(<span class="va">self</span>):</span>
+<span id="cb19-3"><a href="#cb19-3"></a>    <span class="va">self</span>.bonnesPioches <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>    <span class="va">self</span>.nombreErreurs <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a></span>
+<span id="cb19-6"><a href="#cb19-6"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb19-7"><a href="#cb19-7"></a>    <span class="va">self</span>.raz()</span>
+<span id="cb19-8"><a href="#cb19-8"></a>    </span>
+<span id="cb19-9"><a href="#cb19-9"></a>  <span class="kw">def</span> traiterEtTesterPioche(<span class="va">self</span>,pioche,motSecret):</span>
+<span id="cb19-10"><a href="#cb19-10"></a>    <span class="cf">if</span> isLetterInWord(pioche,motSecret):</span>
+<span id="cb19-11"><a href="#cb19-11"></a>      <span class="cf">if</span> <span class="kw">not</span> isLetterInWord(pioche,<span class="va">self</span>.bonnesPioches):</span>
+<span id="cb19-12"><a href="#cb19-12"></a>        <span class="va">self</span>.bonnesPioches <span class="op">+=</span> pioche</span>
+<span id="cb19-13"><a href="#cb19-13"></a>      <span class="cf">return</span> VRAI</span>
+<span id="cb19-14"><a href="#cb19-14"></a>    <span class="cf">else</span>:</span>
+<span id="cb19-15"><a href="#cb19-15"></a>      <span class="va">self</span>.nombreErreurs <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb19-16"><a href="#cb19-16"></a>      <span class="cf">return</span> FAUX</span>
+<span id="cb19-17"><a href="#cb19-17"></a></span>
+<span id="cb19-18"><a href="#cb19-18"></a></span>
+<span id="cb19-19"><a href="#cb19-19"></a><span class="kw">def</span> raz(pendu,suggestion,motAuHasard):</span>
+<span id="cb19-20"><a href="#cb19-20"></a>  pendu.raz()</span>
+<span id="cb19-21"><a href="#cb19-21"></a>  motSecret <span class="op">=</span> choisirMot(suggestion,motAuHasard)</span>
+<span id="cb19-22"><a href="#cb19-22"></a>  <span class="bu">print</span>(motSecret)</span>
+<span id="cb19-23"><a href="#cb19-23"></a>  afficher(donnerMasque(motSecret,<span class="st">&quot;&quot;</span>))</span>
+<span id="cb19-24"><a href="#cb19-24"></a></span>
+<span id="cb19-25"><a href="#cb19-25"></a>  <span class="cf">return</span> motSecret</span>
+<span id="cb19-26"><a href="#cb19-26"></a>  </span>
+<span id="cb19-27"><a href="#cb19-27"></a></span>
+<span id="cb19-28"><a href="#cb19-28"></a><span class="kw">def</span> traiterPioche(pendu,pioche,motSecret):</span>
+<span id="cb19-29"><a href="#cb19-29"></a>  <span class="cf">if</span> pendu.traiterEtTesterPioche(pioche,motSecret):</span>
+<span id="cb19-30"><a href="#cb19-30"></a>    afficher(donnerMasque(motSecret,pendu.bonnesPioches))</span>
+<span id="cb19-31"><a href="#cb19-31"></a>  <span class="cf">else</span>:</span>
+<span id="cb19-32"><a href="#cb19-32"></a>    majCorps(pendu.nombreErreurs)</span></code></pre></div>
+<h4 id="remarques-3">Remarques</h4>
+<p>On peut signaler que <code>monInstance.maFonction(…)</code> est équivalent à <code>maFonction(monInstance,…)</code>.</p>
+<h3 id="exercice-k">Exercice <em>k</em></h3>
+<h4 id="particularités-9">Particularités</h4>
+<ul>
+<li>Utilisation d&#39;une variable globale comme constante ;</li>
+<li>type booléen ;</li>
+<li>manipulation d&#39;une instance de classe.</li>
+</ul>
+<h4 id="solution-8">Solution</h4>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">class</span> Pendu:</span>
+<span id="cb20-2"><a href="#cb20-2"></a>  <span class="kw">def</span> raz(<span class="va">self</span>,suggestion,motAuHasard):</span>
+<span id="cb20-3"><a href="#cb20-3"></a>    <span class="va">self</span>.motSecret <span class="op">=</span> choisirMot(suggestion,motAuHasard)</span>
+<span id="cb20-4"><a href="#cb20-4"></a>    <span class="va">self</span>.bonnesPioches <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a>    <span class="va">self</span>.nombreErreurs <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb20-6"><a href="#cb20-6"></a></span>
+<span id="cb20-7"><a href="#cb20-7"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb20-8"><a href="#cb20-8"></a>    <span class="va">self</span>.motSecret <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb20-9"><a href="#cb20-9"></a>    <span class="va">self</span>.bonnesPioches <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb20-10"><a href="#cb20-10"></a>    <span class="va">self</span>.nombreErreurs <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb20-11"><a href="#cb20-11"></a>    </span>
+<span id="cb20-12"><a href="#cb20-12"></a>  <span class="kw">def</span> traiterEtTesterPioche(<span class="va">self</span>,pioche):</span>
+<span id="cb20-13"><a href="#cb20-13"></a>    <span class="cf">if</span> isLetterInWord(pioche,<span class="va">self</span>.motSecret):</span>
+<span id="cb20-14"><a href="#cb20-14"></a>      <span class="cf">if</span> <span class="kw">not</span> isLetterInWord(pioche,<span class="va">self</span>.bonnesPioches):</span>
+<span id="cb20-15"><a href="#cb20-15"></a>        <span class="va">self</span>.bonnesPioches <span class="op">+=</span> pioche</span>
+<span id="cb20-16"><a href="#cb20-16"></a>      <span class="cf">return</span> VRAI</span>
+<span id="cb20-17"><a href="#cb20-17"></a>    <span class="cf">else</span>:</span>
+<span id="cb20-18"><a href="#cb20-18"></a>      <span class="va">self</span>.nombreErreurs <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb20-19"><a href="#cb20-19"></a>      <span class="cf">return</span> FAUX</span>
+<span id="cb20-20"><a href="#cb20-20"></a></span>
+<span id="cb20-21"><a href="#cb20-21"></a></span>
+<span id="cb20-22"><a href="#cb20-22"></a><span class="kw">def</span> raz(pendu,suggestion,motAuHasard):</span>
+<span id="cb20-23"><a href="#cb20-23"></a>  pendu.raz(suggestion,motAuHasard)</span>
+<span id="cb20-24"><a href="#cb20-24"></a>  <span class="bu">print</span>(pendu.motSecret)</span>
+<span id="cb20-25"><a href="#cb20-25"></a>  afficher(donnerMasque(pendu.motSecret,<span class="st">&quot;&quot;</span>))</span>
+<span id="cb20-26"><a href="#cb20-26"></a></span>
+<span id="cb20-27"><a href="#cb20-27"></a>  <span class="cf">if</span> DIVULGUER_MOT_SECRET:</span>
+<span id="cb20-28"><a href="#cb20-28"></a>    divulguerMotSecret( pendu.motSecret )</span>
+<span id="cb20-29"><a href="#cb20-29"></a>  </span>
+<span id="cb20-30"><a href="#cb20-30"></a></span>
+<span id="cb20-31"><a href="#cb20-31"></a><span class="kw">def</span> traiterPioche(pendu,pioche):</span>
+<span id="cb20-32"><a href="#cb20-32"></a>  <span class="cf">if</span> pendu.traiterEtTesterPioche(pioche):</span>
+<span id="cb20-33"><a href="#cb20-33"></a>    afficher(donnerMasque(pendu.motSecret,pendu.bonnesPioches))</span>
+<span id="cb20-34"><a href="#cb20-34"></a>  <span class="cf">else</span>:</span>
+<span id="cb20-35"><a href="#cb20-35"></a>    majCorps(pendu.nombreErreurs)</span></code></pre></div>
+<h4 id="remarques-4">Remarques</h4>
+<p>Néant</p>
+<h3 id="exercice-l">Exercice <em>l</em></h3>
+<h4 id="particularités-10">Particularités</h4>
+<ul>
+<li>Renvoi de plusieurs valeurs par une fonction ;</li>
+<li>construction d&#39;une chaîne de caractères avec le contenu de variables ;</li>
+<li>récupération des valeurs retournées par une fonction.</li>
+</ul>
+<h4 id="solution-9">Solution</h4>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># Remplace &#39;donnerMasque(…)&#39;</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="kw">def</span> donnerMasqueEtTesterSiVictoire(mot,pioches):</span>
+<span id="cb21-3"><a href="#cb21-3"></a>  masque <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb21-4"><a href="#cb21-4"></a>  victoire <span class="op">=</span> VRAI</span>
+<span id="cb21-5"><a href="#cb21-5"></a></span>
+<span id="cb21-6"><a href="#cb21-6"></a>  <span class="cf">for</span> lettre <span class="kw">in</span> mot:</span>
+<span id="cb21-7"><a href="#cb21-7"></a>    <span class="cf">if</span> lettreEstDansMot(lettre,pioches):</span>
+<span id="cb21-8"><a href="#cb21-8"></a>      masque <span class="op">+=</span> lettre</span>
+<span id="cb21-9"><a href="#cb21-9"></a>    <span class="cf">else</span>:</span>
+<span id="cb21-10"><a href="#cb21-10"></a>      masque <span class="op">+=</span> <span class="st">&quot;_&quot;</span></span>
+<span id="cb21-11"><a href="#cb21-11"></a>      victoire <span class="op">=</span> FAUX</span>
+<span id="cb21-12"><a href="#cb21-12"></a></span>
+<span id="cb21-13"><a href="#cb21-13"></a>  <span class="cf">return</span> masque,victoire    </span>
+<span id="cb21-14"><a href="#cb21-14"></a></span>
+<span id="cb21-15"><a href="#cb21-15"></a></span>
+<span id="cb21-16"><a href="#cb21-16"></a><span class="co"># Remplace &#39;majCorps(…)&#39;</span></span>
+<span id="cb21-17"><a href="#cb21-17"></a><span class="kw">def</span> majCorpsEtTesterSiDefaite(nombreErreurs):</span>
+<span id="cb21-18"><a href="#cb21-18"></a>  <span class="cf">if</span> nombreErreurs <span class="op">&lt;=</span> <span class="bu">len</span>(PARTIES_CORPS)</span>
+<span id="cb21-19"><a href="#cb21-19"></a>    dessinerPartieCorps(PARTIES_CORPS[nombreErreurs<span class="dv">-1</span>])</span>
+<span id="cb21-20"><a href="#cb21-20"></a></span>
+<span id="cb21-21"><a href="#cb21-21"></a>  <span class="cf">return</span> nombreErreurs <span class="op">&gt;=</span> ( P_NOMBRE <span class="op">-</span> <span class="dv">1</span> )</span>
+<span id="cb21-22"><a href="#cb21-22"></a></span>
+<span id="cb21-23"><a href="#cb21-23"></a></span>
+<span id="cb21-24"><a href="#cb21-24"></a><span class="kw">class</span> Pendu:</span>
+<span id="cb21-25"><a href="#cb21-25"></a>  <span class="kw">def</span> raz(<span class="va">self</span>,suggestion,motAuHasard):</span>
+<span id="cb21-26"><a href="#cb21-26"></a>    <span class="va">self</span>.motSecret <span class="op">=</span> choisirMot(suggestion,motAuHasard)</span>
+<span id="cb21-27"><a href="#cb21-27"></a>    <span class="va">self</span>.bonnesPioches <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb21-28"><a href="#cb21-28"></a>    <span class="va">self</span>.nombreErreurs <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb21-29"><a href="#cb21-29"></a>    <span class="va">self</span>.enCours <span class="op">=</span> VRAI</span>
+<span id="cb21-30"><a href="#cb21-30"></a></span>
+<span id="cb21-31"><a href="#cb21-31"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb21-32"><a href="#cb21-32"></a>    <span class="va">self</span>.motSecret <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb21-33"><a href="#cb21-33"></a>    <span class="va">self</span>.bonnesPioches <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb21-34"><a href="#cb21-34"></a>    <span class="va">self</span>.nombreErreurs <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb21-35"><a href="#cb21-35"></a>    <span class="va">self</span>.enCours <span class="op">=</span> FAUX</span>
+<span id="cb21-36"><a href="#cb21-36"></a>    </span>
+<span id="cb21-37"><a href="#cb21-37"></a>  <span class="kw">def</span> traiterEtTesterPioche(<span class="va">self</span>,pioche):</span>
+<span id="cb21-38"><a href="#cb21-38"></a>    <span class="cf">if</span> lettreEstDansMot(pioche,<span class="va">self</span>.motSecret):</span>
+<span id="cb21-39"><a href="#cb21-39"></a>      <span class="cf">if</span> <span class="kw">not</span> lettreEstDansMot(pioche,<span class="va">self</span>.bonnesPioches):</span>
+<span id="cb21-40"><a href="#cb21-40"></a>        <span class="va">self</span>.bonnesPioches <span class="op">+=</span> pioche</span>
+<span id="cb21-41"><a href="#cb21-41"></a>      <span class="cf">return</span> VRAI</span>
+<span id="cb21-42"><a href="#cb21-42"></a>    <span class="cf">else</span>:</span>
+<span id="cb21-43"><a href="#cb21-43"></a>      <span class="va">self</span>.nombreErreurs <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb21-44"><a href="#cb21-44"></a>      <span class="cf">return</span> FAUX</span>
+<span id="cb21-45"><a href="#cb21-45"></a></span>
+<span id="cb21-46"><a href="#cb21-46"></a></span>
+<span id="cb21-47"><a href="#cb21-47"></a><span class="kw">def</span> donnerMasqueEtTesterSiVictoire(mot,pioches):</span>
+<span id="cb21-48"><a href="#cb21-48"></a>  masque <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb21-49"><a href="#cb21-49"></a>  victoire <span class="op">=</span> VRAI</span>
+<span id="cb21-50"><a href="#cb21-50"></a></span>
+<span id="cb21-51"><a href="#cb21-51"></a>  <span class="cf">for</span> lettre <span class="kw">in</span> mot:</span>
+<span id="cb21-52"><a href="#cb21-52"></a>    <span class="cf">if</span> lettreEstDansMot(lettre,pioches):</span>
+<span id="cb21-53"><a href="#cb21-53"></a>      masque <span class="op">+=</span> lettre</span>
+<span id="cb21-54"><a href="#cb21-54"></a>    <span class="cf">else</span>:</span>
+<span id="cb21-55"><a href="#cb21-55"></a>      masque <span class="op">+=</span> <span class="st">&quot;_&quot;</span></span>
+<span id="cb21-56"><a href="#cb21-56"></a>      victoire <span class="op">=</span> FAUX</span>
+<span id="cb21-57"><a href="#cb21-57"></a></span>
+<span id="cb21-58"><a href="#cb21-58"></a>  <span class="cf">return</span> masque,victoire</span>
+<span id="cb21-59"><a href="#cb21-59"></a></span>
+<span id="cb21-60"><a href="#cb21-60"></a></span>
+<span id="cb21-61"><a href="#cb21-61"></a><span class="kw">def</span> majCorpsEtTesterSiDefaite(nombreErreurs):</span>
+<span id="cb21-62"><a href="#cb21-62"></a>  majCorps(nombreErreurs)</span>
+<span id="cb21-63"><a href="#cb21-63"></a></span>
+<span id="cb21-64"><a href="#cb21-64"></a>  <span class="cf">return</span> nombreErreurs <span class="op">&gt;=</span> ( P_NOMBRE <span class="op">-</span> <span class="dv">1</span> )</span>
+<span id="cb21-65"><a href="#cb21-65"></a></span>
+<span id="cb21-66"><a href="#cb21-66"></a></span>
+<span id="cb21-67"><a href="#cb21-67"></a><span class="kw">def</span> traiterPioche(pendu,pioche):</span>
+<span id="cb21-68"><a href="#cb21-68"></a>  <span class="cf">if</span> pendu.traiterEtTesterPioche(pioche):</span>
+<span id="cb21-69"><a href="#cb21-69"></a>    masque,victoire <span class="op">=</span> donnerMasqueEtTesterSiVictoire(pendu.motSecret,pendu.bonnesPioches)</span>
+<span id="cb21-70"><a href="#cb21-70"></a>    afficher(masque)</span>
+<span id="cb21-71"><a href="#cb21-71"></a>    <span class="cf">if</span> victoire <span class="kw">and</span> pendu.enCours:</span>
+<span id="cb21-72"><a href="#cb21-72"></a>      notifier(<span class="st">&quot;Tu as gagné ! Félicitations !&quot;</span>)</span>
+<span id="cb21-73"><a href="#cb21-73"></a>      pendu.enCours <span class="op">=</span> FAUX</span>
+<span id="cb21-74"><a href="#cb21-74"></a>  <span class="cf">elif</span> pendu.enCours <span class="kw">and</span> majCorpsEtTesterSiDefaite(pendu.nombreErreurs):</span>
+<span id="cb21-75"><a href="#cb21-75"></a>    notifier(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Perdu !</span><span class="ch">\n</span><span class="st">Erreurs : </span><span class="sc">{}</span><span class="st"> ; bonnes pioches : </span><span class="sc">{}</span><span class="st">.</span><span class="ch">\n\n</span><span class="st">Le mot à deviner était : &#39;</span><span class="sc">{}</span><span class="st">&#39;.&quot;</span></span>
+<span id="cb21-76"><a href="#cb21-76"></a>             .<span class="bu">format</span>(pendu.nombreErreurs,<span class="bu">len</span>(pendu.bonnesPioches),pendu.motSecret))</span>
+<span id="cb21-77"><a href="#cb21-77"></a>    pendu.enCours <span class="op">=</span> FAUX</span>
+<span id="cb21-78"><a href="#cb21-78"></a></span>
+<span id="cb21-79"><a href="#cb21-79"></a></span>
+<span id="cb21-80"><a href="#cb21-80"></a><span class="kw">def</span> raz(pendu,suggestion,motAuHasard):</span>
+<span id="cb21-81"><a href="#cb21-81"></a>  pendu.raz(suggestion,motAuHasard)</span>
+<span id="cb21-82"><a href="#cb21-82"></a>  <span class="bu">print</span>(pendu.motSecret)</span>
+<span id="cb21-83"><a href="#cb21-83"></a>  afficher(donnerMasqueEtTesterSiVictoire(pendu.motSecret,<span class="st">&quot;&quot;</span>)[<span class="dv">0</span>])</span>
+<span id="cb21-84"><a href="#cb21-84"></a></span>
+<span id="cb21-85"><a href="#cb21-85"></a>  <span class="cf">if</span> DIVULGUER_MOT_SECRET:</span>
+<span id="cb21-86"><a href="#cb21-86"></a>    divulguerMotSecret(pendu.motSecret)</span>
+<span id="cb21-87"><a href="#cb21-87"></a></span>
+<span id="cb21-88"><a href="#cb21-88"></a></span>
+<span id="cb21-89"><a href="#cb21-89"></a><span class="kw">def</span> AConnexion(pendu,suggestion,motAuHasard):</span>
+<span id="cb21-90"><a href="#cb21-90"></a>  <span class="cf">return</span> raz(pendu,suggestion,motAuHasard)</span>
+<span id="cb21-91"><a href="#cb21-91"></a></span>
+<span id="cb21-92"><a href="#cb21-92"></a></span>
+<span id="cb21-93"><a href="#cb21-93"></a><span class="kw">def</span> APioche(pendu,pioche):</span>
+<span id="cb21-94"><a href="#cb21-94"></a>  traiterPioche(pendu,pioche)</span>
+<span id="cb21-95"><a href="#cb21-95"></a></span>
+<span id="cb21-96"><a href="#cb21-96"></a></span>
+<span id="cb21-97"><a href="#cb21-97"></a><span class="kw">def</span> ARelance(pendu,suggestion,motAuHasard):</span>
+<span id="cb21-98"><a href="#cb21-98"></a>  <span class="cf">if</span> pendu.enCours:</span>
+<span id="cb21-99"><a href="#cb21-99"></a>    notifier(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Erreurs : </span><span class="sc">{}</span><span class="st"> ; bonnes pioches : </span><span class="sc">{}</span><span class="st">.</span><span class="ch">\n\n</span><span class="st">Le mot à deviner était : &#39;</span><span class="sc">{}</span><span class="st">&#39;.&quot;</span></span>
+<span id="cb21-100"><a href="#cb21-100"></a>             .<span class="bu">format</span>(pendu.nombreErreurs,<span class="bu">len</span>(pendu.bonnesPioches),pendu.motSecret))</span>
+<span id="cb21-101"><a href="#cb21-101"></a></span>
+<span id="cb21-102"><a href="#cb21-102"></a>  raz(pendu,suggestion,motAuHasard)</span></code></pre></div>
+<h4 id="remarques-5">Remarques</h4>
+<p>Pour la construction des chaînes de caractères passées à <code>notifier(…)</code>, on peut, dans un premier temps, utilisés l&#39;écriture <code>notifier(… + … + …)</code>.</p>
 </body>
 </html>

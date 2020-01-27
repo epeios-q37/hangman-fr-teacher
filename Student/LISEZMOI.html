@@ -156,6 +156,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#exercice-g">Exercice <em>g</em></a></li>
 <li><a href="#exercice-h">Exercice <em>h</em></a></li>
 <li><a href="#exercice-i">Exercice <em>i</em></a></li>
+<li><a href="#exercice-j">Exercice <em>j</em></a></li>
+<li><a href="#exercice-k">Exercice <em>k</em></a></li>
+<li><a href="#exercice-l">Exercice <em>l</em></a></li>
 </ul></li>
 </ul>
 </nav>
@@ -366,7 +369,7 @@ Sinon<br />
 <li><code>mot</code> est une chaîne de caractères contenant le mot à deviner ;</li>
 <li><code>pioches</code> étant une chaîne de caractère contenant les lettres choisies par le joueur ;</li>
 </ul>
-<p>écrire le code de la fonction <code>donnerMasque</code> pour qu&#39;elle retourne <code>mot</code>, mais dont les lettres qui ne sont pas contenus dans <code>pioches</code> sont remplacées par le caractère <code>_</code>.</p>
+<p>écrire le code de la fonction <code>donnerMasque</code> pour qu&#39;elle retourne <code>mot</code>, mais dont les lettres qui ne sont pas contenues dans <code>pioches</code> sont remplacées par le caractère <code>_</code>.</p>
 <h3 id="pseudo-code-4">Pseudo-code</h3>
 <blockquote>
 <p>Mettre une chaîne de caractères vide dans <code>masque</code></p>
@@ -383,7 +386,7 @@ Sinon<br />
 <p>Sachant que le contenu du masque est affiché dans le cadre au-dessus du clavier :</p>
 <ul>
 <li>au lancement, le masque doit être constitué d&#39;un nombre de <code>_</code> égal au nombre de caractères du mot à deviner ;</li>
-<li>cliquer sur une lettre contenue dans le mot à deviner : toutes les occurrences de cette lettre contenus dans le mot à deviner doivent être dévoilées, en plus des lettres déjà dévoilées ;</li>
+<li>cliquer sur une lettre contenue dans le mot à deviner : toutes les occurrences de cette lettre contenues dans le mot à deviner doivent être dévoilées, en plus des lettres déjà dévoilées ;</li>
 <li>cliquer sur une lettre qui n&#39;est <strong>pas</strong> contenue dans le mot à deviner : rien ne doit se passer ;</li>
 <li>tester des mots contenant plusieurs fois la même lettre pour vérifier que toutes les occurrences d&#39;une même lettre soient bien dévoilées.</li>
 </ul>
@@ -408,7 +411,7 @@ Sinon<br />
 <h3 id="tâche">Tâche</h3>
 <p>Sachant que :</p>
 <ul>
-<li><code>nombreErreurs</code> est le nombre d&#39;erreurs commises par le joueur, c&#39;est-à-dire le nombre de lettres qu&#39;il a choisi est qui ne sont pas contenus dans le mot à deviner ;</li>
+<li><code>nombreErreurs</code> est le nombre d&#39;erreurs commises par le joueur, c&#39;est-à-dire le nombre de lettres qu&#39;il a choisi est qui ne sont pas contenues dans le mot à deviner ;</li>
 </ul>
 <p>écrire le code de la fonction <code>majCorps</code> pour qu&#39;elle dessine la partie du corps correspondant au nombre d&#39;erreurs.</p>
 <p>Pour cette tâche, utiliser la fonction <code>dessinerPartieCorps</code> qui prend, comme paramètre, une des valeurs suivantes :</p>
@@ -502,16 +505,16 @@ Sinon si <code>nombreErreurs</code> est égal à 3<br />
 <p>Gérer la lettre sélectionnée par le joueur, de manière à mettre à jour, soit le masque, soit le dessin du pendu en fonction de la présence ou de l&#39;absence dans le mot secret de la lettre sélectionnée (piochée) par le joueur.</p>
 <h3 id="préparation-8">Préparation</h3>
 <ul>
-<li>Dans la première ligne, remplacer le <code>g</code> par un <code>h</code> ;</li>
+<li>Dans la première ligne, remplacer le <code>h</code> par un <code>i</code> ;</li>
 <li>ajouter les lignes suivantes avant la dernière instruction du fichier :
 <ul>
 <li><code>bonnesPioches = &quot;&quot;</code>,</li>
-<li><code>nbErreurs = 0</code>,</li>
+<li><code>nombreErreurs = 0</code>,</li>
 <li><code>def raz(suggestion,motAuHasard):</code>,</li>
 <li><code>def traiterPioche(pioche,motSecret):</code>.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="im">from</span> workshop.fr.h <span class="im">import</span> <span class="op">*</span></span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="im">from</span> workshop.fr.i <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a></span>
 <span id="cb10-3"><a href="#cb10-3"></a>…</span>
 <span id="cb10-4"><a href="#cb10-4"></a></span>
@@ -521,7 +524,7 @@ Sinon si <code>nombreErreurs</code> est égal à 3<br />
 <span id="cb10-8"><a href="#cb10-8"></a></span>
 <span id="cb10-9"><a href="#cb10-9"></a></span>
 <span id="cb10-10"><a href="#cb10-10"></a>bonnesPioches <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
-<span id="cb10-11"><a href="#cb10-11"></a>nbErreurs <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb10-11"><a href="#cb10-11"></a>nombreErreurs <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb10-12"><a href="#cb10-12"></a></span>
 <span id="cb10-13"><a href="#cb10-13"></a></span>
 <span id="cb10-14"><a href="#cb10-14"></a><span class="kw">def</span> raz(suggestion,motAuHasard):</span>
@@ -534,7 +537,7 @@ Sinon si <code>nombreErreurs</code> est égal à 3<br />
 <h3 id="tâches-7">Tâches</h3>
 <ul>
 <li><code>bonnesPioches</code> est une <strong>chaîne de caractères</strong> globale qui contiendra les lettres sélectionnées par le joueur et qui sont contenues dans le mot secret ;</li>
-<li><code>nbErreurs</code> est un <strong>entier</strong> global qui contiendra le nombre de lettres sélectionnées par le joueurs et qui ne sont <strong>pas</strong> contenues dans le mot secret.</li>
+<li><code>nombreErreurs</code> est un <strong>entier</strong> global qui contiendra le nombre de lettres sélectionnées par le joueurs et qui ne sont <strong>pas</strong> contenues dans le mot secret.</li>
 </ul>
 <h4 id="fonction-raz">Fonction <code>raz</code></h4>
 <p>Sachant que :</p>
@@ -549,7 +552,7 @@ Sinon si <code>nombreErreurs</code> est égal à 3<br />
 </ul>
 <p>écrire le code de cette fonction pour :</p>
 <ul>
-<li>réinitialiser les deux variables globales <code>bonnesPioches</code> et <code>nbErreurs</code> ;</li>
+<li>réinitialiser les deux variables globales <code>bonnesPioches</code> et <code>nombreErreurs</code> ;</li>
 <li>stocker dans <code>motSecret</code> un nouveau mot secret, en utilisant l&#39;une des fonctions développées précédemment ;</li>
 <li>afficher le masque correspondant au mot stocké dans <code>motSecret</code> :
 <ul>
@@ -558,7 +561,7 @@ Sinon si <code>nombreErreurs</code> est égal à 3<br />
 </ul></li>
 <li>retourner <code>motSecret</code>.</li>
 </ul>
-<p>Contrairement à <code>bonnesPioches</code> et <code>nbErreurs</code>, qui sont des variable <strong>globales</strong>, <code>motSecret</code> devra être une variable <strong>locale</strong>.</p>
+<p>Contrairement à <code>bonnesPioches</code> et <code>nombreErreurs</code>, qui sont des variable <strong>globales</strong>, <code>motSecret</code> devra être une variable <strong>locale</strong>.</p>
 <p>Le dessin du pendu est effacé automatiquement lorsque l&#39;on clique sur <code>Recommencer</code>.</p>
 <h4 id="fonction-traiterpioche">Fonction <code>traiterPioche</code></h4>
 <p>Sachant que :</p>
@@ -575,7 +578,7 @@ Sinon si <code>nombreErreurs</code> est égal à 3<br />
 </ul></li>
 <li>si <code>pioche</code> n&#39;est <strong>pas</strong> contenu dans <code>motSecret</code> :
 <ul>
-<li>incrémenter la variable globale <code>nbErreurs</code>,</li>
+<li>incrémenter la variable globale <code>nombreErreurs</code>,</li>
 <li>mettre à jour le dessin du pendu.</li>
 </ul></li>
 </ul>
@@ -594,12 +597,446 @@ Sinon si <code>nombreErreurs</code> est égal à 3<br />
   Ajouter <code>pioche</code> à <code>bonnePioches</code><br />
   Afficher le nouveau masque<br />
 Sinon<br />
-  Incrémenter <code>nbErreurs</code><br />
+  Incrémenter <code>nombreErreurs</code><br />
   Complèter le dessin du pendu</p>
 </blockquote>
 <h3 id="aperçu-8">Aperçu</h3>
 <p>Identique à celui de l&#39;exercice précédent.</p>
 <h3 id="tests-7">Tests</h3>
 <p>Identiques à ceux de l&#39;exercice précédent.</p>
+<h2 id="exercice-j">Exercice <em>j</em></h2>
+<h3 id="objectifs-6">Objectifs</h3>
+<p>Comme vous avez pu le constater, la manière dont est codé l&#39;exercice precédent ne permet pas de jouer à ce jeu à plusieurs simultanément. L&#39;objectif de cet exercice est de remédier à cela, grâce à la programmation objet.</p>
+<h3 id="préparation-9">Préparation</h3>
+<ul>
+<li>Dans la première ligne, remplacer le <code>i</code> par un <code>j</code> ;</li>
+<li>supprimer la déclaration des variables <code>bonnesPioches</code> et <code>nombreErreurs</code> ;</li>
+<li>là où il y avait la déclaration de ces variables, placer le code suivant :</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">class</span> Pendu:</span>
+<span id="cb11-2"><a href="#cb11-2"></a>  <span class="kw">def</span> raz(<span class="va">self</span>):</span>
+<span id="cb11-3"><a href="#cb11-3"></a>    <span class="va">self</span>.bonnesPioches <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a>    <span class="va">self</span>.nombreErreurs <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a></span>
+<span id="cb11-6"><a href="#cb11-6"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb11-7"><a href="#cb11-7"></a>    <span class="va">self</span>.raz()</span>
+<span id="cb11-8"><a href="#cb11-8"></a>    </span>
+<span id="cb11-9"><a href="#cb11-9"></a>  <span class="kw">def</span> traiterEtTesterPioche(<span class="va">self</span>,pioche,motSecret):</span></code></pre></div>
+<ul>
+<li>dans les fonctions <code>raz(…)</code> et <code>traiterPioches(…)</code>
+<ul>
+<li>enlever la ligne <code>global bonnesPioches, nombreErreurs</code>,</li>
+<li>ajouter le paramètre <code>pendu</code> en première position dans leurs déclarations respectives.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="im">from</span> workshop.fr.h <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a></span>
+<span id="cb12-3"><a href="#cb12-3"></a>…</span>
+<span id="cb12-4"><a href="#cb12-4"></a></span>
+<span id="cb12-5"><a href="#cb12-5"></a></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="kw">def</span> majCorps(nombreErreurs):    </span>
+<span id="cb12-7"><a href="#cb12-7"></a>    …</span>
+<span id="cb12-8"><a href="#cb12-8"></a></span>
+<span id="cb12-9"><a href="#cb12-9"></a><span class="co"># Les déclarations des variables &#39;bonnesPioches&#39; et &#39;nombreErreurs&#39;</span></span>
+<span id="cb12-10"><a href="#cb12-10"></a><span class="co"># qui étaient positionnées ici doivent être supprimées.</span></span>
+<span id="cb12-11"><a href="#cb12-11"></a></span>
+<span id="cb12-12"><a href="#cb12-12"></a><span class="kw">class</span> Pendu:</span>
+<span id="cb12-13"><a href="#cb12-13"></a>  <span class="kw">def</span> raz(<span class="va">self</span>):</span>
+<span id="cb12-14"><a href="#cb12-14"></a>    <span class="va">self</span>.bonnesPioches <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb12-15"><a href="#cb12-15"></a>    <span class="va">self</span>.nombreErreurs <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb12-16"><a href="#cb12-16"></a></span>
+<span id="cb12-17"><a href="#cb12-17"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb12-18"><a href="#cb12-18"></a>    <span class="va">self</span>.raz()</span>
+<span id="cb12-19"><a href="#cb12-19"></a>    </span>
+<span id="cb12-20"><a href="#cb12-20"></a>  <span class="kw">def</span> traiterEtTesterPioche(<span class="va">self</span>,pioche,motSecret):</span>
+<span id="cb12-21"><a href="#cb12-21"></a></span>
+<span id="cb12-22"><a href="#cb12-22"></a></span>
+<span id="cb12-23"><a href="#cb12-23"></a><span class="kw">def</span> raz(pendu,suggestion,motAuHasard):</span>
+<span id="cb12-24"><a href="#cb12-24"></a><span class="co"># La ligne &#39;global bonnesPioches, nombreErreurs&#39; présente ici doit être supprimée.</span></span>
+<span id="cb12-25"><a href="#cb12-25"></a><span class="co"># Le reste du code doit être conservé.</span></span>
+<span id="cb12-26"><a href="#cb12-26"></a>    …</span>
+<span id="cb12-27"><a href="#cb12-27"></a>  </span>
+<span id="cb12-28"><a href="#cb12-28"></a></span>
+<span id="cb12-29"><a href="#cb12-29"></a><span class="kw">def</span> traiterPioche(pendu,pioche,motSecret):</span>
+<span id="cb12-30"><a href="#cb12-30"></a><span class="co"># La ligne &#39;global bonnesPioches, nombreErreurs&#39; présente ici doit être supprimée.</span></span>
+<span id="cb12-31"><a href="#cb12-31"></a><span class="co"># Le reste du code doit être conservé.</span></span>
+<span id="cb12-32"><a href="#cb12-32"></a>    …</span>
+<span id="cb12-33"><a href="#cb12-33"></a></span>
+<span id="cb12-34"><a href="#cb12-34"></a>go(<span class="bu">globals</span>())    </span></code></pre></div>
+<h3 id="tâches-8">Tâches</h3>
+<p>Au lieu d&#39;être globales à tout le programme, les variables <code>bonnesPioches</code> et <code>nombreErreurs</code> sont maintenant rattachées à une classe appelée <code>Pendu</code>. Une instance de cette classe est crée pour chaque joueur, et est accessible via le paramètre <code>pendu</code> passé aux fonctions <code>raz(…)</code> et <code>traiterPioche(…)</code>.</p>
+<p>Pour accèder aux membre de cette instance, on utilisera l&#39;écriture <code>pendu.&lt;variable ou méthode&gt;</code>. Ainsi, <code>pendu.nombreErreurs</code> donne accès à la variable <code>nombreErreurs</code> de la classe <code>Pendu</code>, et <code>pendu.raz()</code> appellera la méthode <code>raz</code> de cette même classe.</p>
+<p>Dans le cas de méthodes, le premier paramètre, nommé par convention <code>self</code>, est l&#39;instance à partir de laquelle cette fonction a été appelée. Ainsi, en appelant <code>pendu.raz()</code>, le paramètre <code>self</code> de la méthode <code>raz</code> référence la même instance de la classe <code>Pendu</code> que la variable <code>pendu</code>.</p>
+<h4 id="méthode-pendutraiterettesterpioche">Méthode <code>Pendu.traiterEtTesterPioche</code></h4>
+<p>Sachant que :</p>
+<ul>
+<li><code>self</code> est l&#39;instance de la classe <code>Pendu</code> ;</li>
+<li><code>pioche</code> contient la lettre sélectionnée par le joueur ;</li>
+<li><code>motSecret</code> étant le mot à deviner ;</li>
+</ul>
+<p>écrire le code de la méthode <code>Pendu.traiterEtTesterPioche</code> pour qu&#39;elle :</p>
+<ul>
+<li>remplisse les même fonctionnalités que la fonction <code>traiterPioche(…)</code> de l&#39;exercice précedent, mais en utilisant le paramètre <code>self</code> pour accèder aux variables <code>bonnesPioches</code> et <code>nombreErreurs</code> de la classe <code>Pendu</code> (<code>self.bonnesPioches</code> et <code>self.nombreErreurs</code>) ;</li>
+<li>retourne :
+<ul>
+<li><code>VRAI</code> lorsque <code>pioche</code> est présent dans <code>motSecret</code>,</li>
+<li><code>FAUX</code> lorsque <code>pioche</code> n&#39;est <strong>pas</strong> présent dans <code>motSecret</code>.</li>
+</ul></li>
+</ul>
+<h4 id="fonction-raz-2">Fonction <code>raz</code></h4>
+<p>Sachant que :</p>
+<ul>
+<li><code>pendu</code> est une instance de la classe <code>Pendu</code> ;</li>
+<li><code>suggestion</code> est le contenu du champ de saisie ;</li>
+<li><code>motAuHasard</code> est un mot choisi au hasard ;</li>
+<li>cette fonction est appelée dans les mêmes conditions que la fonction homonyme de l&#39;exercice précédent ;</li>
+</ul>
+<p>écrire le code de la fonction <code>raz</code> de manière à ce qu&#39;elle remplisse les même fonctionnalités que dans l&#39;exercice précédent, en utilisant la méthode <code>Pendu.raz</code> pour réinitialiser les variables.</p>
+<h4 id="fonction-traiterpioche-2">Fonction <code>traiterPioche</code></h4>
+<p>Sachant que :</p>
+<ul>
+<li><code>pendu</code> est une instance de la classe <code>Pendu</code> ;</li>
+<li><code>pioche</code> contient la lettre sélectionnée par le joueur ;</li>
+<li><code>motSecret</code> contient le mot à deviner tel que retourné par la fonction <code>raz(…)</code> ci-dessus ;</li>
+</ul>
+<p>écrire le code de la fonction <code>traiterPioche</code> de manière à ce qu&#39;elle remplisse les même fonctionnalités que dans l&#39;exercice précédent, en utilisant la méthode <code>Pendu.traiterEtTesterPioche</code> développée précédemment.</p>
+<h3 id="pseudo-code-9">Pseudo-code</h3>
+<h4 id="méthode-pendutraiterettesterpioche-1">Méthode <code>Pendu.traiterEtTesterPioche</code></h4>
+<blockquote>
+<p>Si <code>pioche</code> est contenu dans <code>motSecret</code><br />
+  Ajouter <code>pioche</code> à <code>bonnePioches</code><br />
+  Retourner <code>VRAI</code><br />
+Sinon<br />
+  Incrémenter <code>nombreErreurs</code><br />
+  Retourner <code>FAUX</code></p>
+</blockquote>
+<h4 id="fonction-raz-3">Fonction <code>raz</code></h4>
+<blockquote>
+<p>Réinitialiser <code>pendu</code></p>
+<p>Choisir un nouveau mot à deviner</p>
+<p>Afficher le masque correspondant à ce nouveau mot à deviner</p>
+<p>Retourner ce nouveau mot à deviner</p>
+</blockquote>
+<h4 id="fonction-traiterpioche-3">Fonction <code>traiterPioche</code></h4>
+<blockquote>
+<p>Si <code>pendu.traiterEtTesterPioche(pioche,motSecret)</code> retourne <code>VRAI</code><br />
+  Afficher le nouveau masque<br />
+Sinon<br />
+  Complèter le dessin du pendu</p>
+</blockquote>
+<h4 id="aperçu-9">Aperçu</h4>
+<p>Identique à celui de l&#39;exercice précedent.</p>
+<h4 id="tests-8">Tests</h4>
+<p>Identiques à ceux de l&#39;exercice précédent, en vérifiant que cela fonctionne également avec plusieurs joueurs simultanés.</p>
+<h2 id="exercice-k">Exercice <em>k</em></h2>
+<h3 id="objectifs-7">Objectifs</h3>
+<p>Prendre en charge la gestion du mot à deviner ainsi que sa (non-)divulgation en fonction de la valeur de la variable globale <code>DIVULGUER_MOT_SECRET</code>.</p>
+<h3 id="préparation-10">Préparation</h3>
+<ul>
+<li>Dans la première ligne, remplacer le <code>j</code> par un <code>k</code> ;</li>
+<li>dans la méthode <code>Pendu.raz</code>, ajouter les paramètres <code>suggestion</code> et <code>motAuHasard</code> ;</li>
+<li>dans le constructeur <code>Pendu.__init__(self)</code>, ajouter la ligne <code>self.motSecret = &quot;&quot;</code> ;</li>
+<li>retirer le paramètre <code>motSecret</code> de la fonction <code>traiterPioche</code>.</li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="im">from</span> workshop.fr.k <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a></span>
+<span id="cb13-3"><a href="#cb13-3"></a>…</span>
+<span id="cb13-4"><a href="#cb13-4"></a></span>
+<span id="cb13-5"><a href="#cb13-5"></a></span>
+<span id="cb13-6"><a href="#cb13-6"></a><span class="kw">def</span> majCorps(<span class="op">*</span>args):</span>
+<span id="cb13-7"><a href="#cb13-7"></a>  …</span>
+<span id="cb13-8"><a href="#cb13-8"></a></span>
+<span id="cb13-9"><a href="#cb13-9"></a></span>
+<span id="cb13-10"><a href="#cb13-10"></a><span class="kw">class</span> Pendu:</span>
+<span id="cb13-11"><a href="#cb13-11"></a>  <span class="kw">def</span> raz(<span class="va">self</span>,suggestion,motAuHasard):</span>
+<span id="cb13-12"><a href="#cb13-12"></a>    …</span>
+<span id="cb13-13"><a href="#cb13-13"></a></span>
+<span id="cb13-14"><a href="#cb13-14"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb13-15"><a href="#cb13-15"></a>    <span class="va">self</span>.motSecret <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb13-16"><a href="#cb13-16"></a>    <span class="va">self</span>.bonnesPioches <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb13-17"><a href="#cb13-17"></a>    <span class="va">self</span>.nombreErreurs <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb13-18"><a href="#cb13-18"></a>    </span>
+<span id="cb13-19"><a href="#cb13-19"></a>  <span class="kw">def</span> traiterEtTesterPioche(<span class="va">self</span>,pioche):</span>
+<span id="cb13-20"><a href="#cb13-20"></a>    …</span>
+<span id="cb13-21"><a href="#cb13-21"></a></span>
+<span id="cb13-22"><a href="#cb13-22"></a></span>
+<span id="cb13-23"><a href="#cb13-23"></a><span class="kw">def</span> raz(pendu,suggestion,motAuHasard):</span>
+<span id="cb13-24"><a href="#cb13-24"></a>  …</span>
+<span id="cb13-25"><a href="#cb13-25"></a>  </span>
+<span id="cb13-26"><a href="#cb13-26"></a></span>
+<span id="cb13-27"><a href="#cb13-27"></a><span class="kw">def</span> traiterPioche(pendu,pioche):</span>
+<span id="cb13-28"><a href="#cb13-28"></a>  …</span>
+<span id="cb13-29"><a href="#cb13-29"></a></span>
+<span id="cb13-30"><a href="#cb13-30"></a></span>
+<span id="cb13-31"><a href="#cb13-31"></a>go(<span class="bu">globals</span>())</span></code></pre></div>
+<h3 id="tâches-9">Tâches</h3>
+<h4 id="méthode-penduraz">Méthode <code>Pendu.raz</code></h4>
+<p>Sachant que :</p>
+<ul>
+<li><code>pendu</code> est une instance de la classe <code>Pendu</code> ;</li>
+<li><code>suggestion</code> est le contenu du champ de saisie ;</li>
+<li><code>motAuHasard</code> est un mot choisi au hasard ;</li>
+</ul>
+<p>modifier la méthode <code>Pendu.raz</code>, en s&#39;inspirant de la <strong>fonction</strong> <code>raz</code>, pour stocker, dans la variable membre <code>Pendu.motSecret</code>, un nouveau mot à deviner.</p>
+<h4 id="fonction-raz-4">Fonction <code>raz</code></h4>
+<p>Sachant que :</p>
+<ul>
+<li><code>pendu</code> est une instance de la classe <code>Pendu</code> ;</li>
+<li><code>suggestion</code> est le contenu du champ de saisie ;</li>
+<li><code>motAuHasard</code> est un mot choisi au hasard ;</li>
+</ul>
+<p>adapter la <strong>fonction</strong> <code>raz</code> pour prendre en compte les modifications de la <strong>méthode</strong> <code>Pendu.raz</code>, la gestion du mot à deviner ayant été déléguée à cette méthode de la classe <code>Pendu</code>.</p>
+<p>Sachant qu&#39;il existe une fonction <code>divulguerMotSecret(…)</code> qui affiche, afin de facilité les tests, la chaîne de caractère passée en paramètre, modifier la fonction <code>raz</code> de manière à afficher ou non le mot secret en fonction de la valeur de la variable globale <code>DIVULGUER_MOT_SECRET</code>.</p>
+<p>Sachant que l&#39;on gère maintenant le mao à deviner <code>motSecret</code>, il n&#39;est <strong>plus</strong> utile :</p>
+<ul>
+<li>d&#39;utiliser une variable locale <code>motSecret</code> ;</li>
+<li>de retourner le mot à deviner.</li>
+</ul>
+<h4 id="fonction-traiterpioche-4">Fonction <code>traiterPioche</code></h4>
+<p>Sachant que :</p>
+<ul>
+<li><code>pendu</code> est une instance de la classe <code>Pendu</code> ;</li>
+<li><code>pioche</code> contient la lettre sélectionnée par le joueur ;</li>
+<li>le mot à deviner :
+<ul>
+<li>n&#39;est plus passé en paramètre à la fonction <code>traiterPioche</code> ;</li>
+<li>est stocké dans la variable membre de la classe pendu <code>Pendu.motSecret</code> ;</li>
+</ul></li>
+</ul>
+<p>modifier le code de la fonction <code>traiterPioche</code> en conséquence.</p>
+<h3 id="pseudo-code-10">Pseudo-code</h3>
+<h4 id="méthode-penduraz-1">Méthode <code>Pendu.raz</code></h4>
+<blockquote>
+<p>Affecter à <code>pendu.motSecret</code> un nouveau mot à deviner</p>
+<p>Réinitialiser les variables membres <code>Pendu.bonnesPioches</code> et <code>Pendu.nombreErreurs</code></p>
+</blockquote>
+<h4 id="fonction-raz-5">Fonction <code>raz</code></h4>
+<blockquote>
+<p>Réinitialiser <code>pendu</code></p>
+<p>Afficher le masque correspondant au nouveau mot à deviner stocké dans l&#39;instance de la classe <code>Pendu</code></p>
+<p>Si <code>DIVULGUER_MOT_SECRET</code> à <code>VRAI</code><br />
+  Divulguer le mot secret</p>
+</blockquote>
+<h4 id="fonction-traiterpioche-5">Fonction <code>traiterPioche</code></h4>
+<blockquote>
+<p>Si <code>pendu.traiterEtTesterPioche(pioche)</code> retourne <code>VRAI</code><br />
+  Afficher le nouveau masque<br />
+Sinon<br />
+  Complèter le dessin du pendu</p>
+</blockquote>
+<h4 id="aperçu-10">Aperçu</h4>
+<p>Identique à l&#39;exercice précédent, sauf dans le cas où <code>DIVULGUER_MOT_SECRET</code> est à <code>FAUX</code>, auquel cas le champ texte à gauche du bouton <code>Recommencer</code> ne doit pas s&#39;afficher.</p>
+<h4 id="tests-9">Tests</h4>
+<p>Identiques à ceux de l&#39;exercice précedent, en vérifiant que le champ texte à gauche du bouton <code>Recommencer</code> n&#39;est pas affiché lorsque <code>DIVULGUER_MOT_SECRET</code> est à <code>FAUX</code>.</p>
+<h2 id="exercice-l">Exercice <em>l</em></h2>
+<h3 id="objectifs-8">Objectifs</h3>
+<p>Gérer les fins de partie, afin de notifier au joueur qu&#39;il a gagné ou perdu, ainsi qu&#39;afficher le nombre d&#39;erreurs et les bonnes pioches lorsque le joueur interrompt une partie en cours pour en commencer une nouvelle.</p>
+<h3 id="préparation-11">Préparation</h3>
+<ul>
+<li>Renommer <code>donnerMasque</code> en <code>donnerMasqueEtTesterSiVictoire</code> ;</li>
+<li>renommer <code>majCorps</code> en <code>majCorpsEtTesterSiDefaite</code> ;</li>
+<li>dans la méthode <code>Pendu.raz</code>, ajouter la ligne <code>self.enCours = VRAI</code> ;</li>
+<li>dans le constructeur <code>Pendu.__init__</code>, ajouter la ligne <code>self.enCours = FAUX</code> ;</li>
+<li>ajouter les déclaration suivantes avant la dernière instruction (<code>go(globals())</code>) du fichier :
+<ul>
+<li><code>def AConnexion(pendu,suggestion,motAuHasard):</code>,</li>
+<li><code>def APioche(pendu,pioche):</code>,</li>
+<li><code>def ARelance(pendu,suggestion,motAuHasard):</code>.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="im">from</span> workshop.fr.k <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a></span>
+<span id="cb14-3"><a href="#cb14-3"></a>…</span>
+<span id="cb14-4"><a href="#cb14-4"></a></span>
+<span id="cb14-5"><a href="#cb14-5"></a></span>
+<span id="cb14-6"><a href="#cb14-6"></a><span class="kw">def</span> lettreEstDansMot(lettre,mot)</span>
+<span id="cb14-7"><a href="#cb14-7"></a>  …</span>
+<span id="cb14-8"><a href="#cb14-8"></a></span>
+<span id="cb14-9"><a href="#cb14-9"></a></span>
+<span id="cb14-10"><a href="#cb14-10"></a><span class="co"># Fonction &#39;donnerMasque&#39; renommée en `donnerMasqueEtTesterSiVictoire`.</span></span>
+<span id="cb14-11"><a href="#cb14-11"></a><span class="kw">def</span> donnerMasqueEtTesterSiVictoire(mot,pioches)</span>
+<span id="cb14-12"><a href="#cb14-12"></a>  …</span>
+<span id="cb14-13"><a href="#cb14-13"></a></span>
+<span id="cb14-14"><a href="#cb14-14"></a><span class="co"># Fonction &#39;majCorps&#39; renommée en &#39;majCorpsEtTesterSiDefaite&#39;.</span></span>
+<span id="cb14-15"><a href="#cb14-15"></a><span class="kw">def</span> majCorpsEtTesterSiDefaite(nombreErreurs):</span>
+<span id="cb14-16"><a href="#cb14-16"></a>  …</span>
+<span id="cb14-17"><a href="#cb14-17"></a>  <span class="va">self</span>.enCours <span class="op">=</span> VRAI</span>
+<span id="cb14-18"><a href="#cb14-18"></a></span>
+<span id="cb14-19"><a href="#cb14-19"></a></span>
+<span id="cb14-20"><a href="#cb14-20"></a><span class="kw">class</span> Pendu:</span>
+<span id="cb14-21"><a href="#cb14-21"></a>  <span class="kw">def</span> raz(<span class="va">self</span>,suggestion,motAuHasard):</span>
+<span id="cb14-22"><a href="#cb14-22"></a>    …</span>
+<span id="cb14-23"><a href="#cb14-23"></a></span>
+<span id="cb14-24"><a href="#cb14-24"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb14-25"><a href="#cb14-25"></a>    …</span>
+<span id="cb14-26"><a href="#cb14-26"></a>    <span class="va">self</span>.enCours <span class="op">=</span> FAUX</span>
+<span id="cb14-27"><a href="#cb14-27"></a>    </span>
+<span id="cb14-28"><a href="#cb14-28"></a>  <span class="kw">def</span> traiterEtTesterPioche(<span class="va">self</span>,pioche):</span>
+<span id="cb14-29"><a href="#cb14-29"></a>    …</span>
+<span id="cb14-30"><a href="#cb14-30"></a></span>
+<span id="cb14-31"><a href="#cb14-31"></a></span>
+<span id="cb14-32"><a href="#cb14-32"></a><span class="kw">def</span> raz(pendu,suggestion,motAuHasard):</span>
+<span id="cb14-33"><a href="#cb14-33"></a>  …</span>
+<span id="cb14-34"><a href="#cb14-34"></a>  </span>
+<span id="cb14-35"><a href="#cb14-35"></a></span>
+<span id="cb14-36"><a href="#cb14-36"></a><span class="kw">def</span> traiterPioche(pendu,pioche):</span>
+<span id="cb14-37"><a href="#cb14-37"></a>  …</span>
+<span id="cb14-38"><a href="#cb14-38"></a></span>
+<span id="cb14-39"><a href="#cb14-39"></a></span>
+<span id="cb14-40"><a href="#cb14-40"></a><span class="kw">def</span> AConnexion(pendu,suggestion,motAuHasard):</span>
+<span id="cb14-41"><a href="#cb14-41"></a></span>
+<span id="cb14-42"><a href="#cb14-42"></a></span>
+<span id="cb14-43"><a href="#cb14-43"></a><span class="kw">def</span> APioche(pendu,pioche):</span>
+<span id="cb14-44"><a href="#cb14-44"></a></span>
+<span id="cb14-45"><a href="#cb14-45"></a></span>
+<span id="cb14-46"><a href="#cb14-46"></a><span class="kw">def</span> ARelance(pendu,suggestion,motAuHasard):</span>
+<span id="cb14-47"><a href="#cb14-47"></a></span>
+<span id="cb14-48"><a href="#cb14-48"></a></span>
+<span id="cb14-49"><a href="#cb14-49"></a>go(<span class="bu">globals</span>())</span></code></pre></div>
+<h3 id="tâches-10">Tâches</h3>
+<h4 id="fonction-donnermasqueettestersivictoire">Fonction <code>donnerMasqueEtTesterSiVictoire</code></h4>
+<p>Sachant que :</p>
+<ul>
+<li><code>mot</code> est une chaîne de caractères contenant le mot à deviner ;</li>
+<li><code>pioches</code> étant une chaîne de caractère contenant les lettres choisies par le joueur ;</li>
+</ul>
+<p>modifier le code de la fonction <code>donnerMasqueEtTesterSiVictoire</code> (précédemment nommée <code>donnerMasque</code>) pour qu&#39;elle retourne, en plus du masque, la valeur <code>VRAI</code> si le joueur a trouvé toutes les lettres (<code>pioches</code> contient toutes les lettres contenues dans <code>mot</code>), la valeur <code>FAUX</code> dans le cas contraire.</p>
+<h4 id="fonction-majcorpsettestersidefaite">Fonction <code>majCorpsEtTesterSiDefaite</code></h4>
+<p>Sachant que :</p>
+<ul>
+<li><code>nombreErreurs</code> est le nombre d&#39;erreurs commises par le joueur, c&#39;est-à-dire le nombre de lettres qu&#39;il a choisi est qui ne sont pas contenues dans le mot à deviner ;</li>
+</ul>
+<p>modifier le code de la fonction <code>majCorpsEtTesterSiDefaite</code> (précédemment nommée <code>majCorps</code>) pour que, en plus de mettre à jour le dessin du corps du pendu, elle retourne la valeur <code>VRAI</code> si le dessin du pendu est complet, <code>FAUX</code> dans le cas contraire.</p>
+<p>Rappel : la variable globale <code>P_NOMBRE</code> contient le nombre de parties dont est constitué le dessin du corps du pendu.</p>
+<h4 id="fonction-raz-6">Fonction <code>raz</code></h4>
+<p>Sachant que :</p>
+<ul>
+<li>la fonction <code>donnerMasque</code> a été renommée en <code>donnerMasqueEtTesterSiVictoire</code> ;</li>
+<li>que cette fonction, en plus de retourner le masque, retourne également un booléen (dont on peut ignorer la valeur) ;</li>
+</ul>
+<p>modifier le code de la fonction <code>raz</code> de manière à tenir compte de ces deux modifications.</p>
+<h4 id="fonction-traiterpioche-6">Fonction <code>traiterPioche</code></h4>
+<p>Sachant que :</p>
+<ul>
+<li><p>concernant la fonction <code>donnerMasqueEtTesterSiVictoire</code> :</p>
+<ul>
+<li>celle-ci remplace la fonction précédemment nommée <code>donnerMasque</code>,</li>
+<li>qu&#39;en plus de retourner le masque, elle retourne également un booléen à <code>VRAI</code> si la partie est gagnée par le joueur, à <code>FAUX</code> sinon;</li>
+</ul></li>
+<li><p>concernant la fonction <code>majCorpsEtTesterSiDefaite</code> :</p>
+<ul>
+<li>celle-ci remplace la fonction précédemment nommée <code>majCorps</code>,</li>
+<li>elle retourne un booléen à <code>VRAI</code> lorsque le joueur a perdu la partie, à <code>FAUX</code> sinon ;</li>
+</ul>
+<p>modifier le code de la fonction <code>traiterPioche</code> pour qu&#39;elle notifie le joueur dés qu&#39;il a gagné ou perdu. Dans le cas où le jouer a perdu la partie, il faudra également lui notifier le nombre d&#39;erreurs qu&#39;il a commis (nombre de lettres piochées ne se trouvant dans le mot à deviner), le nombre de bonnes pioches (nombre de lettres piochées se trouvant dans le mot à deviner), ainsi que le mot à deviner.</p>
+<p>Pour ce faire, il existe un fonction <code>notifier(…)</code> qui affiche une boite de dialogue contenant la chaîne de caractères passée en paramètre à cette fonction.</p></li>
+</ul>
+<h4 id="fonction-aconnexion">Fonction <code>AConnexion</code></h4>
+<p>Sachant que :</p>
+<ul>
+<li><code>pendu</code> est une instance de la classe <code>Pendu</code> ;</li>
+<li><code>suggestion</code> est le contenu du champ de saisie ;</li>
+<li><code>motAuHasard</code> est un mot choisi au hasard ;</li>
+<li>cette fonction est appelée à chaque fois qu&#39;un nouveau joueur se connecte ;</li>
+</ul>
+<p>écrire le code de la fonction <code>AConnexion</code> de manière à initialiser :</p>
+<ul>
+<li>l&#39;instance <code>pendu</code> de la classe <code>Pendu</code> ;</li>
+<li>le masque ;</li>
+<li>le dessin du pendu.</li>
+</ul>
+<p>On utilisera bien entendu le fonctions développées précédemment.</p>
+<h4 id="fonction-apioche">Fonction <code>APioche</code></h4>
+<p>Sachant que :</p>
+<ul>
+<li><code>pendu</code> est une instance de la classe <code>Pendu</code> ;</li>
+<li><code>pioche</code> contient la lettre sélectionnée par le joueur ;</li>
+<li>cette fonction est appelée à chaque fois que le joueur sélectionne une nouvelle lettre ;</li>
+</ul>
+<p>écrire le code de la fonction <code>APioche</code> de manière à mettre à jour :</p>
+<ul>
+<li>l&#39;instance <code>pendu</code> de la classe <code>Pendu</code> ;</li>
+<li>le masque ;</li>
+<li>le dessin du pendu.</li>
+</ul>
+<p>On utilisera bien entendu le fonctions développées précédemment.</p>
+<h4 id="fonction-arelance">Fonction <code>ARelance</code></h4>
+<p>Sachant que :</p>
+<ul>
+<li><code>pendu</code> est une instance de la classe <code>Pendu</code> ;</li>
+<li><code>suggestion</code> est le contenu du champ de saisie ;</li>
+<li><code>motAuHasard</code> est un mot choisi au hasard ;</li>
+<li>cette fonction est appelée à chaque fois que le joueur clique sur le bouton <code>Recommencer</code> ;</li>
+</ul>
+<p>écrire le code de la fonction <code>ARelance</code> de manière à :</p>
+<ul>
+<li>notifier au joueur (on utilisera la fonction <code>notifier(…)</code> évoquée plus haut):
+<ul>
+<li>le nombre d&#39;erreurs,</li>
+<li>le nombre de bonnes pioches,</li>
+<li>le mot à deviner ;</li>
+</ul></li>
+<li>initialiser pour une nouvelle partie :
+<ul>
+<li>l&#39;instance <code>pendu</code> de la classe <code>Pendu</code> ;</li>
+<li>le masque ;</li>
+<li>le dessin du pendu.</li>
+</ul></li>
+</ul>
+<p>On utilisera bien entendu le fonctions développées précédemment.</p>
+<h3 id="pseudo-code-11">Pseudo-code</h3>
+<h4 id="fonction-donnermasqueettestersivictoire-1">Fonction <code>donnerMasqueEtTesterSiVictoire</code></h4>
+<blockquote>
+<p>Mettre une chaîne de caractères vide dans <code>masque</code><br />
+Mettre la valeur <code>VRAI</code> dans<code>victoire</code></p>
+<p>Pour <code>lettre</code> étant chaque lettre dans <code>mot</code><br />
+  Si <code>lettre</code> est dans <code>pioches</code><br />
+    Ajouter <code>lettre</code> à <code>masque</code><br />
+  Sinon<br />
+    Ajouter le caractère <strong><code>_</code></strong> à <code>masque</code><br />
+    Mettre <code>victoire</code> à <code>FAUX</code></p>
+<p>Retourner <code>masque</code> et <code>victoire</code></p>
+</blockquote>
+<h4 id="fonction-majcorpsettestersidefaite-1">Fonction <code>majCorpsEtTesterSiDefaite</code></h4>
+<p>Identique à celui de la fonction <code>majCorps</code> avec, en plus :</p>
+<blockquote>
+<p>Si <code>nombreErreurs</code> &gt;= <code>P_NOMBRE</code><br />
+  Retourner <code>VRAI</code><br />
+Sinon<br />
+  Retourner <code>FAUX</code></p>
+</blockquote>
+<h4 id="fonction-raz-7">Fonction <code>raz</code></h4>
+<p>Identique à celui de l&#39;exercice précédent.</p>
+<h4 id="fonction-traiterpioche-7">Fonction <code>traiterPioche</code></h4>
+<blockquote>
+<p>Si <code>pioche</code> est contenu dans <code>motSecret</code><br />
+  Afficher nouveau masque<br />
+  Si partie en cours et victoire<br />
+    Notifier victoire<br />
+Sinon<br />
+  Complèter le dessin du pendu<br />
+  Si partie en cours et défaite<br />
+    Notifier défaite et afficher informations sur la partie</p>
+</blockquote>
+<h4 id="fonction-aconnexion-1">Fonction <code>AConnexion</code></h4>
+<blockquote>
+<p>Lancer une partie</p>
+</blockquote>
+<h4 id="fonction-apioche-1">Fonction <code>APioche</code></h4>
+<blockquote>
+<p>Lancer le traitement de la lettre choisie par le joueur</p>
+</blockquote>
+<h4 id="fonction-arelance-1">Fonction <code>ARelance</code></h4>
+<blockquote>
+<p>Si partie en cours<br />
+  Afficher informations sur la partie</p>
+<p>Lancer une nouvelle partie</p>
+</blockquote>
+<h3 id="aperçu-11">Aperçu</h3>
+<p>Identique à celui de l&#39;exercice précédent</p>
+<h3 id="tests-10">Tests</h3>
+<p>Identiques à celui de l&#39;exercice précédents.</p>
+<p>Vérifier que la détection d&#39;une victoire et d&#39;une défaite est correctement réalisée, et que les notifications sont correctes.</p>
+<p>Vérifier qu&#39;un click sur le bouton <code>Recommencer</code> entraîne une notification avec les informations sur la partie en cours, ainsi que le lancement d&#39;une nouvelle partie.</p>
 </body>
 </html>
